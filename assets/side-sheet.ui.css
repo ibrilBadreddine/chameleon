@@ -1,0 +1,99 @@
+[ui-side-sheet-content] {
+  --side-sheet-width: 320px;
+
+  z-index: 9999;
+  position: fixed;
+  inset-block-start: 0;
+  color: var(--color-on-surface-variant);
+  background-color: var(--color-surface-container);
+  height: 100%;
+  width: var(--side-sheet-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-expressive-default-spatial);
+
+  &[ui-side-sheet-content="standard"] {
+    border-inline-start: 1px solid var(--color-outline-variant);
+  }
+
+  &[ui-side-sheet-content="modal"] {
+    border-inline-start: 1px solid var(--color-outline-variant);
+
+    &[data-position="start"] {
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+
+    &[data-position="end"] {
+      border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    }
+  }
+
+  &[data-position="start"] {
+    inset-inline-start: 0;
+
+    &[aria-hidden="true"] {
+      inset-inline-start: calc(var(--side-sheet-width) * -1);
+    }
+  }
+
+  &[data-position="end"] {
+    inset-inline-end: 0;
+
+    &[aria-hidden="true"] {
+      inset-inline-end: calc(var(--side-sheet-width) * -1);
+    }
+  }
+
+  [ui-side-sheet-header] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > h2 {
+      flex: 2;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font: var(--font-title-lg);
+    }
+
+    &:has(> [ui-icon-button]:first-child) {
+      padding-inline-start: var(--spacing-12);
+    }
+
+    & > [ui-icon-button]:last-child {
+      margin-inline-start: var(--spacing-12);
+    }
+  }
+
+  [ui-side-sheet-body] {
+    flex: 2;
+    overflow-y: scroll;
+    padding-inline: var(--spacing-24);
+  }
+
+  [ui-side-sheet-header],
+  [ui-side-sheet-footer] {
+    padding: var(--spacing-24);
+
+    &[data-divider="true"] {
+      border-block-start: 1px solid var(--color-outline-variant);
+    }
+  }
+}
+
+[ui-side-sheet-overlay] {
+  inset: 0;
+  opacity: 0;
+  z-index: 9998;
+  position: fixed;
+  background-color: var(--color-overlay);
+  animation: overlay-fade-in var(--transition-standard-fast-effects) forwards;
+}
+
+@keyframes overlay-fade-in {
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,14 @@
+[ui-divider] {
+  border: none;
+  background-color: var(--color-outline-variant);
+
+  &[ui-divider="horizontal"] {
+    height: 1px;
+    width: 100%;
+  }
+
+  &[ui-divider="vertical"] {
+    height: 100%;
+    width: 1px;
+  }
+}

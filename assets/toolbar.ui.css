@@ -1,0 +1,46 @@
+[ui-toolbar] {
+  display: flex;
+  align-items: center;
+
+  &[data-alignment="center"] {
+    gap: var(--spacing-8);
+    justify-content: center;
+  }
+
+  &[data-alignment="spread"] {
+    justify-content: space-between;
+  }
+
+  &[ui-toolbar="floating"] {
+    width: max-content;
+    gap: var(--spacing-4);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-3);
+    border-radius: var(--radius-xl-inc);
+  }
+
+  &[data-type="standard"] {
+    background-color: var(--color-surface-container);
+  }
+
+  &[data-type="vibrant"] {
+    background-color: var(--color-primary-container);
+  }
+
+  &[aria-orientation="horizontal"] {
+    height: 64px;
+
+    &[ui-toolbar="docked"] {
+      padding-inline: var(--spacing-16);
+    }
+  }
+
+  &[aria-orientation="vertical"] {
+    width: 64px;
+    flex-direction: column;
+
+    &[ui-toolbar="docked"] {
+      padding-block: var(--spacing-16);
+    }
+  }
+}

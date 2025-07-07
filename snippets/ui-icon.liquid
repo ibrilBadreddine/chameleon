@@ -1,0 +1,20 @@
+{% comment %}
+  Renders an icon (Material Icons)
+
+  Accepts:
+  - name: {String} Icon name,
+  - size: {Number} (optional) Icon size
+  - filled: {String} (optional) Icon fill color
+
+  Usage:
+  {% render 'ui-icon', name: 'search', size: 24, fill: 'currentColor' %}
+{% endcomment %}
+
+<span
+  ui-icon
+  filled="{{ filled }}"
+  class="material-symbols-outlined"
+  style="--icon-size: {{ size | default: 24 }}px;"
+>
+  {{ name }}
+</span>
