@@ -1,0 +1,19 @@
+<div layout="announcement-bar">
+  <div class="marquee-container">
+    <div class="marquee">
+      {% for _ in (1..2) %}
+        <ul class="bar-wrapper">
+          {% for _ in (1..3) %}
+            <li><span class="content"> Save 20% on your first order </span></li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "label": "Announcement bar"
+}
+{% endschema %}

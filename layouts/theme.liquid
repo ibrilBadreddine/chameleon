@@ -27,6 +27,7 @@
     {{ '_main.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
+    {% section 'announcement-bar' %}
     {% section 'header' %}
     <main layout="main" id="main">
       {% comment %} {{ content_for_layout }} {% endcomment %}
