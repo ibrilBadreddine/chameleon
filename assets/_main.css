@@ -1,20 +1,6 @@
 @import url("./_tokens.css");
-@import url("./button.ui.css");
-@import url("./icon-button.ui.css");
-@import url("./fab.ui.css");
-@import url("./button-group.ui.css");
-@import url("./split-button.ui.css");
-@import url("./radio.ui.css");
-@import url("./checkbox.ui.css");
-@import url("./radio.ui.css");
-@import url("./switch.ui.css");
-@import url("./divider.ui.css");
-@import url("./select.ui.css");
-@import url("./side-sheet.ui.css");
-@import url("./snackbar.ui.css");
-@import url("./text-field.ui.css");
-@import url(".toolbar/.ui.css");
-@import url(".tooltip/.ui.css");
+@import url("./_layout.css");
+@import url("./_misc.css");
 
 * {
   margin: 0;
@@ -31,16 +17,19 @@ body {
   font: var(--font-body-md);
   color: var(--color-on-background);
   background-color: var(--color-background);
-}
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: var(--spacing-12);
 
-[ui-icon] {
-  font-size: var(--icon-size);
+  & > [layout="main"],
+  & > #youcan-section--header,
+  & > #youcan-section--footer {
+    width: 100%;
+  }
 
-  &[filled] {
-    font-variation-settings:
-      "FILL" 1,
-      "wght" 400,
-      "GRAD" 0,
-      "opsz" 24;
+  & > [layout="main"] {
+    flex: 2;
   }
 }

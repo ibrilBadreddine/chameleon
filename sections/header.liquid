@@ -1,0 +1,38 @@
+<header layout="header">
+  <ul class="links">
+    <li class="link">
+      <a href="#">{% render 'ui-icon', name: 'local_fire_department' %} Home</a>
+    </li>
+    <li class="link">
+      <a href="#">Collections</a>
+    </li>
+    <li class="link">
+      <a href="#">Best offers</a>
+    </li>
+    <li class="link">
+      <a href="#">Contact</a>
+    </li>
+  </ul>
+  <ul class="actions">
+    <li class="action">
+      <button aria-label="search">
+        {% render 'ui-icon', name: 'search' %}
+      </button>
+    </li>
+    <li class="action">
+      <button aria-label="search">
+        {% render 'ui-icon', name: 'shopping_cart' %}
+        (0)
+      </button>
+    </li>
+    <li class="action">
+      <button class="action" aria-label="search">Menu</button>
+    </li>
+  </ul>
+</header>
+
+{% schema %}
+{
+  "label": "Header"
+}
+{% endschema %}

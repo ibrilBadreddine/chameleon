@@ -1,38 +1,39 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  --color-background: light-dark(#fffbff, #1c1b1e);
-  --color-on-background: light-dark(#1c1b1e, #e6e1e6);
-  --color-primary: light-dark(#6349bf, #ccbeff);
-  --color-on-primary: light-dark(#ffffff, #340c8f);
-  --color-primary-container: light-dark(#e7deff, #4b2ea6);
-  --color-on-primary-container: light-dark(#1e0060, #e7deff);
-  --color-inverse-primary: light-dark(#ccbeff, #6349bf);
-  --color-secondary: light-dark(#615b71, #cac3dc);
-  --color-on-secondary: light-dark(#ffffff, #322e41);
-  --color-secondary-container: light-dark(#e7dff8, #494458);
-  --color-on-secondary-container: light-dark(#1d192b, #e7dff8);
-  --color-tertiary: light-dark(#7d5262, #eeb8cb);
-  --color-on-tertiary: light-dark(#ffffff, #492534);
-  --color-tertiary-container: light-dark(#ffd9e5, #623b4a);
-  --color-on-tertiary-container: light-dark(#31111f, #ffd9e5);
+  --color-background: light-dark(#fbfcfe, #191c1d);
+  --color-on-background: light-dark(#191c1d, #e1e3e4);
+  --color-primary: light-dark(#006781, #5fd4fd);
+  --color-on-primary: light-dark(#ffffff, #003544);
+  --color-primary-container: light-dark(#b9eaff, #004d62);
+  --color-on-primary-container: light-dark(#001f29, #b9eaff);
+  --color-inverse-primary: light-dark(#5fd4fd, #006781);
+  --color-secondary: light-dark(#4c626b, #b3cad5);
+  --color-on-secondary: light-dark(#ffffff, #1e333c);
+  --color-secondary-container: light-dark(#cfe6f1, #354a53);
+  --color-on-secondary-container: light-dark(#071e26, #cfe6f1);
+  --color-tertiary: light-dark(#5b5b7e, #c4c3eb);
+  --color-on-tertiary: light-dark(#ffffff, #2d2d4d);
+  --color-tertiary-container: light-dark(#e1dfff, #434465);
+  --color-on-tertiary-container: light-dark(#181837, #e1dfff);
   --color-error: light-dark(#ba1a1a, #ffb4ab);
   --color-on-error: light-dark(#ffffff, #690005);
   --color-error-container: light-dark(#ffdad6, #93000a);
   --color-on-error-container: light-dark(#410002, #ffb4ab);
-  --color-surface: light-dark(#fffbff, #1c1b1e);
-  --color-on-surface: light-dark(#1c1b1e, #e6e1e6);
-  --color-surface-variant: light-dark(#e6e0ec, #48454e);
-  --color-on-surface-variant: light-dark(#48454e, #cac4cf);
-  --color-inverse-surface: light-dark(#313033, #e6e1e6);
-  --color-inverse-on-surface: light-dark(#f4eff4, #313033);
-  --color-outline: light-dark(#79757f, #938f99);
-  --color-outline-variant: light-dark(#cac4cf, #48454e);
-  --color-surface-container-lowest: light-dark(#ffffff, #0f0e11);
-  --color-surface-container-low: light-dark(#f7f2f7, #1c1b1e);
-  --color-surface-container: light-dark(#f1ecf1, #201f23);
-  --color-surface-container-high: light-dark(#ebe7eb, #2b292d);
-  --color-surface-container-highest: light-dark(#e6e1e6, #363438);
+  --color-surface: light-dark(#fbfcfe, #191c1d);
+  --color-on-surface: light-dark(#191c1d, #e1e3e4);
+  --color-surface-variant: light-dark(#dce4e8, #40484c);
+  --color-on-surface-variant: light-dark(#40484c, #c0c8cc);
+  --color-inverse-surface: light-dark(#2e3132, #e1e3e4);
+  --color-inverse-on-surface: light-dark(#eff1f2, #2e3132);
+  --color-outline: light-dark(#70787c, #8a9296);
+  --color-outline-variant: light-dark(#c0c8cc, #40484c);
+  --color-surface-container-lowest: light-dark(#ffffff, #0c0f10);
+  --color-surface-container-low: light-dark(#f2f4f5, #191c1d);
+  --color-surface-container: light-dark(#eceef0, #1d2022);
+  --color-surface-container-high: light-dark(#e7e8ea, #272a2c);
+  --color-surface-container-highest: light-dark(#e1e3e4, #323537);
+
   --color-overlay: rgba(0, 0, 0, 0.3);
 
   --spacing-0: 0px;
@@ -66,7 +67,7 @@
   --shadow-4: 0px 2px 3px rgba(0, 0, 0, 0.3), 0px 6px 10px rgba(0, 0, 0, 0.15);
   --shadow-5: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px 8px 12px rgba(0, 0, 0, 0.15);
 
-  --font-family: Roboto, sans-serif;
+  --font-family: DM Sans, sans-serif;
 
   --font-display-lg: 400 57px/64px var(--font-family);
   --font-display-md: 400 45px/52px var(--font-family);
