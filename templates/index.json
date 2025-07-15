@@ -1,11 +1,8 @@
 {
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar"
-    },
-    "header": {
-      "type": "header"
+    "benefits": {
+      "type": "benefits"
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": ["benefits"]
 }

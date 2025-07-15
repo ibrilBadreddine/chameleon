@@ -1,9 +1,10 @@
+/* Announcement Bar */
 [layout="announcement-bar"] {
   display: flex;
   justify-content: center;
   color: var(--color-background);
   background-color: var(--color-on-background);
-  padding-block: var(--spacing-12);
+  padding-block: var(--spacing-10);
   border-radius: var(--radius-md);
   width: calc(100vw - var(--spacing-24));
 
@@ -36,7 +37,6 @@
 
     .bar-wrapper {
       display: flex;
-      list-style: none;
 
       li {
         white-space: nowrap;
@@ -61,10 +61,6 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-16);
-
-  ul {
-    list-style: none;
-  }
 
   .links {
     display: flex;

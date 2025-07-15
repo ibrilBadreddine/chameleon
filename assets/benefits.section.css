@@ -1,0 +1,16 @@
+[section="benefits"] {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-64);
+  justify-content: center;
+  padding: var(--spacing-24);
+  border-radius: var(--radius-md);
+  color: var(--color-background);
+  background-color: var(--color-on-background);
+
+  [block="benefit"] {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+  }
+}

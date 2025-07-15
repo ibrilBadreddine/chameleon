@@ -1,0 +1,14 @@
+{% comment %}
+  Renders a benefit item (Block)
+
+  Accepts:
+  - content: {String} Benefit content,
+  - icon: {String} Benefit icon
+  Usage:
+  {% render 'benefit-block', content: 'Worldwide Shipping', icon: 'language' %}
+{% endcomment %}
+
+<li block="benefit">
+  {% render 'ui-icon', name: icon %}
+  <span>{{ content }}</span>
+</li>
