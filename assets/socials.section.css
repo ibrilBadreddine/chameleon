@@ -1,0 +1,24 @@
+[section="socials"] {
+  display: grid;
+  gap: var(--spacing-12);
+  grid-template-columns: repeat(4, 1fr);
+
+  [block="social"] {
+    a {
+      width: 100%;
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--color-on-background);
+      background-color: var(--color-surface-container-low);
+      padding: calc(var(--spacing-24) - var(--spacing-4));
+      transition: var(--transition-standard-default-effects);
+
+      &:hover {
+        background-color: var(--color-surface-container);
+      }
+    }
+  }
+}

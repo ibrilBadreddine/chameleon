@@ -2,7 +2,10 @@
   "sections": {
     "benefits": {
       "type": "benefits"
+    },
+    "socials": {
+      "type": "socials"
     }
   },
-  "order": ["benefits"]
+  "order": ["benefits", "socials"]
 }
