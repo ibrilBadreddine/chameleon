@@ -2,6 +2,7 @@
 @import url("./_layout.css");
 @import url("./_misc.css");
 
+@import url("./slideshow.section.css");
 @import url("./benefits.section.css");
 @import url("./socials.section.css");
 

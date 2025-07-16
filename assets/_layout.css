@@ -101,6 +101,7 @@
   display: grid;
   gap: var(--spacing-12);
   grid-template-columns: 70% auto;
+  margin-block-start: var(--spacing-12);
 
   .primary-footer {
     display: flex;

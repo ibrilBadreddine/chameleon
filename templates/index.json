@@ -1,5 +1,8 @@
 {
   "sections": {
+    "slideshow": {
+      "type": "slideshow"
+    },
     "benefits": {
       "type": "benefits"
     },
@@ -7,5 +10,5 @@
       "type": "socials"
     }
   },
-  "order": ["benefits", "socials"]
+  "order": ["slideshow", "benefits", "socials"]
 }

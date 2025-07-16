@@ -1,0 +1,25 @@
+{% comment %}
+  Renders a slideshow item (Block)
+
+  Accepts:
+  - slide: {Object} Slide item
+
+  Usage:
+  {% render 'slideshow-block', slide: {...} %}
+{% endcomment %}
+
+<li block="slideshow-slide">
+  <img
+    src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/others/cHQT5IDPgMrFkArG0AcZcloFQwa26cv06QN7y9LM.jpg"
+    alt="slide"
+    height="100%"
+    width="100%"
+  >
+  <div class="content">
+    <div class="text">
+      <h2 class="title">Lorem ipsum dolor sit amet</h2>
+      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, dolor.</p>
+    </div>
+    <a href="#" class="action"> View product </a>
+  </div>
+</li>
