@@ -1,8 +1,8 @@
 {
   "sections": {
-    "placeholder": {
-      "type": "placeholder"
+    "single-product": {
+      "type": "single-product"
     }
   },
-  "order": ["placeholder"]
+  "order": ["single-product"]
 }

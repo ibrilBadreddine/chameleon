@@ -1,0 +1,35 @@
+{% comment %}
+  Renders a product content (title, description, price...)
+
+  Accepts:
+  - product: {Object} Product info,
+
+  Usage:
+  {% render 'pd-content-block', product: {...} %}
+{% endcomment %}
+
+<div block="pd-content">
+  <div class="general-info">
+    <div class="price">
+      <span class="original-price">549 MAD</span>
+      {% comment %} <div class="compare-at-price"></div> {% endcomment %}
+    </div>
+    <div class="about">
+      <h1 class="title">Embossed backpack</h1>
+      <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, architecto.</p>
+    </div>
+    {% comment %} <div class="variants"></div> {% endcomment %}
+    <div class="cta">
+      <div class="quantity">
+        <button aria-label="minus">
+          {% render 'ui-icon', name: 'remove' %}
+        </button>
+        <span class="value">1</span>
+        <button aria-label="plus">
+          {% render 'ui-icon', name: 'add' %}
+        </button>
+      </div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+  </div>
+</div>

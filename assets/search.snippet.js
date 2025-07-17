@@ -7,7 +7,7 @@ if (!customElements.get("ui-search")) {
       this.trigger = this.firstElementChild;
       this.content = this.lastElementChild;
       this.searchInput = this.content.querySelector("input[name='search']");
-      this.closeEvent = this.querySelector("[aria-label='close']");
+      this.clear = this.querySelector("[aria-label='close']");
     }
 
     connectedCallback() {
@@ -16,7 +16,7 @@ if (!customElements.get("ui-search")) {
 
     _render() {
       this.trigger.addEventListener("click", () => this.toggle());
-      this.closeEvent.addEventListener("click", () => this.close());
+      this.clear.addEventListener("click", () => this.clearInput());
       this.addEventListener("keydown", (e) => e.key === this.ESC_KEY && this.close());
     }
 
@@ -31,7 +31,7 @@ if (!customElements.get("ui-search")) {
         if (state) {
           this.searchInput.focus();
         } else {
-          this.searchInput.value = "";
+          this.clearInput();
           this.trigger.focus();
         }
       }, 300);
@@ -43,6 +43,11 @@ if (!customElements.get("ui-search")) {
 
     toggle() {
       this.setState(this.getState !== "open");
+    }
+
+    clearInput() {
+      this.searchInput.value = "";
+      setTimeout(() => this.searchInput.focus(), 0);
     }
   }
 

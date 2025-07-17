@@ -36,9 +36,11 @@ ui-search {
       flex: 2;
 
       input {
+        width: 100%;
         border: none;
         outline: none;
         font: var(--font-body-lg);
+        background-color: transparent;
       }
     }
 
@@ -60,6 +62,12 @@ ui-search {
       width: 0px;
       opacity: 0;
       visibility: hidden;
+    }
+
+    &:has(input:placeholder-shown) {
+      button[aria-label="close"] {
+        visibility: hidden;
+      }
     }
   }
 }
