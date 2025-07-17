@@ -1,0 +1,49 @@
+<div section="faq">
+  <div class="section-head">
+    <h2>FAQ</h2>
+  </div>
+  <div class="section-core">
+    <div class="media">
+      <img
+        src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/WhRgVBZgsQmURYFE20oXVrGwgVWoFEuadrrtwKh0.jpg"
+        alt="faq"
+        height="100%"
+        width="100%"
+      >
+    </div>
+    <div class="content">
+      <div class="head">
+        <h2 class="title">FAQ</h2>
+        <p class="description">
+          Welcome to our FAQ page! Here, you'll find answers to the most common questions about our products, shipping, returns, and more.
+        </p>
+      </div>
+      <div class="core">
+        <ul class="accordion">
+          {% for item in (1..3) %}
+            <li class="accordion-item">
+              <label>
+                <div class="item-trigger">
+                  <span>What should I do if my order arrives damaged?</span>
+                  {% render 'ui-icon', name: 'add' %}
+                </div>
+                <div class="item-content">
+                  <div class="content-wrapper">
+                    <p>Please contact our support team immediately with photos of the damage. We'll arrange a replacement or refund.</p>
+                  </div>
+                </div>
+                <input type="checkbox" name="faq">
+              </label>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "label": "FAQ"
+}
+{% endschema %}

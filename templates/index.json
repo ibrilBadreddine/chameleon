@@ -15,9 +15,12 @@
     "about-us": {
       "type": "about-us"
     },
+    "faq": {
+      "type": "faq"
+    },
     "socials": {
       "type": "socials"
     }
   },
-  "order": ["slideshow", "benefits", "products", "collections", "about-us", "socials"]
+  "order": ["slideshow", "benefits", "products", "collections", "about-us", "faq", "socials"]
 }

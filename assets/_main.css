@@ -8,6 +8,7 @@
 @import url("./collections.section.css");
 @import url("./products.section.css");
 @import url("./about-us.section.css");
+@import url("./faq.section.css");
 
 * {
   margin: 0;
