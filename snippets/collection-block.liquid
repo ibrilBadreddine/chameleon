@@ -1,0 +1,27 @@
+{% comment %}
+  Renders a collection item (Block)
+
+  Accepts:
+  - collection: {Object} Collection info,
+
+  Usage:
+  {% render 'benefit-block', collection: {...} %}
+{% endcomment %}
+
+<li block="collection">
+  <div class="media">
+    <img
+      src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/965bSPjYdRTzA30Oqav4W3wWQfC0LkpqQ3SdF2MI_md.jpg"
+      alt="category"
+      height="100%"
+      width="100%"
+    >
+  </div>
+  <div class="content">
+    <div class="text">
+      <h4 class="title">Women</h4>
+      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, est!</p>
+    </div>
+    <a href="#" class="action">View collection</a>
+  </div>
+</li>

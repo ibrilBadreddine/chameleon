@@ -1,0 +1,103 @@
+[section="collections"] {
+  display: grid;
+  gap: var(--spacing-12);
+
+  .section-head {
+    text-align: center;
+    padding: var(--spacing-16);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-container);
+
+    h2 {
+      font: var(--font-title-md);
+    }
+  }
+
+  .section-core {
+    display: grid;
+    gap: var(--spacing-12);
+    grid-template-columns: repeat(2, 1fr);
+
+    [block="collection"] {
+      display: grid;
+      gap: var(--spacing-12);
+      height: calc(35vh - var(--spacing-6));
+
+      &:first-child {
+        height: 70vh;
+        grid-row: 1 / 3;
+        position: relative;
+
+        .content {
+          width: 30%;
+          position: absolute;
+          inset-inline-start: var(--spacing-24);
+          inset-block-end: var(--spacing-24);
+          color: var(--color-on-background);
+          background-color: var(--color-background);
+
+          .text {
+            .description {
+              opacity: 1;
+              color: var(--color-on-surface-variant);
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        grid-template-columns: 60% auto;
+      }
+
+      &:nth-child(3) {
+        grid-template-columns: auto 60%;
+
+        .content {
+          order: -1;
+        }
+      }
+
+      .media {
+        width: 100%;
+        height: inherit;
+        overflow: hidden;
+        border-radius: var(--radius-md);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .content {
+        border-radius: var(--radius-md);
+        color: var(--color-background);
+        background-color: var(--color-on-background);
+        padding: calc(var(--spacing-48) - var(--spacing-8));
+        display: flex;
+        gap: var(--spacing-24);
+        flex-direction: column;
+        justify-content: space-between;
+
+        .text {
+          display: grid;
+          gap: var(--spacing-8);
+
+          .title {
+            font: var(--font-title-lg);
+          }
+
+          .description {
+            opacity: 0.7;
+            text-wrap: balance;
+          }
+        }
+
+        .action {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
