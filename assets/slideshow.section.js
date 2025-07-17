@@ -32,7 +32,6 @@ if (!customElements.get("ui-slideshow")) {
     }
 
     swipe(index) {
-      console.log(`calc(-${100 * index}%`);
       this.wrapper.style.insetInlineStart = `calc(-${100 * index}%`;
       this.setIndex(index);
     }

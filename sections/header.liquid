@@ -14,19 +14,16 @@
     </li>
   </ul>
   <ul class="actions">
-    <li class="action">
-      <button aria-label="search">
+    <li>
+      <button class="action" aria-label="search">
         {% render 'ui-icon', name: 'search' %}
       </button>
     </li>
-    <li class="action">
-      <button aria-label="search">
-        {% render 'ui-icon', name: 'shopping_cart' %}
-        (0)
-      </button>
+    <li>
+      {% render 'ui-cart-drawer' %}
     </li>
-    <li class="action">
-      <button class="action" aria-label="search">Menu</button>
+    <li>
+      <button class="action" aria-label="menu">Menu</button>
     </li>
   </ul>
 </header>

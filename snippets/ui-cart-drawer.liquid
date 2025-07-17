@@ -1,0 +1,31 @@
+{{ 'cart-drawer.snippet.js' | asset_url | script_tag_deferred }}
+
+{% comment %}
+  Renders cart drawer
+
+  Usage:
+  {% render 'ui-cart-drawer' %}
+{% endcomment %}
+
+<ui-cart-drawer>
+  <button class="drawer-trigger action" aria-expanded="false" aria-label="cart">
+    {% render 'ui-icon', name: 'shopping_cart' %}
+    (0)
+  </button>
+  <div class="drawer-content" data-state="closed">
+    <div class="header">
+      <h6 class="title">Cart <span class="total">(0)</span></h6>
+      <button aria-label="close">
+        {% render 'ui-icon', name: 'close' %}
+      </button>
+    </div>
+    <div class="main"></div>
+    <div class="footer">
+      <div class="info">
+        <span class="label">Subtotal</span>
+        <span class="value">549 MAD</span>
+      </div>
+      <button class="checkout">Checkout</button>
+    </div>
+  </div>
+</ui-cart-drawer>

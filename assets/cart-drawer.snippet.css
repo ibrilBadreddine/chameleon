@@ -1,0 +1,90 @@
+ui-cart-drawer {
+  --cart-drawer-width: 390px;
+
+  /* Trigger */
+  .drawer-trigger {
+    /* Overlay */
+    &:has(+ .drawer-content[data-state="open"]) {
+      &::before {
+        content: "";
+        inset: 0;
+        cursor: auto;
+        z-index: 9998;
+        position: fixed;
+        background-color: var(--color-overlay);
+      }
+    }
+  }
+
+  /* Content */
+  .drawer-content {
+    cursor: auto;
+    z-index: 9999;
+    position: fixed;
+    inset-block-end: var(--spacing-12);
+    padding: var(--spacing-12);
+    border-radius: var(--radius-md);
+    width: var(--cart-drawer-width);
+    height: calc(100vh - var(--spacing-24));
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-expressive-default-spatial);
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: var(--radius-md);
+      background-color: var(--color-surface-container-low);
+      padding: var(--spacing-12);
+      padding-inline-start: calc(var(--spacing-24) - var(--spacing-2));
+
+      .title {
+        font: var(--font-body-lg);
+
+        .total {
+          font: var(--font-body-md);
+        }
+      }
+    }
+
+    /* Main */
+    .main {
+      flex: 2;
+    }
+
+    /* Footer */
+    .footer {
+      border-radius: var(--radius-md);
+      background-color: var(--color-surface-container-low);
+      padding: calc(var(--spacing-24) - var(--spacing-2));
+      display: grid;
+      gap: calc(var(--spacing-24) - var(--spacing-2));
+
+      .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .label {
+          opacity: 0.7;
+        }
+
+        .value {
+          font: var(--font-body-lg);
+        }
+      }
+    }
+
+    &[data-state="open"] {
+      inset-inline-end: var(--spacing-12);
+    }
+
+    &[data-state="closed"] {
+      inset-inline-end: calc(var(--cart-drawer-width) * -1 - (var(--spacing-12) * 2));
+    }
+  }
+}
