@@ -1,0 +1,30 @@
+{% comment %}
+  Renders a product card (Block)
+
+  Accepts:
+  - product: {Object} Product info,
+
+  Usage:
+  {% render 'product-block', product: {...} %}
+{% endcomment %}
+
+<li block="product">
+  <a href="#">
+    <img
+      src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/EgDAxZgJvglybg3dVvcKRIxgHse4tPFKCHpnDyj4.jpg"
+      alt="product"
+      height="100%"
+      width="100%"
+    >
+    <div class="price">
+      <span>450 MAD</span>
+    </div>
+    <div class="badge">
+      <span>50% OFF</span>
+    </div>
+    <div class="info">
+      <p class="title">Stronger with you Tobacco 10 ML</p>
+      <span class="action">View</span>
+    </div>
+  </a>
+</li>

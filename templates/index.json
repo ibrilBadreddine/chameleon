@@ -6,6 +6,9 @@
     "benefits": {
       "type": "benefits"
     },
+    "products": {
+      "type": "products"
+    },
     "collections": {
       "type": "collections"
     },
@@ -13,5 +16,5 @@
       "type": "socials"
     }
   },
-  "order": ["slideshow", "benefits", "collections", "socials"]
+  "order": ["slideshow", "benefits", "products", "collections", "socials"]
 }
