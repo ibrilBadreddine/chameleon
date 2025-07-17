@@ -1,9 +1,14 @@
-<ul section="products">
-  {% render 'product-block' %}
-  {% render 'product-block' %}
-  {% render 'product-block' %}
-  {% render 'product-block' %}
-</ul>
+<div section="products">
+  <div class="section-head">
+    <h2>Our Favorites</h2>
+  </div>
+  <ul class="section-core">
+    {% render 'product-block' %}
+    {% render 'product-block' %}
+    {% render 'product-block' %}
+    {% render 'product-block' %}
+  </ul>
+</div>
 
 {% schema %}
 {

@@ -2,17 +2,6 @@
   display: grid;
   gap: var(--spacing-12);
 
-  .section-head {
-    text-align: center;
-    padding: var(--spacing-16);
-    border-radius: var(--radius-md);
-    background-color: var(--color-surface-container);
-
-    h2 {
-      font: var(--font-title-md);
-    }
-  }
-
   .section-core {
     display: grid;
     gap: var(--spacing-12);

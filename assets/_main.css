@@ -46,3 +46,14 @@ body {
 ul {
   list-style: none;
 }
+
+.section-head {
+  text-align: center;
+  padding: var(--spacing-16);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-container);
+
+  h2 {
+    font: var(--font-title-md);
+  }
+}
