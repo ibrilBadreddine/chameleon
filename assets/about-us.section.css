@@ -10,7 +10,7 @@
     .content {
       padding: var(--spacing-64);
       border-radius: var(--radius-md);
-      background-color: var(--color-surface-container);
+      background-color: var(--color-surface-container-low);
       display: flex;
       flex-direction: column;
       justify-content: space-between;

@@ -53,7 +53,7 @@ ul {
   text-align: center;
   padding: var(--spacing-16);
   border-radius: var(--radius-md);
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-low);
 
   h2 {
     font: var(--font-title-md);

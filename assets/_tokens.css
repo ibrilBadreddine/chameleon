@@ -29,7 +29,8 @@
   --color-outline: light-dark(#70787c, #8a9296);
   --color-outline-variant: light-dark(#c0c8cc, #40484c);
   --color-surface-container-lowest: light-dark(#ffffff, #0c0f10);
-  --color-surface-container-low: light-dark(#f2f4f5, #191c1d);
+  /* --color-surface-container-low: light-dark(#f2f4f5, #191c1d); */
+  --color-surface-container-low: light-dark(#f2f4f5, #272a2c);
   --color-surface-container: light-dark(#eceef0, #1d2022);
   --color-surface-container-high: light-dark(#e7e8ea, #272a2c);
   --color-surface-container-highest: light-dark(#e1e3e4, #323537);
