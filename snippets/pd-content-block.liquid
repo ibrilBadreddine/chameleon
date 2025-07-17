@@ -21,15 +21,15 @@
     {% comment %} <div class="variants"></div> {% endcomment %}
     <div class="cta">
       <div class="quantity">
-        <button aria-label="minus">
+        <button ui-button data-variant="secondary" data-size="md" as-icon aria-label="minus" disabled>
           {% render 'ui-icon', name: 'remove' %}
         </button>
         <span class="value">1</span>
-        <button aria-label="plus">
+        <button ui-button data-variant="secondary" data-size="md" as-icon aria-label="plus">
           {% render 'ui-icon', name: 'add' %}
         </button>
       </div>
-      <button class="add-to-cart">Add to cart</button>
+      <button ui-button data-variant="primary" data-size="md" class="add-to-cart">Add to cart</button>
     </div>
   </div>
 </div>
