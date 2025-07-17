@@ -1,4 +1,4 @@
-if (!customElements.get("ui-cart-drawer")) {
+if (!customElements.get("ui-search")) {
   class CartDrawer extends HTMLElement {
     constructor() {
       super();
@@ -6,6 +6,7 @@ if (!customElements.get("ui-cart-drawer")) {
       this.ESC_KEY = "Escape";
       this.trigger = this.firstElementChild;
       this.content = this.lastElementChild;
+      this.searchInput = this.content.querySelector("input[name='search']");
       this.closeEvent = this.querySelector("[aria-label='close']");
     }
 
@@ -26,7 +27,14 @@ if (!customElements.get("ui-cart-drawer")) {
     setState(state) {
       this.content.setAttribute("data-state", state ? "open" : "closed");
 
-      state ? this.closeEvent.focus() : this.trigger.focus();
+      setTimeout(() => {
+        if (state) {
+          this.searchInput.focus();
+        } else {
+          this.searchInput.value = "";
+          this.trigger.focus();
+        }
+      }, 300);
     }
 
     close() {
@@ -38,5 +46,5 @@ if (!customElements.get("ui-cart-drawer")) {
     }
   }
 
-  customElements.define("ui-cart-drawer", CartDrawer);
+  customElements.define("ui-search", CartDrawer);
 }
