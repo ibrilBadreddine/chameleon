@@ -11,20 +11,24 @@
 <li block="product">
   <a href="#">
     <img
-      src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/rG9FjFFIbrtS00QJAdq2OPMbO1OZI20UmuKKNGIZ_lg.jpg"
+      src="{{ img }}"
       alt="product"
       height="100%"
       width="100%"
     >
     <div class="price">
       <span class="original-price">450 MAD</span>
-      {% comment %} <span class="compare-at-price">600 MAD</span> {% endcomment %}
+      {% if compare_at_price %}
+        <span class="compare-at-price">600 MAD</span>
+      {% endif %}
     </div>
-    <div class="badge">
-      <span>50% OFF</span>
-    </div>
+    {% if badge %}
+      <div class="badge">
+        <span>50% OFF</span>
+      </div>
+    {% endif %}
     <div class="info">
-      <p class="title">Stronger with you Tobacco 10 ML</p>
+      <p class="title">{{ title }}</p>
       <span class="action">View</span>
     </div>
   </a>
