@@ -12,9 +12,12 @@
     "collections": {
       "type": "collections"
     },
+    "about-us": {
+      "type": "about-us"
+    },
     "socials": {
       "type": "socials"
     }
   },
-  "order": ["slideshow", "benefits", "products", "collections", "socials"]
+  "order": ["slideshow", "benefits", "products", "collections", "about-us", "socials"]
 }
