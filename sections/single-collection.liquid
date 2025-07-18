@@ -1,0 +1,37 @@
+<div section="single-collection">
+  <div class="collection-head">
+    <h2 class="title">Man</h2>
+    <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, iusto?</p>
+  </div>
+  <div class="collection-path">
+    <a href="/" ui-button data-variant="secondary" data-size="lg" as-icon aria-label="home"> {% render 'ui-icon', name: 'home' %}</a>
+    <a href="/" ui-button data-variant="secondary" data-size="lg">Collections {% render 'ui-icon', name: 'arrow_right_alt' %}</a>
+    <a href="/" ui-button data-variant="secondary" data-size="lg">Man {% render 'ui-icon', name: 'arrow_right_alt' %}</a>
+  </div>
+  <ul class="collection-products">
+    {% render 'product-block',
+      title: 'Backpack With Foldover Flap',
+      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/D3ZXxSPPWFqnmAqkpZCX8TEflayHPydxLMUEMxWn_md.jpg',
+      badge: true
+    %}
+    {% render 'product-block',
+      title: 'Fabric Multi-Pocket Backpack',
+      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/XDIRXrNbH0IWqxHjUQB6OIyeSVy7LD23M6GrcDDS_md.jpg'
+    %}
+    {% render 'product-block',
+      title: 'Fabric Multi-Pocket Backpack',
+      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/FEW5kx6LGNBKKUhpPwCqTYjrY5ciQmUnLEnpwZ8J_md.jpg',
+      compare_at_price: true
+    %}
+    {% render 'product-block',
+      title: 'Technical Sports Backpack',
+      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/sbZLw8j0k8SsFDp8SGNCECMdKHEfVpFUO9jl1Jnn_md.jpg'
+    %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "label": "Single Collection"
+}
+{% endschema %}

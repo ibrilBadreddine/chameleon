@@ -15,6 +15,7 @@
 [ui-button] {
   border: none;
   cursor: pointer;
+  text-decoration: none;
   outline-offset: 1px;
   outline: 2px solid transparent;
   font: var(--font-body-md);
@@ -35,7 +36,7 @@
 
   &[data-variant="secondary"] {
     color: var(--color-on-background);
-    background-color: var(--color-surface-container-high);
+    background-color: var(--color-surface-container-low);
 
     &:hover:not(:disabled) {
       background-color: var(--color-surface-container-highest);
@@ -48,6 +49,16 @@
 
     &:hover:not(:disabled) {
       background-color: var(--color-surface-container-highest);
+    }
+  }
+
+  &[data-size="lg"] {
+    height: 56px;
+    border-radius: var(--radius-md);
+    padding-inline: calc(var(--spacing-24) - var(--spacing-2));
+
+    &[as-icon] {
+      width: 56px;
     }
   }
 

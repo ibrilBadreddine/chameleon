@@ -10,9 +10,12 @@
 @import url("./about-us.section.css");
 @import url("./faq.section.css");
 @import url("./single-product.section.css");
+@import url("./single-collection.section.css");
 
 @import url("./search.snippet.css");
 @import url("./cart-drawer.snippet.css");
+
+@import url("./product.block.css");
 
 * {
   margin: 0;
