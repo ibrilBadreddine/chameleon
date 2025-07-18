@@ -45,6 +45,10 @@
   &[data-variant="ghost"] {
     color: var(--color-on-background);
     background-color: transparent;
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-surface-container-highest);
+    }
   }
 
   &[data-size="md"] {
@@ -57,6 +61,20 @@
     }
   }
 
+  &[data-size="sm"] {
+    height: 32px;
+    border-radius: var(--radius-sm);
+    padding-inline: var(--spacing-12);
+
+    &[as-icon] {
+      width: 32px;
+
+      [ui-icon] {
+        font-size: 20px;
+      }
+    }
+  }
+
   &[data-size="xs"] {
     width: 16px;
     border-radius: var(--radius-xs);
@@ -64,6 +82,10 @@
 
     &[as-icon] {
       height: 16px;
+
+      [ui-icon] {
+        font-size: 15px;
+      }
     }
   }
 

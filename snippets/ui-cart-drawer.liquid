@@ -15,17 +15,55 @@
   <div class="drawer-content" data-state="closed">
     <div class="header">
       <h6 class="title">Cart <span class="total">(0)</span></h6>
-      <button aria-label="close">
+      <button ui-button data-variant="secondary" data-size="sm" as-icon aria-label="close">
         {% render 'ui-icon', name: 'close' %}
       </button>
     </div>
-    <div class="main"></div>
+    <div class="main">
+      <ul class="cart-items">
+        {% for item in (1..5) %}
+          <li class="cart-item">
+            <div class="image">
+              <img
+                src="https://cdn.youcan.shop/stores/28a34010e84b881fb087359c7e280a08/products/Y5zJcwYGY6SC189RXCpW99QVFnK0Jm05JgIwhDcP.webp"
+                alt="product"
+                height="100%"
+                width="100%"
+              >
+            </div>
+            <div class="content">
+              <div class="info">
+                <div class="bio">
+                  <span class="title">Embossed backpack </span>
+                  <span class="variants">Color: Blue</span>
+                </div>
+                <span class="price">549 MAD</span>
+              </div>
+              <div class="actions">
+                <div class="quantity">
+                  <button ui-button data-variant="ghost" data-size="xs" as-icon aria-label="minus">
+                    {% render 'ui-icon', name: 'remove' %}
+                  </button>
+                  <span class="value">1</span>
+                  <button ui-button data-variant="ghost" data-size="xs" as-icon aria-label="plus">
+                    {% render 'ui-icon', name: 'add' %}
+                  </button>
+                </div>
+                <button ui-button data-variant="secondary" data-size="xs" as-icon class="remove" aria-label="remove">
+                  {% render 'ui-icon', name: 'close_small' %}
+                </button>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
     <div class="footer">
       <div class="info">
         <span class="label">Subtotal</span>
         <span class="value">549 MAD</span>
       </div>
-      <button class="checkout">Checkout</button>
+      <button ui-button data-variant="primary" data-size="md" class="checkout">Checkout</button>
     </div>
   </div>
 </ui-cart-drawer>
