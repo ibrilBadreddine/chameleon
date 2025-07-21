@@ -1,0 +1,76 @@
+<div section="cart">
+  <div class="cart-head">
+    <h2 class="title">Your shopping cart</h2>
+    <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, iusto?</p>
+  </div>
+  <div class="cart-core">
+    <ul class="items">
+      {% for item in (1..4) %}
+        <li class="item">
+          <img
+            src="https://cdn.youcan.shop/stores/1f3870be274f6c49b3e31a0c6728957f/products/qVkwnY1fJN3Lg0aBMAzwbTLClG5sMAqEwKoRCn2n.webp"
+            alt="product"
+            height="100%"
+            width="100%"
+          >
+          <div class="content">
+            <div class="top">
+              <div class="info">
+                <span class="title">Backpack With Foldover Flap</span>
+                <div class="variants">
+                  <span>Color: Red</span>
+                </div>
+              </div>
+              <button ui-button data-variant="secondary" data-size="sm" as-icon aria-label="delete">
+                {% render 'ui-icon', name: 'delete' %}
+              </button>
+            </div>
+            <div class="bottom">
+              <div class="quantity">
+                <button ui-button data-variant="ghost" data-size="xs" as-icon aria-label="minus">
+                  {% render 'ui-icon', name: 'remove' %}
+                </button>
+                <span class="value">1</span>
+                <button ui-button data-variant="ghost" data-size="xs" as-icon aria-label="plus">
+                  {% render 'ui-icon', name: 'add' %}
+                </button>
+              </div>
+              <div class="span price">449 MAD</div>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="summary">
+      <div class="head">
+        <h3>Summary</h3>
+      </div>
+      <ul class="detail-items">
+        <li class="item">
+          <span class="label">Subtotal</span>
+          <span class="value">449 MAD</span>
+        </li>
+        <li class="item">
+          <span class="label">Taxes</span>
+          <span class="value">29 MAD</span>
+        </li>
+        <li class="item">
+          <span class="label">Total</span>
+          <span class="value">478 MAD</span>
+        </li>
+      </ul>
+      <div class="cta">
+        <button ui-button data-variant="secondary" data-size="md">
+          Checkout
+          {% render 'ui-icon', name: 'arrow_right_alt' %}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "label": "Cart"
+}
+{% endschema %}
