@@ -1,0 +1,55 @@
+<div section="thankyou">
+  <div class="thankyou-head">
+    <div class="icon">
+      {% render 'ui-icon', name: 'check_circle', filled: true, size: 80 %}
+    </div>
+    <h2 class="title">Merci pour votre commande !</h2>
+    <p class="description">Votre commande a bien été enregistrée et est en cours de traitement</p>
+  </div>
+  <div class="thankyou-core">
+    <div class="order-summary">
+      <div class="summary-head">
+        <div class="info">
+          <h4 class="id">Order #34245</h4>
+          <span class="date-total">Jul 21, 2025 . 449 MAD</span>
+        </div>
+        <div class="status">
+          {% render 'ui-icon', name: 'check_circle', filled: true, size: 18 %}
+          Paid
+        </div>
+      </div>
+      <div class="summary-title">Payment</div>
+      <div class="order-info">
+        <div class="item">
+          <span class="label">Payment gateway</span>
+          <span class="value">COD</span>
+        </div>
+      </div>
+      <div class="summary-title">Order summary</div>
+      <div class="order-info">
+        <div class="item">
+          <span class="label">Subtotal</span>
+          <span class="value">449 MAD</span>
+        </div>
+        <div class="item">
+          <span class="label">VAT (20%)</span>
+          <span class="value">29 MAD</span>
+        </div>
+        <div class="item">
+          <span class="label">Total</span>
+          <span class="value">478 MAD</span>
+        </div>
+        <button ui-button data-variant="primary" data-size="md">
+          Continue shopping
+          {% render 'ui-icon', name: 'arrow_right_alt' %}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "label": "Thank You"
+}
+{% endschema %}

@@ -20,6 +20,10 @@
   --color-on-error: light-dark(#ffffff, #690005);
   --color-error-container: light-dark(#ffdad6, #93000a);
   --color-on-error-container: light-dark(#410002, #ffb4ab);
+  --color-success: light-dark(#0b6d36, #82d996);
+  --color-on-success: light-dark(#ffffff, #003918);
+  --color-success-container: light-dark(#9ef6b0, #005226);
+  --color-on-success-container: light-dark(#00210b, #9ef6b0);
   --color-surface: light-dark(#fbfcfe, #191c1d);
   --color-on-surface: light-dark(#191c1d, #e1e3e4);
   --color-surface-variant: light-dark(#dce4e8, #40484c);

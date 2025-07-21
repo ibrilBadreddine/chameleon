@@ -1,8 +1,8 @@
 {
   "sections": {
-    "placeholder": {
-      "type": "placeholder"
+    "thankyou": {
+      "type": "thankyou"
     }
   },
-  "order": ["placeholder"]
+  "order": ["thankyou"]
 }

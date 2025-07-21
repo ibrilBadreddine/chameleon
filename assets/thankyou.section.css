@@ -1,0 +1,114 @@
+[section="thankyou"] {
+  display: grid;
+  gap: var(--spacing-12);
+
+  /* Head */
+  .thankyou-head {
+    overflow: hidden;
+    position: relative;
+    padding: var(--spacing-64);
+    border-radius: var(--radius-md);
+    display: grid;
+    gap: var(--spacing-8);
+    color: var(--color-on-success);
+    background-image: linear-gradient(
+      90deg,
+      var(--color-on-success-container),
+      color-mix(in srgb, var(--color-on-success-container) 70%, var(--color-success-container))
+    );
+
+    .title {
+      font: var(--font-headline-md);
+    }
+
+    .description {
+      opacity: 0.7;
+      text-wrap: balance;
+    }
+
+    .icon {
+      position: absolute;
+      opacity: 0.1;
+      scale: 1.6;
+      inset-block-start: -10%;
+    }
+  }
+
+  /* Core */
+  .thankyou-core {
+    padding: var(--spacing-16);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-container-low);
+    display: flex;
+    justify-content: center;
+
+    .order-summary {
+      width: 500px;
+      border-radius: var(--radius-md);
+      background-color: var(--color-background);
+
+      .summary-head {
+        padding: var(--spacing-24);
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        .info {
+          display: grid;
+          gap: var(--spacing-4);
+
+          .id {
+            font: var(--font-title-md);
+          }
+
+          .date-total {
+            opacity: 0.7;
+            font: var(--font-body-sm);
+          }
+        }
+
+        .status {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-4);
+          font: var(--font-body-sm);
+          color: var(--color-success);
+          background-color: var(--color-success-container);
+          padding: var(--spacing-4) var(--spacing-8);
+          border-radius: var(--radius-sm);
+        }
+      }
+
+      .summary-title {
+        font: var(--font-body-sm);
+        text-transform: uppercase;
+        padding: var(--spacing-4) var(--spacing-24);
+        color: var(--color-on-surface-variant);
+        border-block: 1px dashed var(--color-surface-container-high);
+        background-color: var(--color-surface-container-lowest);
+      }
+
+      .order-info {
+        display: grid;
+        gap: var(--spacing-12);
+        padding: var(--spacing-24);
+
+        .item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .label {
+            opacity: 0.7;
+          }
+
+          &:last-child {
+            .value {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
