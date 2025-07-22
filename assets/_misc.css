@@ -43,6 +43,15 @@
     }
   }
 
+  &[data-variant="tertiary"] {
+    color: var(--color-on-background);
+    background-color: var(--color-surface-container);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-surface-container-highest);
+    }
+  }
+
   &[data-variant="ghost"] {
     color: var(--color-on-background);
     background-color: transparent;

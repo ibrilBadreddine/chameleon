@@ -1,0 +1,36 @@
+ui-variant {
+  display: grid;
+  gap: var(--spacing-8);
+
+  [ui-variant-options] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-8);
+
+    [ui-variant-opt] {
+      cursor: pointer;
+      border-radius: var(--radius-xs);
+      padding: var(--spacing-12) var(--spacing-16);
+      background-color: var(--color-surface-container);
+      border: 1px solid var(--color-surface-container-highest);
+      transition: var(--transition-standard-default-effects);
+
+      & > input[type="radio"] {
+        scale: 0;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+      }
+
+      &:has(> input[type="radio"]:checked) {
+        border-color: transparent;
+        color: var(--color-background);
+        background-color: var(--color-on-background);
+      }
+
+      &:hover {
+        border-color: var(--color-on-background);
+      }
+    }
+  }
+}

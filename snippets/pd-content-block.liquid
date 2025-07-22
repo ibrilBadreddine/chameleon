@@ -20,7 +20,9 @@
       <h1 class="title">Embossed backpack</h1>
       <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, architecto.</p>
     </div>
-    {% comment %} <div class="variants"></div> {% endcomment %}
+    <div class="variants">
+      {% render 'ui-variant' %}
+    </div>
     <div class="cta">
       <div class="quantity">
         <button ui-button data-variant="secondary" data-size="md" as-icon aria-label="minus" disabled>
