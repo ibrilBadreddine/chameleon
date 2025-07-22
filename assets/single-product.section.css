@@ -2,8 +2,8 @@
   display: grid;
   gap: var(--spacing-12);
   grid-template-columns: 60% auto;
-  height: 85vh;
-  overflow: hidden;
+  /* height: 85vh; */
+  /* overflow: hidden; */
 
   /* Content */
   [block="pd-content"] {
@@ -57,6 +57,12 @@
         }
       }
     }
+
+    .social-info {
+      display: grid;
+      gap: var(--spacing-12);
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   /* Media */
@@ -69,6 +75,7 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
+    height: 85vh;
 
     .images {
       img {

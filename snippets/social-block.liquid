@@ -4,6 +4,7 @@
   Accepts:
   - type: {String} Social link type (Facebook, Instagram, TikTok, Snapchat, Whatsapp, X...)
   - href: {String} Social link source
+  - target_arrow: {Boolean} Control the target arrow visibility
 
   Usage:
   {% render 'social-block', type: 'facebook', href: 'https://www.facebook.com' %}
@@ -52,5 +53,8 @@
       {% else %}
 
     {% endcase %}
+    {% if target_arrow %}
+      {% render 'ui-icon', name: 'call_made', size: 20 %}
+    {% endif %}
   </a>
 </li>
