@@ -69,3 +69,10 @@
     }
   }
 }
+
+/* Responsive */
+@media (max-width: 640px) {
+  [block="product"] {
+    height: 250px;
+  }
+}

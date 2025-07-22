@@ -112,3 +112,27 @@
     }
   }
 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  [section="thankyou"] {
+    .thankyou-head {
+      padding: calc(var(--spacing-24) + var(--spacing-8));
+
+      .icon {
+        scale: 1;
+        inset-inline-start: -5%;
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  [section="thankyou"] {
+    .thankyou-core {
+      .order-summary {
+        width: 100%;
+      }
+    }
+  }
+}

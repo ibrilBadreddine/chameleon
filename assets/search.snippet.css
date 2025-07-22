@@ -71,3 +71,12 @@ ui-search {
     }
   }
 }
+
+/* Responsive */
+@media (max-width: 769px) {
+  ui-search {
+    .search-content {
+      width: calc(100% - var(--spacing-24));
+    }
+  }
+}

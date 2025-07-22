@@ -22,3 +22,10 @@
     }
   }
 }
+
+/* Responsive */
+@media (max-width: 769px) {
+  [section="socials"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

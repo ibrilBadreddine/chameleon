@@ -38,3 +38,29 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  [section="single-collection"] {
+    .collection-head {
+      padding: calc(var(--spacing-24) + var(--spacing-8));
+    }
+
+    .collection-products {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  [section="single-collection"] {
+    .collection-path {
+      grid-template-columns: 1fr;
+
+      & > [ui-button]:first-child {
+        width: 100%;
+        justify-content: start;
+      }
+    }
+  }
+}

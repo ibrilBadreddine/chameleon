@@ -142,3 +142,28 @@
     }
   }
 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  [section="cart"] {
+    .cart-head {
+      padding: calc(var(--spacing-24) + var(--spacing-8));
+    }
+
+    .cart-core {
+      gap: var(--spacing-12);
+      margin: var(--spacing-0);
+      grid-template-columns: 1fr;
+
+      .items {
+        margin: var(--spacing-12);
+      }
+
+      .summary {
+        /* order: -1; */
+        position: sticky;
+        inset-block-end: var(--spacing-12);
+      }
+    }
+  }
+}

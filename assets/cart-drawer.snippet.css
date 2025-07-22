@@ -83,9 +83,9 @@ ui-cart-drawer {
             justify-content: space-between;
 
             .info {
-              display: flex;
-              align-items: baseline;
+              display: grid;
               gap: var(--spacing-16);
+              grid-template-columns: auto auto;
 
               .bio {
                 display: grid;
@@ -151,5 +151,12 @@ ui-cart-drawer {
     &[data-state="closed"] {
       inset-inline-end: calc(var(--cart-drawer-width) * -1 - (var(--spacing-12) * 2));
     }
+  }
+}
+
+/* Responsive */
+@media (max-width: 769px) {
+  ui-cart-drawer {
+    --cart-drawer-width: calc(100% - var(--spacing-24));
   }
 }
