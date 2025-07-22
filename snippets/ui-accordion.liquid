@@ -1,0 +1,35 @@
+{% comment %}
+  Renders an accordion component
+
+  Accepts:
+  - name: {String} Unique name
+  - items: {Array} List of accordion items (trigger + content)[]
+
+  Usage:
+  {% render 'ui-accordion', items: [...] %}
+{% endcomment %}
+
+{% assign data = items | split: ';' %}
+
+<ul ui-accordion>
+  {% for item in data %}
+    {% assign parts = item | split: '|' %}
+    {% assign trigger = parts[0] %}
+    {% assign content = parts[1] %}
+
+    <li ui-accordion-item>
+      <label>
+        <div ui-accordion-trigger>
+          <span>{{ trigger }}</span>
+          {% render 'ui-icon', name: 'add' %}
+        </div>
+        <div ui-accordion-portal>
+          <div ui-accordion-content>
+            <p>{{ content }}</p>
+          </div>
+        </div>
+        <input type="checkbox" name="{{ name }}">
+      </label>
+    </li>
+  {% endfor %}
+</ul>

@@ -8,6 +8,8 @@
   {% render 'pd-content-block', product: {...} %}
 {% endcomment %}
 
+{% assign info = 'Description|Elevate your dining experience with the Nordic Dining Chair, a perfect blend of timeless design and modern craftsmanship. Made from solid oak, this chair showcases the natural beauty of the wood with its smooth grain and warm finish. The ergonomic design ensures comfort for long meals and gatherings, while its minimalist silhouette complements any interior style.;Dimensions|Materials: Solid oak Finish: Natural matte Dimensions: W: 45 cm D: 50 cm H: 85 cm Seat Height: 47 cm Weight: 6 kg;Shipping a Returns|We ship your furniture securely within 14 business days. Delivery times vary by location, and tracking details are provided upon dispatch. International orders may incur customs fees.' %}
+
 <div block="pd-content">
   <div class="general-info">
     <div class="price">
@@ -32,4 +34,5 @@
       <button ui-button data-variant="primary" data-size="md" class="add-to-cart">Add to cart</button>
     </div>
   </div>
+  {% render 'ui-accordion', name: 'faq', items: info %}
 </div>

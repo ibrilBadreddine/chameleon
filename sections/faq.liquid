@@ -1,3 +1,5 @@
+{% assign faq = 'How long does shipping take?|Shipping typically takes 5–7 business days for domestic orders. International delivery times may vary based on location.;Do you ship internationally?|Yes, we ship to select countries. Additional customs fees or duties may apply depending on your location.;How can I track my order?|Once your order ships, we’ll send you a tracking link via email to monitor its progress.' %}
+
 <div section="faq">
   <div class="section-head">
     <h2>FAQ</h2>
@@ -19,24 +21,7 @@
         </p>
       </div>
       <div class="core">
-        <ul class="accordion">
-          {% for item in (1..3) %}
-            <li class="accordion-item">
-              <label>
-                <div class="item-trigger">
-                  <span>What should I do if my order arrives damaged?</span>
-                  {% render 'ui-icon', name: 'add' %}
-                </div>
-                <div class="item-content">
-                  <div class="content-wrapper">
-                    <p>Please contact our support team immediately with photos of the damage. We'll arrange a replacement or refund.</p>
-                  </div>
-                </div>
-                <input type="checkbox" name="faq">
-              </label>
-            </li>
-          {% endfor %}
-        </ul>
+        {% render 'ui-accordion', name: 'faq', items: faq %}
       </div>
     </div>
   </div>

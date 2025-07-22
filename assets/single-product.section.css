@@ -7,6 +7,10 @@
 
   /* Content */
   [block="pd-content"] {
+    display: flex;
+    gap: var(--spacing-12);
+    flex-direction: column;
+
     .general-info {
       padding: var(--spacing-48);
       border-radius: var(--radius-md);
