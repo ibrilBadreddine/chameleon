@@ -1,44 +1,84 @@
 <footer layout="footer">
   <div class="general">
     <div class="store">
-      <a href="#" class="logo"> {% render 'ui-icon', name: 'favorite' %} Cameleon </a>
-      <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, error.</p>
+      <a href="#" class="logo">
+        {% if section.settings.footer_logo.src %}
+          <img
+            src="{{ section.settings.footer_logo.src }}"
+            alt="{{ store.name }}"
+            height="100%"
+            width="{{ section.settings.logo_width }}"
+          >
+        {% else %}
+          {{ store.name }}
+        {% endif %}
+      </a>
+      <p class="bio">{{ store.description | default: store.title | default: store.name }}</p>
     </div>
-    <div class="copyright">© Made by <a href="http://" target="_blank" rel="noopener noreferrer">YouCan</a></div>
+    <div class="copyright">© Made by <a href="https://youcan.shop" target="_blank">YouCan</a></div>
   </div>
   <div class="links">
-    <div class="links-box">
-      <span>Pages</span>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Collections</a></li>
-        <li><a href="#">Best offers</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="links-box">
-      <span>Help</span>
-      <ul>
-        <li><a href="#">Faq</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Terms</a></li>
-      </ul>
-    </div>
-    <div class="links-box">
-      <span>Store</span>
-      <ul>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Shop product</a></li>
-        <li><a href="#">Shop category</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Blog post</a></li>
-      </ul>
-    </div>
+    {% for linklist in link-lists %}
+      {% if linklist.links | count > 0  and linklist != main-link-list -%}
+        <div class="links-box">
+          <span>{{ linklist.title }}</span>
+          <ul>
+            {% for link in linklist.links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </footer>
 
 {% schema %}
 {
-  "label": "Footer"
+  "label": "t:sections.footer.label",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.footer.footer_links_paragraph"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "t:sections.footer.logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.footer.width",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:common.style.style"
+    },
+    {
+      "type": "color",
+      "id": "footer_background_color",
+      "label": "t:common.colors.background_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "footer_text_color",
+      "label": "t:common.colors.text_color",
+      "default": "#121212"
+    }
+  ]
 }
 {% endschema %}

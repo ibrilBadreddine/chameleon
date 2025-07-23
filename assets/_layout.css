@@ -76,6 +76,10 @@
         text-decoration: none;
         font: var(--font-body-md);
         color: var(--color-on-background);
+
+        img {
+          object-fit: cover;
+        }
       }
 
       &:first-child {
@@ -148,6 +152,12 @@
         display: flex;
         align-items: center;
         gap: var(--spacing-6);
+        font-weight: bold;
+        text-transform: uppercase;
+
+        img {
+          object-fit: cover;
+        }
       }
 
       .bio {
