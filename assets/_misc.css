@@ -63,6 +63,7 @@
 
   &[data-size="lg"] {
     height: 56px;
+    gap: var(--spacing-12);
     border-radius: var(--radius-md);
     padding-inline: calc(var(--spacing-24) - var(--spacing-2));
 
