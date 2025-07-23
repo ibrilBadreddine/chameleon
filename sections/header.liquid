@@ -1,17 +1,31 @@
-<header layout="header">
+<header
+  layout="header"
+  {% if section.settings.header_sticky %}
+    data-sticky
+  {% endif %}
+>
   <ul class="links">
     <li class="link">
-      <a href="#">{% render 'ui-icon', name: 'favorite' %} Home</a>
+      <a href="/">
+        {% if section.settings.header_logo.src %}
+          <img
+            src="{{ section.settings.header_logo.src }}"
+            alt="{{ store.name }}"
+            height="100%"
+            width="{{ section.settings.logo_width }}"
+          >
+        {% else %}
+          {{ store.name }}
+        {% endif %}
+      </a>
     </li>
-    <li class="link">
-      <a href="#">Collections</a>
-    </li>
-    <li class="link">
-      <a href="#">Best offers</a>
-    </li>
-    <li class="link">
-      <a href="#">Contact</a>
-    </li>
+    {% for link in main-link-list.links %}
+      <li class="link">
+        <a href="{{ link.url }}">
+          {{ link.title }}
+        </a>
+      </li>
+    {% endfor %}
   </ul>
   <ul class="actions">
     <li>
@@ -28,6 +42,55 @@
 
 {% schema %}
 {
-  "label": "Header"
+  "label": "t:sections.header.label",
+  "tag": "header",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.header.menu_links_paragraph"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_logo",
+      "label": "t:sections.header.logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 20,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.header.width",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "t:common.style.style"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_sticky",
+      "label": "t:sections.header.sticky_mode",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "t:common.colors.text_color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "header_background_color",
+      "label": "t:common.colors.background_color",
+      "default": "#ffffff"
+    }
+  ]
 }
 {% endschema %}

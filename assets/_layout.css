@@ -57,6 +57,7 @@
 
 /* Header */
 [layout="header"] {
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,6 +76,14 @@
         text-decoration: none;
         font: var(--font-body-md);
         color: var(--color-on-background);
+      }
+
+      &:first-child {
+        text-transform: uppercase;
+
+        a {
+          font-weight: bold;
+        }
       }
     }
   }
@@ -98,6 +107,18 @@
       display: none;
     }
   }
+
+  &[data-sticky] {
+    border-end-end-radius: var(--radius-md);
+    border-end-start-radius: var(--radius-md);
+    background-color: var(--color-background);
+  }
+}
+
+#youcan-section--header:has([layout="header"][data-sticky]) {
+  z-index: 50;
+  position: sticky;
+  inset-block-start: var(--spacing-0);
 }
 
 /* Footer */
