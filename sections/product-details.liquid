@@ -1,0 +1,33 @@
+<div section="product-details">
+  <div class="section-head">
+    <h2>Product details</h2>
+  </div>
+  <ul class="section-core">
+    {% for item in (1..2) %}
+      <li>
+        <div class="content">
+          <h2 class="title">Designing Spaces, Inspiring Connection</h2>
+          <p class="description">
+            Our furniture is thoughtfully crafted to blend timeless Scandinavian design with modern functionality. Each piece is made with meticulous
+            attention to detail, ensuring it fits seamlessly into your home. From the choice of premium materials to the sleek, minimalist aesthetic,
+            we focus on creating furniture that is as practical as it is beautiful.
+          </p>
+        </div>
+        <div class="media">
+          <img
+            src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/0P0iEm0M4bJNzPr9Kifv68XHYsr6O49XIhfDwiSE.jpg"
+            alt="about us"
+            height="100%"
+            width="100%"
+          >
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "label": "Product Details"
+}
+{% endschema %}
