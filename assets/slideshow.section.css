@@ -1,6 +1,6 @@
 [section="slideshow"] {
-  height: 720px;
-  display: -webkit-inline-flex;
+  height: var(--slideshow-height);
+  display: inline-flex;
   position: relative;
 
   /* Slides */
@@ -10,6 +10,7 @@
 
     .wrapper-box {
       height: 100%;
+      width: calc(100vw - var(--spacing-24));
       display: flex;
       position: relative;
       inset-inline-start: var(--spacing-0);
@@ -18,11 +19,20 @@
       [block="slideshow-slide"] {
         min-width: 100%;
         position: relative;
+        background-color: var(--color-surface-container);
 
         img {
           object-fit: cover;
           user-select: none;
           pointer-events: none;
+        }
+
+        & > [ui-icon] {
+          opacity: 0.3;
+          position: absolute;
+          translate: -50% -50%;
+          left: 50%;
+          inset-block-start: 50%;
         }
 
         .content {
@@ -53,6 +63,7 @@
 
           .action {
             color: inherit;
+            width: fit-content;
           }
         }
       }
@@ -83,12 +94,12 @@
       justify-content: center;
       transition: var(--transition-standard-default-effects);
 
-      &:active {
+      &:active:not(:disabled) {
         scale: 0.95;
       }
 
       &:disabled {
-        pointer-events: none;
+        cursor: not-allowed;
         opacity: 0.5;
       }
     }
@@ -134,6 +145,65 @@
       &[aria-selected="true"]::before {
         opacity: 1;
       }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  [section="slideshow"] {
+    .slideshow-wrapper {
+      .wrapper-box {
+        [block="slideshow-slide"] {
+          .content {
+            max-width: 300px;
+            padding: calc(var(--spacing-24) + var(--spacing-8));
+
+            .text {
+              .title {
+                font: var(--font-title-lg);
+              }
+
+              .description {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .slideshow-pagination {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  [section="slideshow"] {
+    .slideshow-wrapper {
+      .wrapper-box {
+        [block="slideshow-slide"] {
+          .content {
+            width: 100%;
+            max-width: calc(100% - var(--spacing-48));
+            padding: calc(var(--spacing-24) - var(--spacing-4));
+            align-items: center;
+            grid-template-columns: auto auto;
+
+            .text {
+              .title {
+                text-wrap: balance;
+                font: var(--font-title-md);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .slideshow-pagination {
+      display: none;
     }
   }
 }

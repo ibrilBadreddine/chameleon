@@ -2,24 +2,38 @@
   Renders a slideshow item (Block)
 
   Accepts:
-  - slide: {Object} Slide item
+  - settings: {Object} Slide settings
 
   Usage:
   {% render 'slideshow-block', slide: {...} %}
 {% endcomment %}
 
 <li block="slideshow-slide">
-  <img
-    src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/others/cHQT5IDPgMrFkArG0AcZcloFQwa26cv06QN7y9LM.jpg"
-    alt="slide"
-    height="100%"
-    width="100%"
-  >
-  {% comment %} <div class="content">
-    <div class="text">
-      <h2 class="title">Lorem ipsum dolor sit amet</h2>
-      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, dolor.</p>
+  {% if settings.image.src %}
+    <img
+      src="{{ settings.image.src }}"
+      alt="{{ "slide " | append: forloop.index }}"
+      height="100%"
+      width="100%"
+    >
+  {% else %}
+    {% render 'ui-icon', name: 'web_stories', size: 60, filled: true %}
+  {% endif %}
+  {% if settings.heading or settings.subheading or settings.button_text %}
+    <div class="content">
+      <div class="text">
+        {% if settings.heading %}
+          <h2 class="title">{{ settings.heading }}</h2>
+        {% endif %}
+        {% if settings.subheading %}
+          <p class="description">{{ settings.subheading }}</p>
+        {% endif %}
+      </div>
+      {% if settings.button_text %}
+        <a href="{{ settings.button_url }}" class="action">
+          {{ settings.button_text }}
+        </a>
+      {% endif %}
     </div>
-    <a href="#" class="action"> View product </a>
-  </div> {% endcomment %}
+  {% endif %}
 </li>
