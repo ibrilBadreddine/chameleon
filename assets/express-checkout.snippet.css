@@ -1,0 +1,29 @@
+ui-express-checkout {
+  display: grid;
+  gap: var(--spacing-8);
+
+  [ui-express-checkout-field] {
+    display: grid;
+    gap: var(--spacing-8);
+
+    &:has(input:required) {
+      [ui-express-checkout-label]::after {
+        content: " *";
+        color: var(--color-error);
+      }
+    }
+
+    & > input {
+      width: 100%;
+      outline: none;
+      border-radius: var(--radius-xs);
+      padding: var(--spacing-12) var(--spacing-16);
+      background-color: var(--color-surface-container);
+      border: 1px solid var(--color-surface-container-highest);
+
+      &:focus {
+        border-color: var(--color-on-background);
+      }
+    }
+  }
+}

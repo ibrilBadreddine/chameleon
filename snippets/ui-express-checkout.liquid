@@ -1,0 +1,24 @@
+{% comment %}
+  Renders an icon (Material Icons)
+
+  Accepts:
+  - fields: {Array} Checkout fields
+
+  Usage:
+  {% render 'ui-express-checkout', name: [...] %}
+{% endcomment %}
+
+<ui-express-checkout>
+  <label ui-express-checkout-field>
+    <span ui-express-checkout-label>Full name</span>
+    <input type="text" placeholder="Full name" required>
+  </label>
+  <label ui-express-checkout-field>
+    <span ui-express-checkout-label>Phone number</span>
+    <input type="text">
+  </label>
+  <label ui-express-checkout-field>
+    <span ui-express-checkout-label>Email</span>
+    <input type="email">
+  </label>
+</ui-express-checkout>
