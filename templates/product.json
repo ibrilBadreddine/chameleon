@@ -5,7 +5,10 @@
     },
     "product-details": {
       "type": "product-details"
+    },
+    "related-products": {
+      "type": "related-products"
     }
   },
-  "order": ["single-product", "product-details"]
+  "order": ["single-product", "product-details", "related-products"]
 }

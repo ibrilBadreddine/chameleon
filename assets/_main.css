@@ -14,11 +14,13 @@
 @import url("./cart.section.css");
 @import url("./thankyou.section.css");
 @import url("./product-details.section.css");
+@import url("./related-products.section.css");
 
 @import url("./search.snippet.css");
 @import url("./variant.snippet.css");
 @import url("./accordion.snippet.css");
 @import url("./cart-drawer.snippet.css");
+@import url("./express-checkout.snippet.css");
 
 @import url("./social.block.css");
 @import url("./product.block.css");
