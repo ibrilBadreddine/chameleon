@@ -1,27 +1,27 @@
-{% assign faq = 'How long does shipping take?|Shipping typically takes 5–7 business days for domestic orders. International delivery times may vary based on location.;Do you ship internationally?|Yes, we ship to select countries. Additional customs fees or duties may apply depending on your location.;How can I track my order?|Once your order ships, we’ll send you a tracking link via email to monitor its progress.' %}
-
 <div section="faq">
   <div class="section-head">
-    <h2>FAQ</h2>
+    <h2>{{ section.settings.title }}</h2>
   </div>
   <div class="section-core">
     <div class="media">
-      <img
-        src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/DoFGcOdYXXGbQXU8A2u7tFVUmHobub7uD2OsQXPX_lg.jpg"
-        alt="faq"
-        height="100%"
-        width="100%"
-      >
+      {% if section.settings.image.src %}
+        <img
+          src="{{ section.settings.image.src }}"
+          alt="{{ section.settings.title | default: "faq" }}"
+          height="100%"
+          width="100%"
+        >
+      {% else %}
+        {% render 'ui-icon', name: 'image', size: 60, filled: true %}
+      {% endif %}
     </div>
     <div class="content">
       <div class="head">
-        <h2 class="title">FAQ</h2>
-        <p class="description">
-          Welcome to our FAQ page! Here, you'll find answers to the most common questions about our products, shipping, returns, and more.
-        </p>
+        <h2 class="title">{{ section.settings.heading }}</h2>
+        <p class="description">{{ section.settings.subheading }}</p>
       </div>
       <div class="core">
-        {% render 'ui-accordion', name: 'faq', items: faq %}
+        {% render 'ui-accordion', name: 'faq', items: section.blocks %}
       </div>
     </div>
   </div>
@@ -29,6 +29,54 @@
 
 {% schema %}
 {
-  "label": "FAQ"
+  "label": "FAQ",
+  "templates": ["index", "product", "page"],
+  "limit": 1,
+  "max_blocks": 8,
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:common.content.title",
+      "default": "FAQ"
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "id": "subheading",
+      "type": "text",
+      "label": "Subheading",
+      "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur possimus non ipsa esse iure ratione aperiam consectetur doloremque accusantium necessitatibus."
+    },
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "label": "FAQ",
+      "settings": [
+        {
+          "id": "question",
+          "type": "text",
+          "label": "Question",
+          "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "id": "answer",
+          "type": "text",
+          "label": "Answer",
+          "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias impedit illo quam culpa rem eius, eveniet sunt beatae officia consequuntur."
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

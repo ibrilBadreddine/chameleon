@@ -9,23 +9,17 @@
   {% render 'ui-accordion', items: [...] %}
 {% endcomment %}
 
-{% assign data = items | split: ';' %}
-
 <ul ui-accordion>
-  {% for item in data %}
-    {% assign parts = item | split: '|' %}
-    {% assign trigger = parts[0] %}
-    {% assign content = parts[1] %}
-
+  {% for item in items %}
     <li ui-accordion-item>
       <label>
         <div ui-accordion-trigger>
-          <span>{{ trigger }}</span>
+          <span>{{ item.trigger | default: item.settings.question }}</span>
           {% render 'ui-icon', name: 'add' %}
         </div>
         <div ui-accordion-portal>
           <div ui-accordion-content>
-            <p>{{ content }}</p>
+            <p>{{ item.content | default: item.settings.answer }}</p>
           </div>
         </div>
         <input type="checkbox" name="{{ name }}">
