@@ -1,25 +1,66 @@
 <div section="collections">
   <div class="section-head">
-    <h2>Collections</h2>
+    <h2>{{ section.settings.title }}</h2>
   </div>
   <ul class="section-core">
-    {% render 'collection-block',
-      title: 'Woman',
-      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/965bSPjYdRTzA30Oqav4W3wWQfC0LkpqQ3SdF2MI_lg.jpg'
-    %}
-    {% render 'collection-block',
-      title: 'Man',
-      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/6FSLi4UY40cEoxuQLwh58CLhdJATbyxmuT4KDgCb_lg.jpg'
-    %}
-    {% render 'collection-block',
-      title: 'Best offers',
-      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/WhRgVBZgsQmURYFE20oXVrGwgVWoFEuadrrtwKh0_lg.jpg'
-    %}
+    {% for block in section.blocks %}
+      {% render 'collection-block', collection: block.settings %}
+    {% endfor %}
   </ul>
 </div>
 
 {% schema %}
 {
-  "label": "Collections"
+  "label": "t:sections.collections.label",
+  "templates": ["index", "product"],
+  "limit": 3,
+  "max_blocks": 3,
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:common.content.title",
+      "default": "Collections"
+    },
+    {
+      "id": "space_top",
+      "type": "range",
+      "label": "t:common.spacing.space_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "id": "space_bottom",
+      "type": "range",
+      "label": "t:common.spacing.space_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "label": "t:common.blocks.collection",
+      "settings": [
+        {
+          "type": "category",
+          "id": "collection",
+          "label": "t:common.collection.label"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "View collection"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

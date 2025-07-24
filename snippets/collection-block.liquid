@@ -2,26 +2,34 @@
   Renders a collection item (Block)
 
   Accepts:
-  - collection: {Object} Collection info,
+  - collection: {Object} Collection info
 
   Usage:
-  {% render 'benefit-block', collection: {...} %}
+  {% render 'collections-block', collection: {...} %}
 {% endcomment %}
+
+{% assign info = collection.collection %}
 
 <li block="collection">
   <div class="media">
-    <img
-      src="{{ img }}"
-      alt="category"
-      height="100%"
-      width="100%"
-    >
+    {% if info.preview_image %}
+      <img
+        src="{{ info.image }}"
+        alt="{{ info.name }}"
+        height="100%"
+        width="100%"
+      >
+    {% else %}
+      {% render 'ui-icon', name: 'image', size: 60, filled: true %}
+    {% endif %}
   </div>
   <div class="content">
     <div class="text">
-      <h4 class="title">{{ title }}</h4>
-      <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, est!</p>
+      <h4 class="title">{{ info.name }}</h4>
+      {% if info.description %}
+        <p class="description">{{ info.description }}</p>
+      {% endif %}
     </div>
-    <a href="#" class="action">View collection</a>
+    <a href="/collections/{{ info.slug }}" class="action">{{ collection.button_text }}</a>
   </div>
 </li>
