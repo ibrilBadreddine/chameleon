@@ -37,12 +37,22 @@
     .media {
       height: 70vh;
       overflow: hidden;
+      position: relative;
       border-radius: var(--radius-md);
+      background-color: var(--color-surface-container);
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      & > [ui-icon] {
+        opacity: 0.3;
+        position: absolute;
+        translate: -50% -50%;
+        left: 50%;
+        inset-block-start: 50%;
       }
     }
   }

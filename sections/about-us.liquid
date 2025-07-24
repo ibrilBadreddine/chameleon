@@ -1,31 +1,111 @@
 <div section="about-us">
   <div class="section-head">
-    <h2>About Us</h2>
+    <h2>{{ section.settings.title }}</h2>
   </div>
   <div class="section-core">
     <div class="content">
-      <h2 class="title">Designing Spaces, Inspiring Connection</h2>
+      <h2 class="title">{{ section.settings.heading }}</h2>
       <div class="text">
         <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur possimus non ipsa esse iure ratione aperiam consectetur doloremque
-          accusantium necessitatibus.
+          {{ section.settings.subheading }}
         </p>
-        <a href="#" class="action">More about us</a>
+        {% if section.settings.button_text %}
+          <a href="{{ section.settings.button_link }}" class="action">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
       </div>
     </div>
     <div class="media">
-      <img
-        src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/0P0iEm0M4bJNzPr9Kifv68XHYsr6O49XIhfDwiSE.jpg"
-        alt="about us"
-        height="100%"
-        width="100%"
-      >
+      {% if section.settings.image.src %}
+        <img
+          src="{{ section.settings.image.src }}"
+          alt="{{ section.settings.heading | default: "about us" }}"
+          height="100%"
+          width="100%"
+        >
+      {% else %}
+        {% render 'ui-icon', name: 'web_stories', size: 60, filled: true %}
+      {% endif %}
     </div>
   </div>
 </div>
 
-{% schema %}
+{%- schema -%}
 {
-  "label": "About Us"
+  "label": "About Us",
+  "templates": ["index"],
+  "limit": 4,
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:common.content.title",
+      "default": "About Us"
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "id": "subheading",
+      "type": "text",
+      "label": "Subheading",
+      "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur possimus non ipsa esse iure ratione aperiam consectetur doloremque accusantium necessitatibus."
+    },
+    {
+      "id": "button_text",
+      "type": "text",
+      "label": "Button text"
+    },
+    {
+      "id": "button_link",
+      "type": "text",
+      "label": "Button link"
+    },
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Image"
+    },
+    {
+      "id": "text_color",
+      "type": "color",
+      "label": "t:common.colors.text_color",
+      "default": "#121212"
+    },
+    {
+      "id": "background_color",
+      "type": "color",
+      "label": "t:common.colors.background_color",
+      "default": "#FFFFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "t:common.spacing.section_spacing"
+    },
+    {
+      "id": "space_top",
+      "type": "range",
+      "label": "t:common.spacing.space_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "id": "space_bottom",
+      "type": "range",
+      "label": "t:common.spacing.space_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    }
+  ]
 }
-{% endschema %}
+{%- endschema -%}
