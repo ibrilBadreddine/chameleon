@@ -25,7 +25,7 @@ ui-cart-drawer {
     padding: var(--spacing-12);
     border-radius: var(--radius-md);
     width: var(--cart-drawer-width);
-    height: calc(100vh - var(--spacing-24));
+    height: calc(100% - var(--spacing-24));
     background-color: var(--color-background);
     display: flex;
     flex-direction: column;
@@ -54,6 +54,7 @@ ui-cart-drawer {
     /* Main */
     .main {
       flex: 2;
+      overflow-y: auto;
       padding: var(--spacing-24) calc(var(--spacing-24) - var(--spacing-2));
 
       .cart-items {
