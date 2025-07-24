@@ -47,7 +47,7 @@
     {% section 'header' %}
     <main layout="main" id="main">
       {{ content_for_layout }}
-      {% render 'ui-whatsapp', type: 'fab' %}
+      {% comment %} {% render 'ui-whatsapp', type: 'fab' %} {% endcomment %}
     </main>
     {% section 'footer' %}
   </body>
