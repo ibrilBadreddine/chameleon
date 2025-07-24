@@ -158,12 +158,6 @@
       .items {
         margin: var(--spacing-12);
       }
-
-      .summary {
-        /* order: -1; */
-        position: sticky;
-        inset-block-end: var(--spacing-12);
-      }
     }
   }
 }

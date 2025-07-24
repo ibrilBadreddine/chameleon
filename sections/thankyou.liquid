@@ -3,8 +3,8 @@
     <div class="icon">
       {% render 'ui-icon', name: 'check_circle', filled: true, size: 80 %}
     </div>
-    <h2 class="title">Merci pour votre commande !</h2>
-    <p class="description">Votre commande a bien été enregistrée et est en cours de traitement</p>
+    <h2 class="title">Thank you for your purchase!</h2>
+    <p class="description">Your order has been received and is being processed</p>
   </div>
   <div class="thankyou-core">
     <div class="order-summary">
@@ -17,6 +17,27 @@
           {% render 'ui-icon', name: 'check_circle', filled: true, size: 18 %}
           Paid
         </div>
+      </div>
+      <div class="summary-title">Products</div>
+      <div class="order-info">
+        {% for item in (1..2) %}
+          <div class="product">
+            <div class="image">
+              <img
+                src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/EgDAxZgJvglybg3dVvcKRIxgHse4tPFKCHpnDyj4_md.jpg"
+                alt="product"
+                height="100%"
+                width="100%"
+              >
+              {% comment %} {% render 'ui-icon', name: 'image', filled: true %} {% endcomment %}
+            </div>
+            <div class="content">
+              <span class="title">Rubberised Multi-Pocket Backpack</span>
+              <span class="count">x1</span>
+            </div>
+            <div class="value">449 MAD</div>
+          </div>
+        {% endfor %}
       </div>
       <div class="summary-title">Payment</div>
       <div class="order-info">
