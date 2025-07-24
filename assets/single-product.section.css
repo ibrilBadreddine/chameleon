@@ -82,6 +82,7 @@
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
     height: 85vh;
+    background-color: var(--color-surface-container);
 
     &:not(:has(.images img:nth-child(2))) {
       overflow: hidden;
@@ -94,6 +95,14 @@
         object-fit: cover;
         scroll-snap-align: center;
         scroll-snap-stop: always;
+      }
+
+      & > [ui-icon] {
+        opacity: 0.3;
+        position: absolute;
+        translate: -50% -50%;
+        left: 50%;
+        inset-block-start: 50%;
       }
     }
 
