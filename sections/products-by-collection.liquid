@@ -3,11 +3,13 @@
     <h2>{{ section.settings.title }}</h2>
   </div>
   <ul class="section-core">
-    {% paginate section.settings.collection.products by 4 id category_id: section.settings.collection.id %}
-      {% for item in items -%}
-        {% render 'product-block', product: item %}
-      {% endfor %}
-    {% endpaginate %}
+    {% if section.settings.collection %}
+      {% paginate section.settings.collection.products by 4 id category_id: section.settings.collection.id %}
+        {% for item in items -%}
+          {% render 'product-block', product: item %}
+        {% endfor %}
+      {% endpaginate %}
+    {% endif %}
   </ul>
 </div>
 
