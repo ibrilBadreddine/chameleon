@@ -1,12 +1,80 @@
 <ul section="socials">
-  {% render 'social-block', type: 'facebook', href: 'https://www.facebook.com' %}
-  {% render 'social-block', type: 'instagram', href: 'https://www.facebook.com' %}
-  {% render 'social-block', type: 'tiktok', href: 'https://www.facebook.com' %}
-  {% render 'social-block', type: 'x', href: 'https://www.facebook.com' %}
+  {% for social in section.blocks %}
+    {% render 'social-block', type: social.settings.social_name, href: social.settings.social_link %}
+  {% endfor %}
 </ul>
 
 {% schema %}
 {
-  "label": "Social links"
+  "label": "Social links",
+  "limit": 3,
+  "max_blocks": 6,
+  "settings": [
+    {
+      "id": "space_top",
+      "type": "range",
+      "label": "t:common.spacing.space_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "id": "space_bottom",
+      "type": "range",
+      "label": "t:common.spacing.space_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social",
+      "label": "Social item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "social_name",
+          "label": "Social name",
+          "options": [
+            {
+              "value": "facebook",
+              "label": "Facebook"
+            },
+            {
+              "value": "instagram",
+              "label": "Instagram"
+            },
+            {
+              "value": "x-twitter",
+              "label": "X (Twitter)"
+            },
+            {
+              "value": "tiktok",
+              "label": "TikTok"
+            },
+            {
+              "value": "whatsapp",
+              "label": "WhatsApp"
+            },
+            {
+              "value": "snapchat",
+              "label": "Snapchat"
+            }
+          ],
+          "default": "facebook"
+        },
+        {
+          "type": "text",
+          "id": "social_link",
+          "label": "Social link"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
