@@ -10,51 +10,27 @@
 
 <div block="pd-media">
   <div class="images">
-    <img
-      src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/D3ZXxSPPWFqnmAqkpZCX8TEflayHPydxLMUEMxWn.jpg"
-      alt="product"
-      height="100%"
-      width="100%"
-    >
-    <img
-      src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/XDIRXrNbH0IWqxHjUQB6OIyeSVy7LD23M6GrcDDS.jpg"
-      alt="product"
-      height="100%"
-      width="100%"
-    >
-    <img
-      src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/FEW5kx6LGNBKKUhpPwCqTYjrY5ciQmUnLEnpwZ8J.jpg"
-      alt="product"
-      height="100%"
-      width="100%"
-    >
+    {% for image in product.images %}
+      <img
+        src="{{ image }}"
+        alt="{{ product.name }}"
+        height="100%"
+        width="100%"
+      >
+    {% endfor %}
   </div>
   <div class="controller">
     <div class="controller-wrapper">
-      <button aria-label="product" aria-selected="true">
-        <img
-          src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/D3ZXxSPPWFqnmAqkpZCX8TEflayHPydxLMUEMxWn.jpg"
-          alt="product"
-          height="100%"
-          width="100%"
-        >
-      </button>
-      <button aria-label="product" aria-selected="false">
-        <img
-          src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/XDIRXrNbH0IWqxHjUQB6OIyeSVy7LD23M6GrcDDS.jpg"
-          alt="product"
-          height="100%"
-          width="100%"
-        >
-      </button>
-      <button aria-label="product" aria-selected="false">
-        <img
-          src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/FEW5kx6LGNBKKUhpPwCqTYjrY5ciQmUnLEnpwZ8J.jpg"
-          alt="product"
-          height="100%"
-          width="100%"
-        >
-      </button>
+      {% for image in product.images %}
+        <button aria-label="product" aria-selected="false">
+          <img
+            src="{{ image }}"
+            alt="{{ product.name }}"
+            height="100%"
+            width="100%"
+          >
+        </button>
+      {% endfor %}
     </div>
   </div>
   <div class="pagination">

@@ -8,17 +8,23 @@
   {% render 'pd-content-block', product: {...} %}
 {% endcomment %}
 
+{% assign default_variant = product.selected_or_first_available_variant %}
+{% assign price = default_variant.price | default: product.price %}
+{% assign compare_at_price = default_variant.compare_at_price | default: product.compare_at_price %}
+
 {% assign info = 'Description|Elevate your dining experience with the Nordic Dining Chair, a perfect blend of timeless design and modern craftsmanship. Made from solid oak, this chair showcases the natural beauty of the wood with its smooth grain and warm finish. The ergonomic design ensures comfort for long meals and gatherings, while its minimalist silhouette complements any interior style.;Dimensions|Materials: Solid oak Finish: Natural matte Dimensions: W: 45 cm D: 50 cm H: 85 cm Seat Height: 47 cm Weight: 6 kg;Shipping a Returns|We ship your furniture securely within 14 business days. Delivery times vary by location, and tracking details are provided upon dispatch. International orders may incur customs fees.' %}
 
 <div block="pd-content">
   <div class="general-info">
     <div class="price">
-      <span class="original-price">549 MAD</span>
-      {% comment %} <div class="compare-at-price"></div> {% endcomment %}
+      <span class="original-price">{{ price | default: 0 | money }}</span>
+      {% if compare_at_price %}
+        <div class="compare-at-price">{{ compare_at_price | default: 0 | money }}</div>
+      {% endif %}
     </div>
     <div class="about">
-      <h1 class="title">Embossed backpack</h1>
-      <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, architecto.</p>
+      <h1 class="title">{{ product.name }}</h1>
+      <p class="subtitle">{{ product.description }}</p>
     </div>
     <div class="variants">
       {% render 'ui-variant' %}

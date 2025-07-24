@@ -17,7 +17,15 @@
       gap: calc(var(--spacing-48) - var(--spacing-8));
 
       .price {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-8);
         font: var(--font-body-lg);
+
+        .compare-at-price {
+          opacity: 0.7;
+          text-decoration: line-through;
+        }
       }
 
       .about {
