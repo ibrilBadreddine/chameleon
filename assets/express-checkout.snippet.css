@@ -20,6 +20,7 @@ ui-express-checkout {
       padding: var(--spacing-12) var(--spacing-16);
       background-color: var(--color-surface-container);
       border: 1px solid var(--color-surface-container-highest);
+      transition: var(--transition-standard-default-effects);
 
       &:focus {
         border-color: var(--color-on-background);

@@ -83,6 +83,10 @@
     -webkit-overflow-scrolling: touch;
     height: 85vh;
 
+    &:not(:has(.images img:nth-child(2))) {
+      overflow: hidden;
+    }
+
     .images {
       img {
         width: 100%;
@@ -221,6 +225,10 @@
         .cta {
           display: flex;
           flex-direction: column;
+        }
+
+        [ui-whatsapp] {
+          justify-content: center;
         }
       }
     }

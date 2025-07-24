@@ -1,25 +1,31 @@
 <div section="product-details">
   <div class="section-head">
-    <h2>Product details</h2>
+    <h2>{{ section.settings.title }}</h2>
   </div>
   <ul class="section-core">
-    {% for item in (1..2) %}
+    {% for detail in section.blocks %}
       <li>
         <div class="content">
-          <h2 class="title">Designing Spaces, Inspiring Connection</h2>
-          <p class="description">
-            Our furniture is thoughtfully crafted to blend timeless Scandinavian design with modern functionality. Each piece is made with meticulous
-            attention to detail, ensuring it fits seamlessly into your home. From the choice of premium materials to the sleek, minimalist aesthetic,
-            we focus on creating furniture that is as practical as it is beautiful.
-          </p>
+          <h2 class="title">
+            {{ detail.settings.heading }}
+          </h2>
+          {% if detail.settings.description %}
+            <p class="description">
+              {{ detail.settings.description }}
+            </p>
+          {% endif %}
         </div>
         <div class="media">
-          <img
-            src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/categories/0P0iEm0M4bJNzPr9Kifv68XHYsr6O49XIhfDwiSE.jpg"
-            alt="about us"
-            height="100%"
-            width="100%"
-          >
+          {% if detail.settings.image.src %}
+            <img
+              src="{{ detail.settings.image.src }}"
+              alt="{{detail.settings.heading}}"
+              height="100%"
+              width="100%"
+            >
+          {% else %}
+            {% render 'ui-icon', name: 'image', size: 60, filled: true %}
+          {% endif %}
         </div>
       </li>
     {% endfor %}
@@ -28,6 +34,41 @@
 
 {% schema %}
 {
-  "label": "Product Details"
+  "label": "Product Details",
+  "limit": 3,
+  "max_blocks": 2,
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:common.content.title",
+      "default": "Product details"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "detail",
+      "label": "Detail",
+      "settings": [
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "id": "description",
+          "type": "text",
+          "label": "Description",
+          "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur possimus non ipsa esse iure ratione aperiam consectetur doloremque accusantium necessitatibus."
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

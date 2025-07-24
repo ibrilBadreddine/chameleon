@@ -19,23 +19,27 @@
       >
     {% endfor %}
   </div>
-  <div class="controller">
-    <div class="controller-wrapper">
-      {% for image in product.images %}
-        <button aria-label="product" aria-selected="false">
-          <img
-            src="{{ image }}"
-            alt="{{ product.name }}"
-            height="100%"
-            width="100%"
-          >
-        </button>
-      {% endfor %}
+  {% if product.images.size > 1 %}
+    <div class="controller">
+      <div class="controller-wrapper">
+        {% for image in product.images %}
+          <button aria-label="product" aria-selected="false">
+            <img
+              src="{{ image }}"
+              alt="{{ product.name }}"
+              height="100%"
+              width="100%"
+            >
+          </button>
+        {% endfor %}
+      </div>
     </div>
-  </div>
-  <div class="pagination">
-    <button class="page" aria-label="page-1" aria-selected="true"></button>
-    <button class="page" aria-label="page-2" aria-selected="false"></button>
-    <button class="page" aria-label="page-3" aria-selected="false"></button>
-  </div>
+  {% endif %}
+  {% if product.images.size > 1 %}
+    <div class="pagination">
+      <button class="page" aria-label="page-1" aria-selected="true"></button>
+      <button class="page" aria-label="page-2" aria-selected="false"></button>
+      <button class="page" aria-label="page-3" aria-selected="false"></button>
+    </div>
+  {% endif %}
 </div>
