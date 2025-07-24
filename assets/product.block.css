@@ -3,13 +3,24 @@
   position: relative;
   height: 450px;
   border-radius: var(--radius-md);
+  background-color: var(--color-surface-container);
 
   & > a {
+    height: 100%;
+    display: block;
     color: var(--color-on-background);
 
     img {
       object-fit: cover;
       transition: var(--transition-standard-default-effects);
+    }
+
+    & > [ui-icon] {
+      opacity: 0.3;
+      position: absolute;
+      translate: -50% -50%;
+      left: 50%;
+      inset-block-start: 50%;
     }
 
     .info {

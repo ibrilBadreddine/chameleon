@@ -1,31 +1,65 @@
 <div section="products">
   <div class="section-head">
-    <h2>Our Favorites</h2>
+    <h2>{{ section.settings.title }}</h2>
   </div>
   <ul class="section-core">
-    {% render 'product-block',
-      title: 'Backpack With Foldover Flap',
-      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/D3ZXxSPPWFqnmAqkpZCX8TEflayHPydxLMUEMxWn_md.jpg',
-      badge: true
-    %}
-    {% render 'product-block',
-      title: 'Fabric Multi-Pocket Backpack',
-      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/XDIRXrNbH0IWqxHjUQB6OIyeSVy7LD23M6GrcDDS_md.jpg'
-    %}
-    {% render 'product-block',
-      title: 'Fabric Multi-Pocket Backpack',
-      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/FEW5kx6LGNBKKUhpPwCqTYjrY5ciQmUnLEnpwZ8J_md.jpg',
-      compare_at_price: true
-    %}
-    {% render 'product-block',
-      title: 'Technical Sports Backpack',
-      img: 'https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/sbZLw8j0k8SsFDp8SGNCECMdKHEfVpFUO9jl1Jnn_md.jpg'
-    %}
+    {% for block in section.blocks %}
+      {% render 'product-block', product: block.settings.product, badge: block.settings.badge %}
+    {% endfor %}
   </ul>
 </div>
 
 {% schema %}
 {
-  "label": "Products"
+  "label": "Products",
+  "templates": ["index", "product"],
+  "limit": 3,
+  "max_blocks": 24,
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:common.content.title",
+      "default": "Our Favorites"
+    },
+    {
+      "id": "space_top",
+      "type": "range",
+      "label": "t:common.spacing.space_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "id": "space_bottom",
+      "type": "range",
+      "label": "t:common.spacing.space_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "label": "t:common.blocks.product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "t:common.collection.label"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
