@@ -12,6 +12,9 @@
     "collections": {
       "type": "collections"
     },
+    "products-by-collection": {
+      "type": "products-by-collection"
+    },
     "about-us": {
       "type": "about-us"
     },
@@ -22,5 +25,5 @@
       "type": "socials"
     }
   },
-  "order": ["slideshow", "benefits", "products", "collections", "about-us", "faq", "socials"]
+  "order": ["slideshow", "benefits", "products", "collections", "products-by-collection", "about-us", "faq", "socials"]
 }
