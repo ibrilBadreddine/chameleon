@@ -20,9 +20,5 @@
   [section="benefits"] {
     display: grid;
     grid-template-columns: 1fr;
-
-    [block="benefit"] {
-      justify-content: center;
-    }
   }
 }

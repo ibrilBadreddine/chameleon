@@ -1,12 +1,57 @@
 <ul section="benefits">
-  {% render 'benefit-block', content: 'Free Shipping over 500€', icon: 'delivery_truck_speed' %}
-  {% render 'benefit-block', content: 'Worldwide Shipping', icon: 'language' %}
-  {% render 'benefit-block', content: 'Free Returns', icon: 'package_2' %}
-  {% render 'benefit-block', content: '5-Year Warranty', icon: 'chair_alt' %}
+  {% for benefit in section.blocks %}
+    {% render 'benefit-block', content: benefit.settings.content, icon: benefit.settings.icon %}
+  {% endfor %}
 </ul>
 
 {% schema %}
 {
-  "label": "Benefits"
+  "label": "Benefits",
+  "limit": 3,
+  "max_blocks": 8,
+  "settings": [
+    {
+      "id": "space_top",
+      "type": "range",
+      "label": "t:common.spacing.space_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "id": "space_bottom",
+      "type": "range",
+      "label": "t:common.spacing.space_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "label": "Benefit",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "You can use [Google Icons](https://fonts.google.com/icons)"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

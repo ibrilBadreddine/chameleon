@@ -10,6 +10,8 @@
 {% endcomment %}
 
 <li block="benefit">
-  {% render 'ui-icon', name: icon %}
+  {% if icon %}
+    {% render 'ui-icon', name: icon %}
+  {% endif %}
   <span>{{ content }}</span>
 </li>
