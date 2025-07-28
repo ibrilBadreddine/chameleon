@@ -1,5 +1,16 @@
 [
   {
+    "label": "Theme",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary color",
+        "default": "#2d6a4f"
+      }
+    ]
+  },
+  {
     "label": "t:settings_schema.seo.label",
     "settings": [
       {
@@ -153,47 +164,6 @@
         "unit": "%",
         "label": "t:settings_schema.typography.font_size_scale",
         "default": 100
-      }
-    ]
-  },
-  {
-    "label": "t:settings_schema.buttons.label",
-    "settings": [
-      {
-        "type": "header",
-        "content": "t:settings_schema.buttons.colors"
-      },
-      {
-        "type": "color",
-        "id": "button_background_color",
-        "label": "t:settings_schema.buttons.primary_button_background",
-        "default": "#121212"
-      },
-      {
-        "type": "color",
-        "id": "button_text_color",
-        "label": "t:settings_schema.buttons.primary_button_text",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "secondary_button_color",
-        "label": "t:settings_schema.buttons.secondary_button",
-        "default": "#121212"
-      },
-      {
-        "type": "header",
-        "content": "t:common.border.border"
-      },
-      {
-        "type": "range",
-        "id": "button_border_radius",
-        "min": 0,
-        "max": 40,
-        "step": 2,
-        "unit": "px",
-        "label": "t:common.border.corner_radius",
-        "default": 10
       }
     ]
   },

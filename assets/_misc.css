@@ -1,5 +1,9 @@
 /* Icon */
 [ui-icon] {
+  flex-shrink: 0;
+  overflow: hidden;
+  width: var(--icon-size);
+  height: var(--icon-size);
   font-size: var(--icon-size);
 
   &[filled] {
@@ -26,11 +30,11 @@
   transition: var(--transition-standard-default-effects);
 
   &[data-variant="primary"] {
-    color: var(--color-background);
-    background-color: var(--color-on-background);
+    color: var(--color-on-primary);
+    background-color: var(--color-primary);
 
     &:hover:not(:disabled) {
-      background-color: color-mix(in srgb, var(--color-on-background), currentColor 8%);
+      background-color: color-mix(in srgb, var(--color-primary), currentColor 8%);
     }
   }
 

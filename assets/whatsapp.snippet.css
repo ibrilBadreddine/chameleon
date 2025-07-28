@@ -40,7 +40,7 @@
       gap: var(--spacing-4);
 
       .subtitle {
-        opacity: 0.7;
+        opacity: 0.8;
         font: var(--font-body-sm);
       }
     }

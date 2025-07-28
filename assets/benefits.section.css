@@ -6,8 +6,8 @@
   gap: var(--spacing-24) var(--spacing-64);
   padding: var(--spacing-24);
   border-radius: var(--radius-md);
-  color: var(--color-background);
-  background-color: var(--color-on-background);
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
 
   [block="benefit"] {
     display: flex;

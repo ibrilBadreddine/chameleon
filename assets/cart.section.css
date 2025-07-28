@@ -15,7 +15,7 @@
     }
 
     .description {
-      opacity: 0.7;
+      opacity: 0.8;
       text-wrap: balance;
     }
   }
@@ -72,7 +72,7 @@
               }
 
               .variants {
-                opacity: 0.7;
+                opacity: 0.8;
                 font: var(--font-body-sm);
               }
             }
@@ -106,8 +106,8 @@
       height: fit-content;
       padding: var(--spacing-24);
       border-radius: var(--radius-lg);
-      color: var(--color-background);
-      background-color: var(--color-on-background);
+      color: var(--color-on-primary);
+      background-color: var(--color-primary);
 
       .head {
         h3 {
@@ -120,7 +120,7 @@
         gap: var(--spacing-12);
 
         .item {
-          opacity: 0.7;
+          opacity: 0.8;
           display: flex;
           align-items: center;
           justify-content: space-between;

@@ -3,37 +3,27 @@
 
   --color-background: light-dark(#fbfcfe, #191c1d);
   --color-on-background: light-dark(#191c1d, #e1e3e4);
+
   --color-primary: light-dark(#006781, #5fd4fd);
   --color-on-primary: light-dark(#ffffff, #003544);
   --color-primary-container: light-dark(#b9eaff, #004d62);
   --color-on-primary-container: light-dark(#001f29, #b9eaff);
-  --color-inverse-primary: light-dark(#5fd4fd, #006781);
-  --color-secondary: light-dark(#4c626b, #b3cad5);
-  --color-on-secondary: light-dark(#ffffff, #1e333c);
-  --color-secondary-container: light-dark(#cfe6f1, #354a53);
-  --color-on-secondary-container: light-dark(#071e26, #cfe6f1);
-  --color-tertiary: light-dark(#5b5b7e, #c4c3eb);
-  --color-on-tertiary: light-dark(#ffffff, #2d2d4d);
-  --color-tertiary-container: light-dark(#e1dfff, #434465);
-  --color-on-tertiary-container: light-dark(#181837, #e1dfff);
+
   --color-error: light-dark(#ba1a1a, #ffb4ab);
   --color-on-error: light-dark(#ffffff, #690005);
-  --color-error-container: light-dark(#ffdad6, #93000a);
-  --color-on-error-container: light-dark(#410002, #ffb4ab);
+
   --color-success: light-dark(#0b6d36, #82d996);
   --color-on-success: light-dark(#ffffff, #003918);
   --color-success-container: light-dark(#9ef6b0, #005226);
   --color-on-success-container: light-dark(#00210b, #9ef6b0);
-  --color-surface: light-dark(#fbfcfe, #191c1d);
-  --color-on-surface: light-dark(#191c1d, #e1e3e4);
-  --color-surface-variant: light-dark(#dce4e8, #40484c);
-  --color-on-surface-variant: light-dark(#40484c, #c0c8cc);
-  --color-inverse-surface: light-dark(#2e3132, #e1e3e4);
-  --color-inverse-on-surface: light-dark(#eff1f2, #2e3132);
+
   --color-outline: light-dark(#70787c, #8a9296);
   --color-outline-variant: light-dark(#c0c8cc, #40484c);
+
+  --color-surface-variant: light-dark(#dce4e8, #40484c);
+  --color-on-surface-variant: light-dark(#40484c, #c0c8cc);
+
   --color-surface-container-lowest: light-dark(#ffffff, #0c0f10);
-  /* --color-surface-container-low: light-dark(#f2f4f5, #191c1d); */
   --color-surface-container-low: light-dark(#f2f4f5, #272a2c);
   --color-surface-container: light-dark(#eceef0, #1d2022);
   --color-surface-container-high: light-dark(#e7e8ea, #272a2c);

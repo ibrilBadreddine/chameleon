@@ -24,7 +24,7 @@
         gap: var(--spacing-48);
 
         .description {
-          opacity: 0.7;
+          opacity: 0.8;
           text-wrap: balance;
         }
 

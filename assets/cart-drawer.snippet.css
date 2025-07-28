@@ -93,7 +93,7 @@ ui-cart-drawer {
                 gap: var(--spacing-8);
 
                 .variants {
-                  opacity: 0.7;
+                  opacity: 0.8;
                   font: var(--font-body-sm);
                 }
               }
@@ -124,6 +124,7 @@ ui-cart-drawer {
 
     /* Footer */
     .footer {
+      position: relative;
       border-radius: var(--radius-md);
       background-color: var(--color-surface-container-low);
       padding: calc(var(--spacing-24) - var(--spacing-2));
@@ -136,12 +137,22 @@ ui-cart-drawer {
         justify-content: space-between;
 
         .label {
-          opacity: 0.7;
+          opacity: 0.8;
         }
 
         .value {
           font: var(--font-body-lg);
         }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        inset-block-end: 99%;
+        backdrop-filter: blur(0.5px);
+        background: linear-gradient(to top, var(--color-background), transparent);
       }
     }
 

@@ -22,7 +22,7 @@
     }
 
     .description {
-      opacity: 0.7;
+      opacity: 0.8;
       text-wrap: balance;
     }
 
@@ -62,7 +62,7 @@
           }
 
           .date-total {
-            opacity: 0.7;
+            opacity: 0.8;
             font: var(--font-body-sm);
           }
         }
@@ -99,7 +99,7 @@
           justify-content: space-between;
 
           .label {
-            opacity: 0.7;
+            opacity: 0.8;
           }
 
           &:last-child {
@@ -144,7 +144,7 @@
             flex-direction: column;
 
             .count {
-              opacity: 0.7;
+              opacity: 0.8;
             }
           }
         }
