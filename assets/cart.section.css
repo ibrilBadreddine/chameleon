@@ -51,6 +51,7 @@
           width: 120px;
           height: 120px;
           border-radius: var(--radius-md);
+          border: 1px solid var(--color-surface-container);
         }
 
         .content {
@@ -106,8 +107,6 @@
       height: fit-content;
       padding: var(--spacing-24);
       border-radius: var(--radius-lg);
-      color: var(--color-on-primary);
-      background-color: var(--color-primary);
 
       .head {
         h3 {
@@ -138,6 +137,25 @@
         & > button {
           width: 100%;
         }
+      }
+    }
+  }
+
+  /* Theme */
+  &[theme="primary"] {
+    .cart-core {
+      .summary {
+        color: var(--color-on-primary);
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  &[theme="neutral"] {
+    .cart-core {
+      .summary {
+        color: var(--color-background);
+        background-color: var(--color-on-background);
       }
     }
   }

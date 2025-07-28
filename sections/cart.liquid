@@ -1,4 +1,4 @@
-<div section="cart">
+<div section="cart" theme="{{ section.settings.theme }}">
   <div class="cart-head">
     <h2 class="title">Your shopping cart</h2>
     <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, iusto?</p>
@@ -71,6 +71,24 @@
 
 {% schema %}
 {
-  "label": "Cart"
+  "label": "Cart",
+  "settings": [
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Theme",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "neutral",
+          "label": "Neutral"
+        }
+      ],
+      "default": "primary"
+    }
+  ]
 }
 {% endschema %}

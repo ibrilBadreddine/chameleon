@@ -1,4 +1,4 @@
-<footer layout="footer">
+<footer layout="footer" theme="{{ section.settings.theme }}">
   <div class="general">
     <div class="store">
       <a href="#" class="logo">
@@ -68,16 +68,20 @@
       "content": "t:common.style.style"
     },
     {
-      "type": "color",
-      "id": "footer_background_color",
-      "label": "t:common.colors.background_color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "footer_text_color",
-      "label": "t:common.colors.text_color",
-      "default": "#121212"
+      "type": "select",
+      "id": "theme",
+      "label": "Theme",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "neutral",
+          "label": "Neutral"
+        }
+      ],
+      "default": "primary"
     }
   ]
 }

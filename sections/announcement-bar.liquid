@@ -1,4 +1,4 @@
-<div layout="announcement-bar">
+<div layout="announcement-bar" theme="{{ section.settings.theme }}">
   <div class="marquee-container">
     <div class="marquee">
       {% for _ in (1..2) %}
@@ -23,6 +23,22 @@
       "id": "content",
       "label": "Content",
       "default": "Save 20% on your first order"
+    },
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Theme",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "neutral",
+          "label": "Neutral"
+        }
+      ],
+      "default": "primary"
     }
   ]
 }

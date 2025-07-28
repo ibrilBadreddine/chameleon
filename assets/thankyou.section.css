@@ -121,6 +121,7 @@
             position: relative;
             border-radius: var(--radius-sm);
             background-color: var(--color-surface-container);
+            border: 1px solid var(--color-surface-container);
 
             img {
               width: 100%;

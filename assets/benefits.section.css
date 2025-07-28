@@ -6,13 +6,22 @@
   gap: var(--spacing-24) var(--spacing-64);
   padding: var(--spacing-24);
   border-radius: var(--radius-md);
-  color: var(--color-on-primary);
-  background-color: var(--color-primary);
 
   [block="benefit"] {
     display: flex;
     align-items: center;
     gap: var(--spacing-8);
+  }
+
+  /* Theme */
+  &[theme="primary"] {
+    color: var(--color-on-primary);
+    background-color: var(--color-primary);
+  }
+
+  &[theme="neutral"] {
+    color: var(--color-background);
+    background-color: var(--color-on-background);
   }
 }
 

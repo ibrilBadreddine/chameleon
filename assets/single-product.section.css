@@ -99,6 +99,7 @@
         object-fit: cover;
         scroll-snap-align: center;
         scroll-snap-stop: always;
+        border: 1px solid var(--color-surface-container);
       }
 
       & > [ui-icon] {

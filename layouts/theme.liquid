@@ -11,7 +11,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="{{ request.url }}">
+
+    <title>{{ store.title | default: store.name }}</title>
     <meta name="description" content="{{ store.description | default: store.name }}">
+
+    <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/@material/material-color-utilities@0.3.0/index.js">
+
+    {% comment %} TODO: SHETTABA {% endcomment %}
+    <script type="module">
+      import { argbFromHex, hexFromArgb, CorePalette, Hct } from 'https://cdn.jsdelivr.net/npm/@material/material-color-utilities@0.3.0/index.js';
+
+      const THEME_KEY = 'theme-tokens';
+      const primaryColor = document.querySelector('body').dataset.primary;
+
+      const isDark = !window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const toneMap = isDark
+        ? { lowest: 4, low: 10, base: 12, high: 17, highest: 22, bg: 6, onBg: 90 }
+        : { lowest: 100, low: 96, base: 94, high: 92, highest: 90, bg: 98, onBg: 10 };
+
+      function loadCachedTheme() {
+        try {
+          const cached = JSON.parse(localStorage.getItem(THEME_KEY));
+          if (cached && cached.primaryColor === primaryColor && cached.isDark === isDark) {
+            return cached.tokens;
+          }
+        } catch {}
+        return null;
+      }
+
+      function saveTheme(tokens) {
+        localStorage.setItem(THEME_KEY, JSON.stringify({ primaryColor, isDark, tokens }));
+      }
+
+      function applyTheme(tokens) {
+        const root = document.documentElement;
+        for (const [key, value] of Object.entries(tokens)) {
+          root.style.setProperty(key, value);
+        }
+      }
+
+      function generateTheme() {
+        const argb = argbFromHex(primaryColor);
+        const hct = Hct.fromInt(argb);
+        const baseTone = isDark ? 80 : 40;
+        const primaryHex = hexFromArgb(Hct.from(hct.hue, hct.chroma, baseTone).toInt());
+
+        const palette = CorePalette.of(argb);
+        const a1 = palette.a1,
+          error = palette.error,
+          n1 = palette.n1,
+          n2 = palette.n2;
+        const tone = (g, t) => hexFromArgb(g.tone(t));
+
+        return {
+          '--color-primary': primaryHex,
+          '--color-on-primary': tone(a1, isDark ? 20 : 100),
+          '--color-primary-container': tone(a1, isDark ? 30 : 90),
+          '--color-on-primary-container': tone(a1, isDark ? 90 : 10),
+          '--color-error': tone(error, isDark ? 80 : 40),
+          '--color-on-error': tone(error, isDark ? 20 : 100),
+          '--color-background': tone(n1, toneMap.bg),
+          '--color-on-background': tone(n1, toneMap.onBg),
+          '--color-surface': tone(n1, toneMap.bg),
+          '--color-on-surface': tone(n1, toneMap.onBg),
+          '--color-surface-container-lowest': tone(n1, toneMap.lowest),
+          '--color-surface-container-low': tone(n1, toneMap.low),
+          '--color-surface-container': tone(n1, toneMap.base),
+          '--color-surface-container-high': tone(n1, toneMap.high),
+          '--color-surface-container-highest': tone(n1, toneMap.highest),
+          '--color-surface-variant': tone(n2, isDark ? 30 : 90),
+          '--color-on-surface-variant': tone(n2, isDark ? 80 : 30),
+          '--color-outline': tone(n2, isDark ? 60 : 50),
+          '--color-outline-variant': tone(n2, isDark ? 30 : 80),
+        };
+      }
+
+      const cached = loadCachedTheme();
+      if (cached) {
+        applyTheme(cached);
+      } else {
+        const generated = generateTheme();
+        applyTheme(generated);
+        saveTheme(generated);
+      }
+    </script>
 
     {% comment %} Icons {% endcomment %}
     <link
@@ -42,7 +125,7 @@
 
     {{ '_main.css' | asset_url | stylesheet_tag }}
   </head>
-  <body>
+  <body data-primary="{{ settings.primary_color.hex }}">
     {% section 'announcement-bar' %}
     {% section 'header' %}
     <main layout="main" id="main">

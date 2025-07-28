@@ -1,4 +1,4 @@
-<ul section="benefits">
+<ul section="benefits" theme="{{ section.settings.theme }}">
   {% for benefit in section.blocks %}
     {% render 'benefit-block', content: benefit.settings.content, icon: benefit.settings.icon %}
   {% endfor %}
@@ -10,6 +10,22 @@
   "limit": 3,
   "max_blocks": 8,
   "settings": [
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Theme",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "neutral",
+          "label": "Neutral"
+        }
+      ],
+      "default": "primary"
+    },
     {
       "id": "space_top",
       "type": "range",
