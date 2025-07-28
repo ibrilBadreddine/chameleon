@@ -30,6 +30,7 @@
 
         .action {
           color: inherit;
+          width: fit-content;
         }
       }
     }

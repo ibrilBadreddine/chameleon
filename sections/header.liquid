@@ -6,7 +6,7 @@
 >
   <ul class="links">
     <li class="link">
-      <a href="/">
+      <a href="/" ui-link>
         {% if section.settings.header_logo.src %}
           <img
             src="{{ section.settings.header_logo.src }}"
@@ -21,7 +21,7 @@
     </li>
     {% for link in main-link-list.links %}
       <li class="link">
-        <a href="{{ link.url }}">
+        <a href="{{ link.url }}" ui-link>
           {{ link.title }}
         </a>
       </li>

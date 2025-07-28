@@ -130,3 +130,33 @@
     opacity: 0.5;
   }
 }
+
+/* Link */
+[ui-link] {
+  position: relative;
+  text-decoration: none;
+
+  &:not(:has(img))::before {
+    content: "";
+    width: 0%;
+    height: 1px;
+    position: absolute;
+    inset-block-end: -1px;
+    background-color: var(--color-on-background);
+    transition: var(--transition-expressive-default-spatial);
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &[ui-link="secondary"] {
+    &::before {
+      width: 100%;
+    }
+
+    &:hover::before {
+      width: 25%;
+    }
+  }
+}

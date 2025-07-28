@@ -25,7 +25,7 @@
           <ul>
             {% for link in linklist.links %}
               <li>
-                <a href="{{ link.url }}">{{ link.title }}</a>
+                <a href="{{ link.url }}" ui-link>{{ link.title }}</a>
               </li>
             {% endfor %}
           </ul>

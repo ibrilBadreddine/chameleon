@@ -95,6 +95,11 @@
 
         .action {
           color: inherit;
+          width: fit-content;
+
+          &::before {
+            background-color: currentColor;
+          }
         }
       }
     }
