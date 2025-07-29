@@ -97,12 +97,23 @@
   }
 
   /* Theme */
-  &[theme="primary"] {
+  &[theme="primary-low"] {
     .section-core {
       [block="collection"] {
         .content {
-          color: var(--color-on-primary);
-          background-color: var(--color-primary);
+          color: light-dark(var(--color-on-primary-container), var(--color-on-primary));
+          background-color: light-dark(var(--color-primary-container), var(--color-primary));
+        }
+      }
+    }
+  }
+
+  &[theme="primary-high"] {
+    .section-core {
+      [block="collection"] {
+        .content {
+          color: light-dark(var(--color-on-primary), var(--color-on-primary-container));
+          background-color: light-dark(var(--color-primary), var(--color-primary-container));
         }
       }
     }

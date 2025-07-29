@@ -42,18 +42,34 @@
   }
 
   /* Theme */
-  &[theme="primary"] {
-    color: var(--color-on-primary);
-    background-color: var(--color-primary);
+  &[theme="primary-low"] {
+    color: light-dark(var(--color-on-primary-container), var(--color-on-primary));
+    background-color: light-dark(var(--color-primary-container), var(--color-primary));
 
     .marquee-container {
       &::after,
       &::before {
-        background: linear-gradient(to right, var(--color-primary), transparent);
+        background: linear-gradient(to right, light-dark(var(--color-primary-container), var(--color-primary)), transparent);
       }
 
       &::after {
-        background: linear-gradient(to left, var(--color-primary), transparent);
+        background: linear-gradient(to left, light-dark(var(--color-primary-container), var(--color-primary)), transparent);
+      }
+    }
+  }
+
+  &[theme="primary-high"] {
+    color: light-dark(var(--color-on-primary), var(--color-on-primary-container));
+    background-color: light-dark(var(--color-primary), var(--color-primary-container));
+
+    .marquee-container {
+      &::after,
+      &::before {
+        background: linear-gradient(to right, light-dark(var(--color-primary), var(--color-primary-container)), transparent);
+      }
+
+      &::after {
+        background: linear-gradient(to left, light-dark(var(--color-primary), var(--color-primary-container)), transparent);
       }
     }
   }
@@ -230,16 +246,33 @@
   }
 
   /* Theme */
-  &[theme="primary"] {
-    color: var(--color-on-primary);
-    background-color: var(--color-primary);
+  &[theme="primary-low"] {
+    color: light-dark(var(--color-on-primary-container), var(--color-on-primary));
+    background-color: light-dark(var(--color-primary-container), var(--color-primary));
 
     .links {
       .links-box {
         ul {
           li {
             a::before {
-              background-color: var(--color-on-primary);
+              background-color: light-dark(var(--color-on-primary-container), var(--color-on-primary));
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &[theme="primary-high"] {
+    color: light-dark(var(--color-on-primary), var(--color-on-primary-container));
+    background-color: light-dark(var(--color-primary), var(--color-primary-container));
+
+    .links {
+      .links-box {
+        ul {
+          li {
+            a::before {
+              background-color: light-dark(var(--color-on-primary), var(--color-on-primary-container));
             }
           }
         }
