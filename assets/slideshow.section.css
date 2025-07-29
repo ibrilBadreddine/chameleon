@@ -87,7 +87,7 @@
       height: 40px;
       cursor: pointer;
       border-radius: var(--radius-sm);
-      color: var(--color-background);
+      color: white;
       background-color: var(--color-overlay);
       display: flex;
       align-items: center;
@@ -139,7 +139,7 @@
         height: 10px;
         clip-path: circle();
         opacity: 0.5;
-        background-color: var(--color-background);
+        background-color: white;
       }
 
       &[aria-selected="true"]::before {
@@ -189,7 +189,7 @@
             max-width: calc(100% - var(--spacing-48));
             padding: calc(var(--spacing-24) - var(--spacing-4));
             align-items: center;
-            grid-template-columns: auto auto;
+            grid-template-columns: auto max-content;
 
             .text {
               .title {

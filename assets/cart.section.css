@@ -128,7 +128,7 @@
             opacity: 1;
             font: var(--font-body-lg);
             padding-block-start: var(--spacing-24);
-            border-block-start: 1px dashed var(--color-outline);
+            border-block-start: 1px dashed color-mix(in srgb, currentColor 38%, transparent);
           }
         }
       }

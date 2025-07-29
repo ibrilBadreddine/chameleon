@@ -13,5 +13,5 @@
   {% if icon %}
     {% render 'ui-icon', name: icon %}
   {% endif %}
-  <span>{{ content }}</span>
+  <span>{{ content | default: 'My benefit' }}</span>
 </li>

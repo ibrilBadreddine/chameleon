@@ -40,7 +40,12 @@ ui-search {
         border: none;
         outline: none;
         font: var(--font-body-lg);
+        color: var(--color-on-background);
         background-color: transparent;
+
+        &::placeholder {
+          color: color-mix(in srgb, currentColor 50%, transparent);
+        }
       }
     }
 

@@ -22,9 +22,10 @@
       import { argbFromHex, hexFromArgb, CorePalette, Hct } from 'https://cdn.jsdelivr.net/npm/@material/material-color-utilities@0.3.0/index.js';
 
       const THEME_KEY = 'theme-tokens';
-      const primaryColor = document.querySelector('body').dataset.primary;
+      const primaryColor = document.querySelector('body').dataset.primary.slice(0, 7);
 
-      const isDark = !window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // const isDark = !window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = document.querySelector('body').dataset.themeMode === 'dark';
       const toneMap = isDark
         ? { lowest: 4, low: 10, base: 12, high: 17, highest: 22, bg: 6, onBg: 90 }
         : { lowest: 100, low: 96, base: 94, high: 92, highest: 90, bg: 98, onBg: 10 };
@@ -83,6 +84,7 @@
           '--color-on-surface-variant': tone(n2, isDark ? 80 : 30),
           '--color-outline': tone(n2, isDark ? 60 : 50),
           '--color-outline-variant': tone(n2, isDark ? 30 : 80),
+          '--color-overlay': isDark ? 'rgba(125, 125, 125, 0.3)' : 'rgba(0, 0, 0, 0.3)',
         };
       }
 
@@ -125,7 +127,7 @@
 
     {{ '_main.css' | asset_url | stylesheet_tag }}
   </head>
-  <body data-primary="{{ settings.primary_color.hex }}">
+  <body data-primary="{{ settings.primary_color.hex }}" data-theme-mode="{{ settings.them_mode }}">
     {% section 'announcement-bar' %}
     {% section 'header' %}
     <main layout="main" id="main">

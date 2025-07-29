@@ -71,8 +71,6 @@
 
       .content {
         border-radius: var(--radius-md);
-        color: var(--color-background);
-        background-color: var(--color-on-background);
         padding: calc(var(--spacing-48) - var(--spacing-8));
         display: flex;
         gap: var(--spacing-24);
@@ -100,6 +98,29 @@
           &::before {
             background-color: currentColor;
           }
+        }
+      }
+    }
+  }
+
+  /* Theme */
+  &[theme="primary"] {
+    .section-core {
+      [block="collection"] {
+        .content {
+          color: var(--color-on-primary);
+          background-color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  &[theme="neutral"] {
+    .section-core {
+      [block="collection"] {
+        .content {
+          color: var(--color-background);
+          background-color: var(--color-on-background);
         }
       }
     }

@@ -7,6 +7,22 @@
         "id": "primary_color",
         "label": "Primary color",
         "default": "#2d6a4f"
+      },
+      {
+        "type": "select",
+        "id": "them_mode",
+        "label": "Theme mode",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ],
+        "default": "light"
       }
     ]
   },

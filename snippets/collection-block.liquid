@@ -25,7 +25,7 @@
   </div>
   <div class="content">
     <div class="text">
-      <h4 class="title">{{ info.name }}</h4>
+      <h4 class="title">{{ info.name | default: 'My collection' }}</h4>
       {% if info.description %}
         <p class="description">{{ info.description }}</p>
       {% endif %}
