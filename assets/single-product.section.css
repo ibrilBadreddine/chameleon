@@ -168,10 +168,11 @@
       justify-content: center;
 
       .page {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         border: none;
         outline: none;
+        cursor: pointer;
         filter: contrast(0);
         border-radius: var(--radius-rounded);
         background-color: var(--color-on-background);
