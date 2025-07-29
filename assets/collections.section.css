@@ -24,13 +24,6 @@
           inset-block-end: var(--spacing-24);
           color: var(--color-on-background);
           background-color: var(--color-background);
-
-          .text {
-            .description {
-              opacity: 1;
-              color: var(--color-on-surface-variant);
-            }
-          }
         }
       }
 
