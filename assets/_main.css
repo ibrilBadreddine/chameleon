@@ -59,6 +59,10 @@ body {
     gap: var(--spacing-12);
     flex-direction: column;
   }
+
+  &:has([ui-theme]:checked) {
+    color-scheme: dark;
+  }
 }
 
 ul {
