@@ -162,33 +162,37 @@
 }
 
 /* Theme */
-[ui-theme] {
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  appearance: none;
-  position: relative;
-  padding: var(--spacing-6);
-  border-radius: var(--radius-rounded);
-  background-color: var(--color-surface-container);
-  transition: var(--transition-standard-default-effects);
+ui-theme {
+  display: flex;
 
-  &::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    clip-path: circle();
-    inset-inline-start: var(--spacing-6);
-    background-color: var(--color-on-background);
-    transition: var(--transition-expressive-fast-spatial);
-  }
+  & > input {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    appearance: none;
+    position: relative;
+    padding: var(--spacing-6);
+    border-radius: var(--radius-rounded);
+    background-color: var(--color-surface-container);
+    transition: var(--transition-standard-default-effects);
 
-  &:hover:not(:active) {
-    background-color: var(--color-surface-container-highest);
-  }
+    &::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      clip-path: circle();
+      inset-inline-start: var(--spacing-6);
+      background-color: var(--color-on-background);
+      transition: var(--transition-expressive-fast-spatial);
+    }
 
-  &:checked::before {
-    inset-inline-start: calc(100% - 14px);
+    &:hover:not(:active) {
+      background-color: var(--color-surface-container-highest);
+    }
+
+    &:checked::before {
+      inset-inline-start: calc(100% - 14px);
+    }
   }
 }
