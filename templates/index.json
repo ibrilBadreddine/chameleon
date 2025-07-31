@@ -23,7 +23,10 @@
     },
     "socials": {
       "type": "socials"
+    },
+    "product-reviews": {
+      "type": "product-reviews"
     }
   },
-  "order": ["slideshow", "benefits", "products", "collections", "products-by-collection", "about-us", "faq", "socials"]
+  "order": ["slideshow", "benefits", "products", "collections", "products-by-collection", "about-us", "faq", "product-reviews", "socials"]
 }

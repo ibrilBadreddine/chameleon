@@ -1,0 +1,16 @@
+<div section="product-reviews">
+  <div class="section-head">
+    <h2>Honest Reviews</h2>
+  </div>
+  <ul class="section-core">
+    {% for review in (1..4) %}
+      {% render 'review-block' %}
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "label": "Product Review"
+}
+{% endschema %}

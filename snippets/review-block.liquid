@@ -1,0 +1,26 @@
+{% comment %}
+  Renders a review card (Block)
+
+  Accepts:
+  - review: {Object} Product info,
+
+  Usage:
+  {% render 'review-block', product: {...} %}
+{% endcomment %}
+
+<li block="review">
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, quod?</p>
+  </div>
+  <div class="author">
+    <span class="name">Carlos Tao</span>
+    <div class="rating">
+      <div class="stars">
+        {% for star in (1..5) %}
+          {% render 'ui-icon', name: 'kid_star', size: 20, filled: true %}
+        {% endfor %}
+      </div>
+      <span class="value">(5.0)</span>
+    </div>
+  </div>
+</li>
