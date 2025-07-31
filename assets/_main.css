@@ -60,6 +60,7 @@ body {
     flex-direction: column;
   }
 
+  &[data-theme-mode="dark"],
   &:has(ui-theme > input:checked) {
     color-scheme: dark;
   }

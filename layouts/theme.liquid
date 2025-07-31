@@ -15,6 +15,8 @@
     <title>{{ store.title | default: store.name }}</title>
     <meta name="description" content="{{ store.description | default: store.name }}">
 
+    {{ '_main.css' | asset_url | stylesheet_tag }}
+
     <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/@material/material-color-utilities@0.3.0/index.js">
 
     {% comment %} TODO: SHETTABA {% endcomment %}
@@ -97,6 +99,9 @@
         for (const [key, value] of Object.entries(tokens)) {
           root.style.setProperty(key, value);
         }
+
+        document.querySelector('[ui-loader]').style.opacity = 0;
+        document.querySelector('[ui-loader]').style.visibility = 'hidden';
       }
 
       function loadCachedTheme() {
@@ -153,10 +158,10 @@
       rel="shortcut icon"
       href="{{ favicon }}"
     >
-
-    {{ '_main.css' | asset_url | stylesheet_tag }}
   </head>
   <body data-primary="{{ settings.primary_color.hex }}" data-theme-mode="{{ settings.them_mode }}">
+    {% render 'ui-loader' %}
+
     {% section 'announcement-bar' %}
     {% section 'header' %}
     <main layout="main" id="main">
