@@ -224,3 +224,13 @@ ui-theme {
     transform: translateX(100%);
   }
 }
+
+/* Empty */
+[ui-empty] {
+  text-align: center;
+  padding: var(--spacing-64);
+
+  span {
+    opacity: 0.8;
+  }
+}

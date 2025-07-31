@@ -3,19 +3,18 @@
 
   Accepts:
   - collection: {Object} Collection info
+  - action: {String} Collection action button content
 
   Usage:
-  {% render 'collections-block', collection: {...} %}
+  {% render 'collections-block', collection: {...}, action: "View collection" %}
 {% endcomment %}
-
-{% assign info = collection.collection %}
 
 <li block="collection">
   <div class="media">
-    {% if info.preview_image %}
+    {% if collection.preview_image %}
       <img
-        src="{{ info.image }}"
-        alt="{{ info.name }}"
+        src="{{ collection.image }}"
+        alt="{{ collection.name }}"
         height="100%"
         width="100%"
       >
@@ -25,11 +24,11 @@
   </div>
   <div class="content">
     <div class="text">
-      <h4 class="title">{{ info.name | default: 'My collection' }}</h4>
-      {% if info.description %}
-        <p class="description">{{ info.description }}</p>
+      <h4 class="title">{{ collection.name | default: 'My collection' }}</h4>
+      {% if collection.description %}
+        <p class="description">{{ collection.description }}</p>
       {% endif %}
     </div>
-    <a href="/collections/{{ info.slug }}" ui-link="secondary" class="action">{{ collection.button_text }}</a>
+    <a href="/collections/{{ collection.slug }}" ui-link="secondary" class="action">{{ action }}</a>
   </div>
 </li>

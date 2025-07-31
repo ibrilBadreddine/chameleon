@@ -20,9 +20,7 @@
           {% endfor %}
         </ul>
       {% else %}
-        <div class="search-no-results">
-          <span>No results found (;-;)</span>
-        </div>
+        {% render 'ui-empty' %}
       {% endif %}
     </div>
   </div>

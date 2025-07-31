@@ -18,13 +18,20 @@
       {% render 'ui-icon', name: 'arrow_right_alt' -%}
     </a>
   </div>
-  <ul class="collection-products">
-    {% paginate collection.products by 24 cod, category_id: category.id %}
-      {% for product in items %}
-        {% render 'product-block', product: product %}
-      {% endfor %}
-    {% endpaginate %}
-  </ul>
+
+  {% paginate collection.products by 24 cod, category_id: category.id %}
+    <div class="collection-core">
+      {% if items.size > 0 %}
+        <ul class="collection-products">
+          {% for product in items %}
+            {% render 'product-block', product: product %}
+          {% endfor %}
+        </ul>
+      {% else %}
+        {% render 'ui-empty' %}
+      {% endif %}
+    </div>
+  {% endpaginate %}
 </div>
 
 {% schema %}

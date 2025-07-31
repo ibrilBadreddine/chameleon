@@ -1,8 +1,8 @@
 {
   "sections": {
-    "placeholder": {
-      "type": "placeholder"
+    "all-collections": {
+      "type": "all-collections"
     }
   },
-  "order": ["placeholder"]
+  "order": ["all-collections"]
 }

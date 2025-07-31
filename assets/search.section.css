@@ -31,16 +31,6 @@
     gap: var(--spacing-12);
     grid-template-columns: repeat(4, 1fr);
   }
-
-  /* No Results */
-  .search-no-results {
-    text-align: center;
-    padding: var(--spacing-64);
-
-    span {
-      opacity: 0.8;
-    }
-  }
 }
 
 /* Responsive */

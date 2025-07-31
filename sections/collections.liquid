@@ -4,7 +4,7 @@
   </div>
   <ul class="section-core">
     {% for block in section.blocks %}
-      {% render 'collection-block', collection: block.settings %}
+      {% render 'collection-block', collection: block.settings.collection, action: block.settings.button_text %}
     {% endfor %}
   </ul>
 </div>
