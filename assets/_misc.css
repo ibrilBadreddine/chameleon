@@ -4,8 +4,8 @@
   overflow: hidden;
   width: var(--icon-size);
   height: var(--icon-size);
-  font-size: var(--icon-size);
-  display: flex;
+  font-size: var(--icon-size) !important;
+  display: flex !important;
   align-items: center;
   justify-content: center;
 

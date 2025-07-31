@@ -61,6 +61,10 @@ ui-search {
       background-color: transparent;
       color: var(--color-on-surface-variant);
       margin-inline-end: calc(var(--spacing-6) * -1);
+
+      & > [ui-icon] {
+        overflow: visible;
+      }
     }
 
     &[data-state="closed"] {

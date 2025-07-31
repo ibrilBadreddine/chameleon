@@ -1,5 +1,3 @@
-{{ 'cart-drawer.snippet.js' | asset_url | script_tag_deferred }}
-
 {% comment %}
   Renders cart drawer
 
@@ -7,7 +5,7 @@
   {% render 'ui-cart-drawer' %}
 {% endcomment %}
 
-<ui-cart-drawer>
+<ui-drawer class="cart">
   <button class="drawer-trigger action" aria-expanded="false" aria-label="cart">
     {% render 'ui-icon', name: 'shopping_cart' %}
     (0)
@@ -20,9 +18,9 @@
       </button>
     </div>
     <div class="main">
-      <ul class="cart-items">
+      <ul class="items">
         {% for item in (1..8) %}
-          <li class="cart-item">
+          <li class="item">
             <div class="image">
               <img
                 src="https://cdn.youcan.shop/stores/28a34010e84b881fb087359c7e280a08/products/Y5zJcwYGY6SC189RXCpW99QVFnK0Jm05JgIwhDcP.webp"
@@ -66,4 +64,4 @@
       <a href="{{ routes.cart_url }}" ui-button data-variant="primary" data-size="md" class="checkout">Checkout</a>
     </div>
   </div>
-</ui-cart-drawer>
+</ui-drawer>

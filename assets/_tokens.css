@@ -29,6 +29,8 @@
   --color-surface-container-high: light-dark(#e7e8ea, #272a2c);
   --color-surface-container-highest: light-dark(#e1e3e4, #323537);
 
+  --color-star: rgb(250 165 72);
+
   --spacing-0: 0px;
   --spacing-2: 2px;
   --spacing-4: 4px;

@@ -1,5 +1,5 @@
-if (!customElements.get("ui-cart-drawer")) {
-  class CartDrawer extends HTMLElement {
+if (!customElements.get("ui-drawer")) {
+  class Drawer extends HTMLElement {
     constructor() {
       super();
 
@@ -38,5 +38,5 @@ if (!customElements.get("ui-cart-drawer")) {
     }
   }
 
-  customElements.define("ui-cart-drawer", CartDrawer);
+  customElements.define("ui-drawer", Drawer);
 }

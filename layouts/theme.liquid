@@ -158,6 +158,8 @@
       rel="shortcut icon"
       href="{{ favicon }}"
     >
+
+    {{ 'drawer.snippet.js' | asset_url | script_tag_deferred }}
   </head>
   <body data-primary="{{ settings.primary_color.hex }}" data-theme-mode="{{ settings.them_mode }}">
     {% render 'ui-loader' %}
