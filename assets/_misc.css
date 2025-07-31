@@ -98,7 +98,7 @@
       width: 32px;
 
       [ui-icon] {
-        font-size: 20px;
+        --icon-size: 20px !important;
       }
     }
   }
@@ -112,7 +112,7 @@
       height: 16px;
 
       [ui-icon] {
-        font-size: 15px;
+        --icon-size: 16px !important;
       }
     }
   }
