@@ -6,7 +6,7 @@ if (!customElements.get("ui-search")) {
       this.ESC_KEY = "Escape";
       this.trigger = this.firstElementChild;
       this.content = this.lastElementChild;
-      this.searchInput = this.content.querySelector("input[name='search']");
+      this.searchInput = this.content.querySelector("input[name='q']");
       this.clear = this.querySelector("[aria-label='close']");
     }
 

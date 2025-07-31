@@ -1,0 +1,37 @@
+{% paginate search.products by 24 cod %}
+  <div section="search">
+    <div class="search-head">
+      <h2 class="title">
+        {% if terms == null or terms == '' %}
+          All products
+        {% else %}
+          "{{ terms | escape }}" <small>[{{ total }}]</small>
+        {% endif %}
+      </h2>
+      {% if terms %}
+        <p class="description">Result for</p>
+      {% endif %}
+    </div>
+    <div class="search-core">
+      {% if items.size > 0 %}
+        <ul class="search-products">
+          {% for product in items %}
+            {% render 'product-block', product: product %}
+          {% endfor %}
+        </ul>
+      {% else %}
+        <div class="search-no-results">
+          <span>No results found (;-;)</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endpaginate %}
+
+{%- schema -%}
+{
+  "label": "Search",
+  "templates": ["search"],
+  "limit": 1
+}
+{%- endschema -%}
