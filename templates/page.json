@@ -1,8 +1,8 @@
 {
   "sections": {
-    "placeholder": {
-      "type": "placeholder"
+    "page": {
+      "type": "page"
     }
   },
-  "order": ["placeholder"]
+  "order": ["page"]
 }
