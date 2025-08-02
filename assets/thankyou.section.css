@@ -72,10 +72,29 @@
           align-items: center;
           gap: var(--spacing-4);
           font: var(--font-body-sm);
-          color: var(--color-success);
-          background-color: var(--color-success-container);
           padding: var(--spacing-4) var(--spacing-8);
           border-radius: var(--radius-sm);
+
+          &[data-status="paid"] {
+            color: var(--color-success);
+            background-color: var(--color-success-container);
+          }
+
+          &[data-status="captured"] {
+            color: var(--color-info);
+            background-color: var(--color-info-container);
+          }
+
+          &[data-status="unpaid"],
+          &[data-status="refunded"] {
+            color: var(--color-on-surface);
+            background-color: var(--color-surface-container-highest);
+          }
+
+          &[data-status="pending"] {
+            color: var(--color-error);
+            background-color: var(--color-error-container);
+          }
         }
       }
 

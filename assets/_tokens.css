@@ -12,6 +12,11 @@
   --color-error: light-dark(#ba1a1a, #ffb4ab);
   --color-on-error: light-dark(#ffffff, #690005);
 
+  --color-info: light-dark(#414bda, #bec2ff);
+  --color-on-info: light-dark(#ffffff, #0007a8);
+  --color-info-container: light-dark(#e0e0ff, #242ec2);
+  --color-on-info-container: light-dark(#00036b, #e0e0ff);
+
   --color-success: light-dark(#0b6d36, #82d996);
   --color-on-success: light-dark(#ffffff, #003918);
   --color-success-container: light-dark(#9ef6b0, #005226);

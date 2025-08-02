@@ -3,67 +3,93 @@
     <div class="icon">
       {% render 'ui-icon', name: 'check_circle', filled: true, size: 80 %}
     </div>
-    <h2 class="title">Thank you for your purchase!</h2>
-    <p class="description">Your order has been received and is being processed</p>
+    <h2 class="title">{{ 'order.title' | t }}</h2>
+    <p class="description">{{ 'order.description' | t }}</p>
   </div>
   <div class="thankyou-core">
     <div class="order-summary">
       <div class="summary-head">
         <div class="info">
-          <h4 class="id">Order #34245</h4>
-          <span class="date-total">Jul 21, 2025 . 449 MAD</span>
+          <h4 class="id">Your order</h4>
+          <span class="date-total">{{ 'now' | date: '%b %d, %Y' }} . {{ order.total | default: 0 | money }}</span>
         </div>
-        <div class="status">
-          {% render 'ui-icon', name: 'check_circle', filled: true, size: 18 %}
-          Paid
-        </div>
+        {% render 'ui-payment-status', status: order.paymentStatusSlug %}
       </div>
       <div class="summary-title">Products</div>
       <div class="order-info">
-        {% for item in (1..2) %}
+        {% for product in order.order_variants %}
           <div class="product">
             <div class="image">
-              <img
-                src="https://cdn.youcan.shop/stores/8c0f76d0ef7e3d4694bc90e537d522d1/products/EgDAxZgJvglybg3dVvcKRIxgHse4tPFKCHpnDyj4_md.jpg"
-                alt="product"
-                height="100%"
-                width="100%"
-              >
-              {% comment %} {% render 'ui-icon', name: 'image', filled: true %} {% endcomment %}
+              {% if product.image %}
+                <img
+                  src="{{ product.image }}"
+                  alt="{{ product.name }}"
+                  height="100%"
+                  width="100%"
+                >
+              {% else %}
+                {% render 'ui-icon', name: 'image', filled: true %}
+              {% endif %}
             </div>
             <div class="content">
-              <span class="title">Rubberised Multi-Pocket Backpack</span>
-              <span class="count">x1</span>
+              <span class="title">{{ product.name }}</span>
+              <span class="count">x{{ product.quantity }}</span>
             </div>
-            <div class="value">449 MAD</div>
+            <div class="value">{{ product.price | default: 0 | money }}</div>
           </div>
         {% endfor %}
       </div>
       <div class="summary-title">Payment</div>
       <div class="order-info">
         <div class="item">
-          <span class="label">Payment gateway</span>
-          <span class="value">COD</span>
+          <span class="label">{{ 'order.payment_method.label' | t }}:</span>
+          <span class="value">
+            {% assign payment_gateway = order.gatewayType %}
+            {% render 'ui-payment-gateway', type: payment_gateway %}
+          </span>
         </div>
       </div>
-      <div class="summary-title">Order summary</div>
+      <div class="summary-title">{{ 'order.order_summary' | t }}</div>
       <div class="order-info">
         <div class="item">
-          <span class="label">Subtotal</span>
-          <span class="value">449 MAD</span>
+          <span class="label">{{ 'order.subtotal' | t }}</span>
+          <span class="value">{{ order.sub_total | default: 0 | money }}</span>
+        </div>
+        {% if order.coupon != null %}
+          <div class="item">
+            <span class="label">{{ 'order.coupon_code' | t }}</span>
+            <div class="value">{{ order.coupon.code }}</div>
+          </div>
+          <div class="item">
+            <span class="label">{{ 'order.discount_amount' | t }}</span>
+            <span class="value">
+              {% render 'ui-discount-value', coupon: order.coupon %}
+            </span>
+          </div>
+        {% endif %}
+        {% if order.vat != 0 %}
+          <div class="item">
+            <span class="label">{{ 'cart.page.summary.vat' | t }} ({{ order.vat | times: 100 | append: '%' }})</span>
+            <span class="value">{{ order.total_tax_amount | default: 0 | money }}</span>
+          </div>
+        {% endif %}
+        <div class="item">
+          <span class="label">{{ 'order.shipping' | t }}</span>
+          {% if order.shippingCost == 0 or order.shippingCost == null %}
+            {% assign shipping_cost = 'order.free' | t %}
+          {% else %}
+            {% assign shipping_cost = order.shippingCost | default: 0 | money %}
+          {% endif %}
+          <span class="value">{{ shipping_cost }}</span>
         </div>
         <div class="item">
-          <span class="label">VAT (20%)</span>
-          <span class="value">29 MAD</span>
+          <span class="label">{{ 'order.total' | t }}</span>
+          <span class="value">{{ order.total | default: 0 | money }}</span>
         </div>
-        <div class="item">
-          <span class="label">Total</span>
-          <span class="value">478 MAD</span>
-        </div>
-        <button ui-button data-variant="primary" data-size="md">
-          Continue shopping
+        <a href="{{ routes.root_url |  default: "/" }}" ui-button data-variant="primary" data-size="md">
+          {{ 'order.action' | t }}
           {% render 'ui-icon', name: 'arrow_right_alt' %}
-        </button>
+        </a>
       </div>
     </div>
   </div>
