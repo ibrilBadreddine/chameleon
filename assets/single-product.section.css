@@ -123,7 +123,9 @@
         border-radius: var(--radius-md);
         background-color: var(--color-background);
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         gap: var(--spacing-4);
         box-shadow:
           0 4px 6px -1px #0000001a,
