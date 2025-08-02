@@ -8,19 +8,21 @@
   {% render 'review-block', product: {...} %}
 {% endcomment %}
 
-<li block="review">
-  <div class="content">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, quod?</p>
-  </div>
-  <div class="author">
-    <span class="name">Carlos Tao</span>
-    <div class="rating">
-      <div class="stars">
-        {% for star in (1..5) %}
-          {% render 'ui-icon', name: 'kid_star', size: 20, filled: true %}
-        {% endfor %}
-      </div>
-      <span class="value">(5.0)</span>
+<template>
+  <li block="review">
+    <div class="content">
+      <p ui-product-reviews-item="content"></p>
     </div>
-  </div>
-</li>
+    <div class="author">
+      <span class="name" ui-product-reviews-item="author"></span>
+      <div class="rating">
+        <div class="stars" ui-product-reviews-item="stars">
+          {% for star in (1..5) %}
+            {% render 'ui-icon', name: 'kid_star', size: 20, filled: true %}
+          {% endfor %}
+        </div>
+        <span class="value" ui-product-reviews-item="rating"></span>
+      </div>
+    </div>
+  </li>
+</template>

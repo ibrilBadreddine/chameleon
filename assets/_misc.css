@@ -234,3 +234,8 @@ ui-theme {
     opacity: 0.8;
   }
 }
+
+/* Hidden */
+[hidden] {
+  display: none !important;
+}

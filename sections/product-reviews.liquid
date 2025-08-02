@@ -1,16 +1,58 @@
-<div section="product-reviews">
+{% if section.settings.product.id %}
+  {{ 'product-reviews.section.js' | asset_url | script_tag_deferred }}
+{% endif %}
+
+<ui-product-reviews section="product-reviews" product-id="{{ section.settings.product.id }}">
   <div class="section-head">
-    <h2>Honest Reviews</h2>
+    <h2>{{ section.settings.title }}</h2>
   </div>
   <ul class="section-core">
-    {% for review in (1..4) %}
-      {% render 'review-block' %}
+    {% render 'review-block' %}
+  </ul>
+  <ul class="section-core" ui-product-reviews-skeleton>
+    {% for skeleton in (1..4) %}
+      <li block="review" class="skeleton">
+        <div class="content">
+          {% for line in (1..2) %}
+            <div class="sk line"></div>
+          {% endfor %}
+        </div>
+        <div class="author">
+          <div class="sk line"></div>
+          <div class="rating">
+            <div class="stars">
+              {% for star in (1..5) %}
+                <div class="sk icon"></div>
+              {% endfor %}
+            </div>
+            <div class="sk line"></div>
+          </div>
+        </div>
+      </li>
     {% endfor %}
   </ul>
-</div>
+  <div class="show-more" ui-product-reviews-show-more>
+    <div ui-link role="button">{{ 'general.show_more' | t }}</div>
+  </div>
+</ui-product-reviews>
 
 {% schema %}
 {
-  "label": "Product Review"
+  "label": "Product Reviews",
+  "templates": ["index", "product"],
+  "limit": 3,
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:common.content.title",
+      "default": "Honest Review"
+    }
+  ]
 }
 {% endschema %}

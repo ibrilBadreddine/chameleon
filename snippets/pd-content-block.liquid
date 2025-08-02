@@ -40,7 +40,13 @@
           {% render 'ui-icon', name: 'add' %}
         </button>
       </div>
-      <button ui-button data-variant="primary" data-size="md" class="add-to-cart">Add to cart</button>
+      {% if settings.checkout_type == 'express' %}
+        <button ui-button data-variant="primary" data-size="md" class="add-to-cart">
+          {{ 'product.buy_button.express_checkout.place_order' | t }}
+        </button>
+      {% else %}
+        <button ui-button data-variant="primary" data-size="md" class="add-to-cart">Add to cart</button>
+      {% endif %}
     </div>
     {% render 'ui-whatsapp', type: 'cta' %}
   </div>
