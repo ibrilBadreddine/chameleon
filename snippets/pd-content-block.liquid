@@ -29,6 +29,9 @@
     <div class="variants">
       {% render 'ui-variant' %}
     </div>
+    {% if product.isTrackingInventory %}
+      {% render 'ui-inventory-status', count: default_variant.inventory, threshold: 10 %}
+    {% endif %}
     {% render 'ui-express-checkout' %}
     <div class="cta">
       <div class="quantity">

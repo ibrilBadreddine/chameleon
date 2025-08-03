@@ -12,10 +12,16 @@
 {% schema %}
 {
   "label": "Related products",
-  "templates": ["index", "product"],
+  "templates": ["product"],
   "limit": 3,
-  "max_blocks": 24,
-  "settings": [],
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:common.content.title",
+      "default": "Related products"
+    }
+  ],
   "blocks": [
     {
       "type": "product",

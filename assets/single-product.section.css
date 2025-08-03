@@ -46,6 +46,29 @@
         }
       }
 
+      .inventory {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-8);
+        margin-block-start: calc((var(--spacing-48) - var(--spacing-8)) * -1);
+
+        &[data-inventory="out-of-stock"] [ui-icon] {
+          color: var(--color-outline);
+        }
+
+        &[data-inventory="low-stock"] [ui-icon] {
+          color: var(--color-error);
+        }
+
+        &[data-inventory="in-stock"] [ui-icon] {
+          color: var(--color-success);
+        }
+
+        [data-status] {
+          font: var(--font-body-sm);
+        }
+      }
+
       .cta {
         display: grid;
         gap: var(--spacing-12);
