@@ -6,9 +6,12 @@
     "product-details": {
       "type": "product-details"
     },
+    "product-reviews": {
+      "type": "product-reviews"
+    },
     "related-products": {
       "type": "related-products"
     }
   },
-  "order": ["single-product", "product-details", "related-products"]
+  "order": ["single-product", "product-details", "product-reviews", "related-products"]
 }

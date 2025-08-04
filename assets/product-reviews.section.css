@@ -2,6 +2,14 @@
   display: grid;
   gap: var(--spacing-12);
 
+  .section-head {
+    &:has(ui-add-review) {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  }
+
   .section-core {
     display: grid;
     gap: var(--spacing-12);
