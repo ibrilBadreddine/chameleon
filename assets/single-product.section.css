@@ -95,6 +95,14 @@
       display: grid;
       gap: var(--spacing-12);
       grid-template-columns: repeat(2, 1fr);
+
+      @media (min-width: 769px) {
+        &:not(:has(li:last-child:is(:nth-child(even)))) {
+          & > li:last-child {
+            grid-column: 1 / 3;
+          }
+        }
+      }
     }
   }
 

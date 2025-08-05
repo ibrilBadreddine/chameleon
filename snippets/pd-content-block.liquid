@@ -51,13 +51,45 @@
         <button ui-button data-variant="primary" data-size="md" class="add-to-cart">Add to cart</button>
       {% endif %}
     </div>
-    {% render 'ui-whatsapp', type: 'cta' %}
+    {% for block in section.blocks %}
+      {% if block.type == 'whatsapp_button' %}
+        {% render 'ui-whatsapp', type: 'cta', number: block.settings.whatsapp_number, message: block.settings.whatsapp_message %}
+      {% endif %}
+    {% endfor %}
   </div>
-  {% render 'ui-accordion', name: 'faq', items: info %}
-  <ul class="social-info">
-    {% render 'social-block', type: 'facebook', href: 'https://www.facebook.com', target_arrow: true %}
-    {% render 'social-block', type: 'instagram', href: 'https://www.facebook.com', target_arrow: true %}
-    {% render 'social-block', type: 'tiktok', href: 'https://www.facebook.com', target_arrow: true %}
-    {% render 'social-block', type: 'x-twitter', href: 'https://www.facebook.com', target_arrow: true %}
-  </ul>
+
+  {% comment %}
+    {% assign accordions = '' %}
+    {% for block in section.blocks %}
+      {% if block.type == 'accordion' %}
+        {% assign accordions = accordions | append: block.id | append: ',' %}
+      {% endif %}
+    {% endfor %}
+    {% assign accordion_ids = accordions | split: ',' %}
+
+    {% for block in section.blocks %}
+      {% if accordion_ids contains block.id and block.type == 'accordion' %}
+        {% render 'ui-accordion', name: product.id, items: block.settings %}
+      {% endif %}
+    {% endfor %}
+  {% endcomment %}
+  {% render 'ui-accordion', name: product.id, items: section.blocks %}
+
+  {% assign has_social = false %}
+  {% for block in section.blocks %}
+    {% if block.type == 'social' %}
+      {% assign has_social = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if has_social %}
+    <ul class="social-info">
+      {% for block in section.blocks %}
+        {% if block.type == 'social' %}
+          {% render 'social-block', type: block.settings.social_name, href: block.settings.social_link, target_arrow: true %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
 </div>

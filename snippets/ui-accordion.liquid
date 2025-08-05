@@ -11,19 +11,21 @@
 
 <ul ui-accordion>
   {% for item in items %}
-    <li ui-accordion-item>
-      <label>
-        <div ui-accordion-trigger>
-          <span>{{ item.trigger | default: item.settings.question }}</span>
-          {% render 'ui-icon', name: 'add' %}
-        </div>
-        <div ui-accordion-portal>
-          <div ui-accordion-content>
-            <p>{{ item.content | default: item.settings.answer }}</p>
+    {% if item.type == 'accordion' or item.type == 'faq' %}
+      <li ui-accordion-item>
+        <label>
+          <div ui-accordion-trigger>
+            <span>{{ item.trigger | default: item.settings.question }}</span>
+            {% render 'ui-icon', name: 'add' %}
           </div>
-        </div>
-        <input type="checkbox" name="{{ name }}">
-      </label>
-    </li>
+          <div ui-accordion-portal>
+            <div ui-accordion-content>
+              <p>{{ item.content | default: item.settings.answer }}</p>
+            </div>
+          </div>
+          <input type="checkbox" name="{{ name }}">
+        </label>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
