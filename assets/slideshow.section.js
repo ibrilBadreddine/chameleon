@@ -20,11 +20,13 @@ if (!customElements.get("ui-slideshow")) {
     }
 
     _render() {
-      this.canGoNext();
-      this.canGoPrevious();
+      if (this.arrows.previous && this.arrows.next) {
+        this.canGoNext();
+        this.canGoPrevious();
 
-      this.arrows.previous.addEventListener("click", () => this.swipe(--this.index));
-      this.arrows.next.addEventListener("click", () => this.swipe(++this.index));
+        this.arrows.previous.addEventListener("click", () => this.swipe(--this.index));
+        this.arrows.next.addEventListener("click", () => this.swipe(++this.index));
+      }
 
       this.dots.forEach((dot, idx) => {
         dot.addEventListener("click", () => this.swipe(idx));
@@ -43,8 +45,10 @@ if (!customElements.get("ui-slideshow")) {
         dot.setAttribute("aria-selected", index === idx);
       });
 
-      this.canGoNext();
-      this.canGoPrevious();
+      if (this.arrows.previous && this.arrows.next) {
+        this.canGoNext();
+        this.canGoPrevious();
+      }
     }
 
     canGoPrevious() {
