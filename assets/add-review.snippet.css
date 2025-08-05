@@ -132,11 +132,53 @@ ui-add-review {
           gap: var(--spacing-4);
           grid-template-columns: repeat(25, 1fr);
           margin-inline: 52px;
+          position: relative;
           background: linear-gradient(90deg, var(--color-error) 0%, var(--color-star) 50%, var(--color-success) 100%);
 
           & > span {
             height: 25px;
+            z-index: 3;
+            position: relative;
             background-color: var(--color-background);
+          }
+
+          &::before {
+            content: "";
+            inset-inline-end: 0;
+            inset-block-start: 0;
+            height: 100%;
+            position: absolute;
+            background-color: var(--color-surface-container-highest);
+          }
+        }
+
+        &:not(:has(.star[aria-checked="true"])) {
+          .preview::before {
+            width: 100%;
+          }
+        }
+
+        &:has(.star:nth-child(1)[aria-checked="true"]) {
+          .preview::before {
+            width: 80%;
+          }
+        }
+
+        &:has(.star:nth-child(2)[aria-checked="true"]) {
+          .preview::before {
+            width: 58%;
+          }
+        }
+
+        &:has(.star:nth-child(3)[aria-checked="true"]) {
+          .preview::before {
+            width: 38%;
+          }
+        }
+
+        &:has(.star:nth-child(4)[aria-checked="true"]) {
+          .preview::before {
+            width: 18%;
           }
         }
       }
@@ -159,11 +201,13 @@ ui-add-review {
       .core {
         .rating {
           .stars {
-            margin-inline: var(--spacing-0);
-
             .star {
               width: 100%;
             }
+          }
+
+          .preview {
+            margin-inline: var(--spacing-0);
           }
         }
       }
