@@ -109,36 +109,6 @@
 }
 
 /* Responsive */
-@media (min-width: 640px) {
-  [block="product"] {
-    height: auto;
-
-    & > a,
-    & > div {
-      .head {
-        &:has(.badge):has(ui-product-button) {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-
-          .badge {
-            order: 3;
-          }
-
-          .badge,
-          .price {
-            width: fit-content;
-          }
-
-          ui-product-button {
-            display: flex;
-            justify-content: flex-end;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 640px) {
   [block="product"] {
     height: auto;

@@ -22,6 +22,9 @@
 
   /* Products */
   .all-collections-core {
+    display: grid;
+    gap: var(--spacing-12);
+
     .items {
       display: grid;
       gap: var(--spacing-12);

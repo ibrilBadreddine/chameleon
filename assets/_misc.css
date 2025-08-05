@@ -125,7 +125,12 @@
     }
   }
 
-  &:disabled {
+  &[data-disabled] {
+    pointer-events: none;
+  }
+
+  &:disabled,
+  &[data-disabled] {
     cursor: not-allowed;
     opacity: 0.5;
   }

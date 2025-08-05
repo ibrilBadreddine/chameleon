@@ -19,6 +19,7 @@
             {% render 'product-block', product: product %}
           {% endfor %}
         </ul>
+        {% render 'ui-pagination', next_page_url: next_page, previous_page_url: previous_page, current: current, last: last, terms: terms %}
       {% else %}
         {% render 'ui-empty' %}
       {% endif %}

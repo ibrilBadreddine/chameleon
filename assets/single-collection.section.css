@@ -31,11 +31,17 @@
     }
   }
 
-  /* Products */
-  .collection-products {
+  /* Core */
+  .collection-core {
     display: grid;
     gap: var(--spacing-12);
-    grid-template-columns: repeat(4, 1fr);
+
+    /* Products */
+    .collection-products {
+      display: grid;
+      gap: var(--spacing-12);
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }
 
@@ -46,8 +52,10 @@
       padding: calc(var(--spacing-24) + var(--spacing-8));
     }
 
-    .collection-products {
-      grid-template-columns: repeat(2, 1fr);
+    .collection-core {
+      .collection-products {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 }
