@@ -13,6 +13,9 @@
             alt="{{ store.name }}"
             height="100%"
             width="{{ section.settings.logo_width }}"
+            {% if section.settings.logo_invert %}
+              data-invert
+            {% endif %}
           >
         {% else %}
           {{ store.name }}
@@ -71,6 +74,12 @@
       "unit": "px",
       "label": "t:sections.header.width",
       "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_invert",
+      "label": "Invert logo color in dark mode",
+      "default": false
     },
     {
       "type": "header",
