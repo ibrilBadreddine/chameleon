@@ -1,0 +1,27 @@
+{% comment %}
+  Renders a list of linked fields, typically "country", "region", and "city" (optional)
+
+  Accepts:
+  - fields: {Array} list of fields
+
+  Usage:
+  {% render 'ui-linked-fields', fields: [...] %}
+{% endcomment %}
+
+{% assign linked_fields = 'country,region,city' %}
+
+<ui-linked-fields>
+  {% for field in fields %}
+    {% if linked_fields contains field.name %}
+      <label ui-express-checkout-field>
+        <span ui-express-checkout-label>{{ field.display_name }}</span>
+        <select
+          name="{{ field.name }}"
+          {% if field.required %}
+            required
+          {% endif %}
+        ></select>
+      </label>
+    {% endif %}
+  {% endfor %}
+</ui-linked-fields>

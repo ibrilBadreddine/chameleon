@@ -1,19 +1,26 @@
 ui-express-checkout {
   display: grid;
-  gap: var(--spacing-8);
+  gap: var(--spacing-12);
+
+  ui-linked-fields {
+    display: grid;
+    gap: var(--spacing-12);
+  }
 
   [ui-express-checkout-field] {
     display: grid;
     gap: var(--spacing-8);
 
-    &:has(input:required) {
+    &:has(input:required, select:required, textarea:required) {
       [ui-express-checkout-label]::after {
         content: " *";
         color: var(--color-error);
       }
     }
 
-    & > input {
+    & > input,
+    & > select,
+    & > textarea {
       width: 100%;
       outline: none;
       border-radius: var(--radius-xs);
@@ -21,7 +28,7 @@ ui-express-checkout {
       color: var(--color-on-background);
       background-color: var(--color-surface-container);
       border: 1px solid var(--color-surface-container-highest);
-      transition: var(--transition-standard-default-effects);
+      transition: border-color var(--transition-standard-default-effects);
 
       &::placeholder {
         color: color-mix(in srgb, currentColor 50%, transparent);
@@ -29,6 +36,33 @@ ui-express-checkout {
 
       &:focus {
         border-color: var(--color-on-background);
+      }
+    }
+
+    & > textarea {
+      min-height: 43px;
+      resize: vertical;
+    }
+
+    & > select {
+      outline: none;
+      cursor: pointer;
+      appearance: none;
+    }
+
+    &:has(select) {
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        rotate: 45deg;
+        position: absolute;
+        inset-block-end: 20px;
+        inset-inline-end: var(--spacing-16);
+        border-block-end: 1.2px solid currentColor;
+        border-inline-end: 1.2px solid currentColor;
       }
     }
   }
