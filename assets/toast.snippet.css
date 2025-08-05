@@ -1,6 +1,6 @@
 ui-toast {
   left: 50%;
-  z-index: 50;
+  z-index: 9999;
   position: fixed;
   transform: translateX(-50%);
   inset-block-end: var(--spacing-12);

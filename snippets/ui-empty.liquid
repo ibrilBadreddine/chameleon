@@ -1,10 +1,13 @@
 {% comment %}
   Renders an empty state
 
+  Accepts:
+  - content: {String} component content
+
   Usage:
-  {% render 'ui-empty' %}
+  {% render 'ui-empty', content: '...' %}
 {% endcomment %}
 
 <div ui-empty>
-  <span>No results found (;-;)</span>
+  <span>{{ content }}</span>
 </div>
