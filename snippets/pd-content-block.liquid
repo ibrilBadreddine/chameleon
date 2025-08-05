@@ -26,9 +26,9 @@
       <h1 class="title">{{ product.name }}</h1>
       <p class="subtitle">{{ product.description }}</p>
     </div>
-    <div class="variants">
-      {% render 'ui-variant' %}
-    </div>
+    {% if product.options.size > 0 %}
+      {% render 'ui-variants' %}
+    {% endif %}
     {% if product.isTrackingInventory %}
       {% render 'ui-inventory-status', count: default_variant.inventory, threshold: 10 %}
     {% endif %}

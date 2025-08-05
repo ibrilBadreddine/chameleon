@@ -271,6 +271,10 @@
           justify-content: center;
         }
       }
+
+      .social-info {
+        grid-template-columns: 1fr;
+      }
     }
   }
 }

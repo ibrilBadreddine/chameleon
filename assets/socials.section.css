@@ -5,8 +5,14 @@
 }
 
 /* Responsive */
-@media (max-width: 769px) {
+@media (max-width: 1024) {
   [section="socials"] {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 769px) {
+  [section="socials"] {
+    grid-template-columns: 1fr;
   }
 }
