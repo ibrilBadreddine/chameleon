@@ -137,6 +137,12 @@
 
 @media (max-width: 769px) {
   [section="product-reviews"] {
+    .section-head {
+      &:has(ui-add-review) {
+        justify-content: space-between;
+      }
+    }
+
     .section-core {
       grid-template-columns: 1fr;
 

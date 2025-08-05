@@ -12,11 +12,11 @@ const PUB_SUB_EVENTS = {
 };
 
 // Toast
-// const toast = new Toast();
+const toast = document.querySelector("ui-toast");
 
 // Handle global errors
 if (window.errorStrings.checkout) {
-  // toast.show(window.errorStrings.checkout, "error");
+  toast.show(window.errorStrings.checkout, "error");
 }
 
 // Custom validation messages
