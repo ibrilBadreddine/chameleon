@@ -1,6 +1,6 @@
 <ul section="socials">
   {% for social in section.blocks %}
-    {% render 'social-block', type: social.settings.social_name, href: social.settings.social_link %}
+    {% render 'social-block', type: social.settings.social_name, href: social.settings.social_link, youcan_attributes: social.youcan_attributes %}
   {% endfor %}
 </ul>
 

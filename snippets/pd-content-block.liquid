@@ -53,26 +53,15 @@
     </div>
     {% for block in section.blocks %}
       {% if block.type == 'whatsapp_button' %}
-        {% render 'ui-whatsapp', type: 'cta', number: block.settings.whatsapp_number, message: block.settings.whatsapp_message %}
+        {% render 'ui-whatsapp',
+          type: 'cta',
+          number: block.settings.whatsapp_number,
+          message: block.settings.whatsapp_message,
+          youcan_attributes: block.youcan_attributes
+        %}
       {% endif %}
     {% endfor %}
   </div>
-
-  {% comment %}
-    {% assign accordions = '' %}
-    {% for block in section.blocks %}
-      {% if block.type == 'accordion' %}
-        {% assign accordions = accordions | append: block.id | append: ',' %}
-      {% endif %}
-    {% endfor %}
-    {% assign accordion_ids = accordions | split: ',' %}
-
-    {% for block in section.blocks %}
-      {% if accordion_ids contains block.id and block.type == 'accordion' %}
-        {% render 'ui-accordion', name: product.id, items: block.settings %}
-      {% endif %}
-    {% endfor %}
-  {% endcomment %}
   {% render 'ui-accordion', name: product.id, items: section.blocks %}
 
   {% assign has_social = false %}
@@ -87,7 +76,12 @@
     <ul class="social-info">
       {% for block in section.blocks %}
         {% if block.type == 'social' %}
-          {% render 'social-block', type: block.settings.social_name, href: block.settings.social_link, target_arrow: true %}
+          {% render 'social-block',
+            target_arrow: true,
+            type: block.settings.social_name,
+            href: block.settings.social_link,
+            youcan_attributes: block.youcan_attributes
+          %}
         {% endif %}
       {% endfor %}
     </ul>

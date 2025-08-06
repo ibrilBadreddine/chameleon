@@ -4,6 +4,7 @@
   Accepts:
   - product: {Object} Product info,
   - badge: {Boolean} Control product badge visibility
+  - youcan_attributes: {String} (optional) YouCan attributes (allow blocks to be highlighted in the theme editor)
 
   Usage:
   {% render 'product-block', product: {...} %}
@@ -13,7 +14,7 @@
 {% assign price = default_variant.price | default: product.price %}
 {% assign compare_at_price = default_variant.compare_at_price | default: product.compare_at_price %}
 
-<li block="product">
+<li block="product" {{ youcan_attributes }}>
   <a href="{{ product.url }}">
     <div class="media">
       {% if product.preview_image %}

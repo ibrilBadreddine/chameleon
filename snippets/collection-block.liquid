@@ -4,12 +4,13 @@
   Accepts:
   - collection: {Object} Collection info
   - action: {String} Collection action button content
+  - youcan_attributes: {String} (optional) YouCan attributes (allow blocks to be highlighted in the theme editor)
 
   Usage:
   {% render 'collections-block', collection: {...}, action: "View collection" %}
 {% endcomment %}
 
-<li block="collection">
+<li block="collection" {{ youcan_attributes }}>
   <div class="media">
     {% if collection.preview_image %}
       <img

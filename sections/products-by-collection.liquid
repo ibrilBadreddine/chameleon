@@ -7,7 +7,7 @@
   <ul class="section-core">
     {% if collection %}
       {% paginate collection.products by 4 id category_id: collection.id %}
-        {% for item in items -%}
+        {% for item in items %}
           {% render 'product-block', product: item %}
         {% endfor %}
       {% endpaginate %}

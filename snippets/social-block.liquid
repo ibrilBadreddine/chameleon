@@ -5,6 +5,7 @@
   - type: {String} Social link type (Facebook, Instagram, TikTok, Snapchat, Whatsapp, X...)
   - href: {String} Social link source
   - target_arrow: {Boolean} Control the target arrow visibility
+  - youcan_attributes: {String} (optional) YouCan attributes (allow blocks to be highlighted in the theme editor)
 
   Usage:
   {% render 'social-block', type: 'facebook', href: 'https://www.facebook.com' %}
@@ -12,7 +13,7 @@
 
 {% assign socials = 'facebook|Facebook,instagram|Instagram,tiktok|TikTok,snapchat|Snapchat,whatsapp|Whatsapp,x-twitter|X (Twitter)' | split: ',' %}
 
-<li block="social">
+<li block="social" {{ youcan_attributes }}>
   <a href="{{ href | default: "#" }}" target="_blank">
     {% for social in socials %}
       {% assign parts = social | split: '|' %}

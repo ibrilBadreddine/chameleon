@@ -12,7 +12,7 @@
 <ul ui-accordion>
   {% for item in items %}
     {% if item.type == 'accordion' or item.type == 'faq' %}
-      <li ui-accordion-item>
+      <li ui-accordion-item {{ item.youcan_attributes }}>
         <label>
           <div ui-accordion-trigger>
             <span>{{ item.trigger | default: item.settings.question }}</span>
