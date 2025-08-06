@@ -5,15 +5,19 @@
   - name: {String} Icon name,
   - size: {Number} (optional) Icon size
   - filled: {String} (optional) Icon fill color
+  - hidden: {Boolean} (optional) Hide icon
 
   Usage:
-  {% render 'ui-icon', name: 'search', size: 24, filled: true %}
+  {% render 'ui-icon', name: 'search', size: 24, filled: true, hidden: false %}
 {% endcomment %}
 
 <span
   ui-icon
   {% if filled %}
     filled
+  {% endif %}
+  {% if hidden %}
+    hidden
   {% endif %}
   class="material-symbols-outlined"
   style="--icon-size: {{ size | default: 24 }}px;"

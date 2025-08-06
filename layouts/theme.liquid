@@ -67,6 +67,8 @@
           '--color-on-primary-container': onPrimaryContainerHex,
           '--color-error': toneFromPalette(error, isDark ? 80 : 40),
           '--color-on-error': toneFromPalette(error, isDark ? 20 : 100),
+          '--color-error-container': toneFromPalette(error, isDark ? 30 : 90),
+          '--color-on-error-container': toneFromPalette(error, isDark ? 90 : 10),
           '--color-background': toneFromPalette(n1, toneMap.bg),
           '--color-on-background': toneFromPalette(n1, toneMap.onBg),
           '--color-surface': toneFromPalette(n1, toneMap.bg),
@@ -159,10 +161,48 @@
       href="{{ favicon }}"
     >
 
+    {{ content_for_header }}
+
+    <script src="https://unpkg.com/@youcan/js@latest/dist/index.umd.js" defer></script>
+    {{ 'toast.snippet.js' | asset_url | script_tag_deferred }}
+    {{ '_global.js' | asset_url | script_tag_deferred }}
+    {{ '_pubsub.js' | asset_url | script_tag_deferred }}
+    {{ '_cart.js' | asset_url | script_tag_deferred }}
+    {{ 'product-button.snippet.js' | asset_url | script_tag_deferred }}
     {{ 'drawer.snippet.js' | asset_url | script_tag_deferred }}
+
+    <script>
+      window.errorStrings = {
+        checkout: '{{ form.errors | first }}',
+        insufficient_inventory: '{{ 'error_messages.insufficient_inventory' | t }}',
+        rating_is_required: '{{ 'error_messages.rating_is_required' | t }}',
+        large_file: '{{ 'error_messages.large_file' | t }}',
+      }
+
+      window.combobox = {
+        search: '{{ 'general.search' | t }}',
+        no_results: '{{ 'general.no-results' | t }}',
+      }
+
+      window.successStrings = {
+        review_submitted: '{{ 'success_messages.review_submitted' | t }}'
+      }
+
+      window.inventoryStatuses = {
+        in_stock: '{{ 'product.inventory_in_stock' | t }}',
+        in_stock_show_count: '{{ 'product.inventory_in_stock_show_count' | t }}',
+        low_stock: '{{ 'product.inventory_low_stock' | t }}',
+        low_stock_show_count: '{{ 'product.inventory_low_stock_show_count' | t }}',
+        out_of_stock: '{{ 'product.inventory_out_of_stock' | t }}',
+      }
+
+      window.productsVariants = {};
+    </script>
   </head>
   <body data-primary="{{ settings.primary_color.hex }}" data-theme-mode="{{ settings.them_mode }}">
+    {% render 'ui-skip-to-content' %}
     {% render 'ui-loader' %}
+    {% render 'ui-toast' %}
 
     {% section 'announcement-bar' %}
     {% section 'header' %}

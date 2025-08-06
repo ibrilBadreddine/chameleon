@@ -8,58 +8,45 @@
 <ui-drawer class="cart">
   <button class="drawer-trigger action" aria-expanded="false" aria-label="cart">
     {% render 'ui-icon', name: 'shopping_cart' %}
-    (0)
+    (<ui-cart-bubble>{{ cart.count | default: 0 }}</ui-cart-bubble>)
   </button>
   <div class="drawer-content" data-state="closed">
     <div class="header">
-      <h6 class="title">Cart <span class="total">(0)</span></h6>
+      <h6 class="title">
+        Cart
+        <span class="total">
+          (<ui-cart-bubble>{{ cart.count | default: 0 }}</ui-cart-bubble>)
+        </span>
+      </h6>
       <button ui-button data-variant="secondary" data-size="sm" as-icon aria-label="close">
         {% render 'ui-icon', name: 'close' %}
       </button>
     </div>
     <div class="main">
-      <ul class="items">
-        {% for item in (1..8) %}
-          <li class="item">
-            <div class="image">
-              <img
-                src="https://cdn.youcan.shop/stores/28a34010e84b881fb087359c7e280a08/products/Y5zJcwYGY6SC189RXCpW99QVFnK0Jm05JgIwhDcP.webp"
-                alt="product"
-                height="100%"
-                width="100%"
-              >
-            </div>
-            <div class="content">
-              <div class="info">
-                <div class="bio">
-                  <span class="title">Embossed backpack </span>
-                  <span class="variants">Color: Blue</span>
-                </div>
-                <span class="price">549 MAD</span>
-              </div>
-              <div class="actions">
-                <div class="quantity">
-                  <button ui-button data-variant="ghost" data-size="xs" as-icon aria-label="minus">
-                    {% render 'ui-icon', name: 'remove' %}
-                  </button>
-                  <span class="value">1</span>
-                  <button ui-button data-variant="ghost" data-size="xs" as-icon aria-label="plus">
-                    {% render 'ui-icon', name: 'add' %}
-                  </button>
-                </div>
-                <button ui-button data-variant="secondary" data-size="xs" as-icon class="remove" aria-label="remove">
-                  {% render 'ui-icon', name: 'close_small' %}
-                </button>
-              </div>
-            </div>
-          </li>
+      <template ui-cart-drawer-item>
+        {% render 'ui-cart-drawer-item', product: product %}
+      </template>
+      <ui-cart-drawer-items>
+        {% for product in cart.items %}
+          {% render 'ui-cart-drawer-item', product: product %}
         {% endfor %}
-      </ul>
+      </ui-cart-drawer-items>
+      {% unless cart.count > 0 %}
+        {% render 'ui-empty', content: 'Cart is empty (;-;)' %}
+      {% else %}
+        {% render 'ui-empty', content: 'Cart is empty (;-;)', hidden: true %}
+      {% endunless %}
     </div>
-    <div class="footer">
+    <div
+      class="footer"
+      {% unless cart.count > 0 %}
+        hidden
+      {% endunless %}
+      ui-cart-drawer-footer
+    >
       <div class="info">
         <span class="label">Subtotal</span>
-        <span class="value">549 MAD</span>
+        <span class="value" ui-cart-item="subtotal">{{ cart.sub_total | default: 0 | money }}</span>
       </div>
       <a href="{{ routes.cart_url }}" ui-button data-variant="primary" data-size="md" class="checkout">Checkout</a>
     </div>

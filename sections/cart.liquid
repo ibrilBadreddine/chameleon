@@ -4,88 +4,55 @@
     <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, iusto?</p>
   </div>
   <div class="cart-core">
-    {% if cart.items.size > 0 %}
-      <ul class="items">
-        {% for product in cart.items %}
-          <li class="item">
-            <div class="media">
-              {% unless product.image contains '/store-front/images/product-default' %}
-                <img
-                  src="{{ product.image }}"
-                  alt="{{ product.name }}"
-                  height="100%"
-                  width="100%"
-                >
-              {% else %}
-                {% render 'ui-icon', name: 'image', filled: true %}
-              {% endunless %}
-            </div>
-            <div class="content">
-              <div class="top">
-                <div class="info">
-                  <span class="title">{{ product.name }}</span>
-                  <span class="variants" ui-cart-item="variant">
-                    {% for variant in product.variations %}
-                      <span>{{ variant[1] }}</span>
-                      {% unless forloop.index == product.variations.size - 1 %}
-                        <span>/</span>
-                      {% endunless %}
-                    {% endfor %}
-                  </span>
-                </div>
-                <ui-cart-remove
-                  item="{{ product.id }}"
-                  product-variant="{{ product.product_variant_id }}"
-                >
-                  <button
-                    ui-button
-                    data-variant="secondary"
-                    data-size="sm"
-                    as-icon
-                    aria-label="delete"
-                    ui-cart-item="delete-button"
-                  >
-                    {% render 'ui-icon', name: 'delete' %}
-                  </button>
-                </ui-cart-remove>
-              </div>
-              <div class="bottom">
-                {% render 'ui-quantity' %}
-                <div class="span price">{{ product.price | default: 0 | money }}</div>
-              </div>
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
-      <div class="summary">
-        <div class="head">
-          <h3>{{ 'cart.page.summary.title' | t }}</h3>
-        </div>
-        <ul class="detail-items">
-          <li class="item">
-            <span class="label">{{ 'order.coupon_code' | t }}</span>
-            <span class="value">{{ cart.coupon.code }}</span>
-          </li>
-          <li class="item">
-            <span class="label">{{ 'cart.page.summary.subtotal' | t }}</span>
-            <span class="value">{{ cart.sub_total | default: 0 | money }}</span>
-          </li>
-          <li class="item">
-            <span class="label">{{ 'order.discount_amount' | t }}</span>
-            <span class="value"> {% render 'ui-discount-value', coupon: cart.coupon %} </span>
-          </li>
-          <li class="item">
-            <span class="label">{{ 'cart.page.summary.total' | t }}</span>
-            <span class="value">{{ cart.discounted_sub_total | default: 0 | money }}</span>
-          </li>
-        </ul>
-        <div class="cta">
-          <a href="{{ cart.cart_submit_url }}" ui-button data-variant="secondary" data-size="md">
-            {{ 'cart.page.summary.checkout_button' | t }}
-            {% render 'ui-icon', name: 'arrow_right_alt' %}
-          </a>
-        </div>
+    <template ui-cart-item>
+      {% render 'ui-cart-item', product: product %}
+    </template>
+    <ui-cart-items
+      {% unless cart.items.size > 0 %}
+        hidden
+      {% endunless %}
+    >
+      {% for product in cart.items %}
+        {% render 'ui-cart-item', product: product %}
+      {% endfor %}
+    </ui-cart-items>
+    <div
+      class="summary"
+      {% unless cart.items.size > 0 %}
+        hidden
+      {% endunless %}
+      ui-cart-summary
+    >
+      <div class="head">
+        <h3>{{ 'cart.page.summary.title' | t }}</h3>
       </div>
+      <ul class="detail-items">
+        <li class="item">
+          <span class="label">{{ 'order.coupon_code' | t }}</span>
+          <span class="value">{{ cart.coupon.code }}</span>
+        </li>
+        <li class="item">
+          <span class="label">{{ 'cart.page.summary.subtotal' | t }}</span>
+          <span class="value" ui-cart-item="subtotal">{{ cart.sub_total | default: 0 | money }}</span>
+        </li>
+        <li class="item">
+          <span class="label">{{ 'order.discount_amount' | t }}</span>
+          <span class="value"> {% render 'ui-discount-value', coupon: cart.coupon %} </span>
+        </li>
+        <li class="item">
+          <span class="label">{{ 'cart.page.summary.total' | t }}</span>
+          <span class="value">{{ cart.discounted_sub_total | default: 0 | money }}</span>
+        </li>
+      </ul>
+      <div class="cta">
+        <a href="{{ cart.cart_submit_url }}" ui-button data-variant="secondary" data-size="md">
+          {{ 'cart.page.summary.checkout_button' | t }}
+          {% render 'ui-icon', name: 'arrow_right_alt' %}
+        </a>
+      </div>
+    </div>
+    {% if cart.items.size > 0 %}
+      {% render 'ui-empty', content: 'Cart is empty (;-;)', hidden: true %}
     {% else %}
       {% render 'ui-empty', content: 'Cart is empty (;-;)' %}
     {% endif %}

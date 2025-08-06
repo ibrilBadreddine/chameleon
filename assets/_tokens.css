@@ -109,24 +109,8 @@
   --ripple-full: radial-gradient(circle, color-mix(in srgb, currentColor 12%, transparent) 100%, transparent 41%);
 }
 
-@keyframes button-ripple {
-  from {
-    background-size: 150%;
-  }
-  to {
-    background-size: 250%;
-  }
-}
-
-@keyframes input-ripple {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes focus {
-  to {
-    outline-width: 3px;
-    outline-color: var(--color-on-secondary-container);
+@keyframes spin {
+  100% {
+    rotate: 360deg;
   }
 }

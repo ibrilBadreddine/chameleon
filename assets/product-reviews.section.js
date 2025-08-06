@@ -27,7 +27,6 @@ if (!customElements.get("ui-product-reviews")) {
         const res = response || youcanjs.product.fetchReviews(this.productId, { limit: this.LIMIT_PER_REQUEST });
         const items = await res.data();
 
-        console.log(items);
         items.length && this.setupItems(items);
         this.updatePagination(res);
       } catch (error) {
@@ -41,7 +40,6 @@ if (!customElements.get("ui-product-reviews")) {
 
     setupItems(items) {
       const itemsWithContent = items.filter((item) => !!item.content);
-      console.log(itemsWithContent);
       const totalItems = itemsWithContent.length;
 
       totalItems ? itemsWithContent.forEach((item) => this.createItem(item)) : this.filter.remove();
