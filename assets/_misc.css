@@ -244,3 +244,26 @@ ui-theme {
 [hidden] {
   display: none !important;
 }
+
+/* Skip to main content */
+[ui-skip-to-content] {
+  left: 50%;
+  opacity: 0;
+  z-index: 1000;
+  position: fixed;
+  padding: 16px 24px;
+  transform: translateX(-50%);
+  inset-block-start: -64px;
+  border-radius: var(--radius-md);
+  color: var(--color-on-background);
+  background-color: var(--color-surface-container);
+  transition: var(--transition-expressive-default-spatial);
+  outline: none;
+  border: 1px solid transparent;
+
+  &:focus-visible {
+    opacity: 1;
+    inset-block-start: var(--spacing-12);
+    border-color: var(--color-surface-container-highest);
+  }
+}
