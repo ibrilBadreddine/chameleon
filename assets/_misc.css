@@ -134,12 +134,18 @@
     cursor: not-allowed;
     opacity: 0.5;
   }
+
+  &:focus-visible {
+    outline-color: var(--color-on-background);
+  }
 }
 
 /* Link */
 [ui-link] {
   position: relative;
   text-decoration: none;
+  outline-offset: 1px;
+  outline: 2px solid transparent;
 
   &:not(:has(img))::before {
     content: "";
@@ -164,6 +170,10 @@
       width: 25%;
     }
   }
+
+  &:focus-visible {
+    outline-color: var(--color-on-background);
+  }
 }
 
 /* Theme */
@@ -180,6 +190,8 @@ ui-theme {
     border-radius: var(--radius-rounded);
     background-color: var(--color-surface-container);
     transition: var(--transition-standard-default-effects);
+    outline-offset: 1px;
+    outline: 2px solid transparent;
 
     &::before {
       content: "";
@@ -198,6 +210,10 @@ ui-theme {
 
     &:checked::before {
       inset-inline-start: calc(100% - 14px);
+    }
+
+    &:focus-visible {
+      outline-color: var(--color-on-background);
     }
   }
 }
