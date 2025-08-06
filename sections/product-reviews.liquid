@@ -5,7 +5,9 @@
 <ui-product-reviews section="product-reviews" product-id="{{ section.settings.product.id | default: product.id }}">
   <div class="section-head">
     <h2>{{ section.settings.title }}</h2>
-    {% render 'ui-add-review', product_id: product.id %}
+    {% if template.name == 'product' %}
+      {% render 'ui-add-review', product_id: product.id %}
+    {% endif %}
   </div>
   <ul class="section-core">
     {% render 'review-block' %}
