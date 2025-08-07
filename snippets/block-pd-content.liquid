@@ -5,7 +5,7 @@
   - product: {Object} Product info,
 
   Usage:
-  {% render 'pd-content-block', product: {...} %}
+  {% render 'block-pd-content', product: {...} %}
 {% endcomment %}
 
 {% assign default_variant = product.selected_or_first_available_variant %}
@@ -77,7 +77,7 @@
     <ul class="social-info">
       {% for block in section.blocks %}
         {% if block.type == 'social' %}
-          {% render 'social-block',
+          {% render 'block-social',
             target_arrow: true,
             type: block.settings.social_name,
             href: block.settings.social_link,

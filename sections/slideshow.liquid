@@ -7,7 +7,7 @@
   <div class="slideshow-wrapper">
     <ul class="wrapper-box">
       {% for slide in section.blocks %}
-        {% render 'slideshow-block', settings: slide.settings %}
+        {% render 'block-slideshow', settings: slide.settings %}
       {% endfor %}
     </ul>
   </div>

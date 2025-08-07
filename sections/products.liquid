@@ -4,7 +4,7 @@
   </div>
   <ul class="section-core">
     {% for block in section.blocks %}
-      {% render 'product-block', product: block.settings.product, badge: block.settings.badge, youcan_attributes: block.youcan_attributes %}
+      {% render 'block-product', product: block.settings.product, badge: block.settings.badge, youcan_attributes: block.youcan_attributes %}
     {% endfor %}
   </ul>
 </div>

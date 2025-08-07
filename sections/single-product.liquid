@@ -1,8 +1,8 @@
 {{ '_product.js' | asset_url | script_tag_deferred }}
 
 <ui-product section="single-product" product-id="{{ product.id }}">
-  {% render 'pd-media-block' %}
-  {% render 'pd-content-block' %}
+  {% render 'block-pd-media' %}
+  {% render 'block-pd-content' %}
 </ui-product>
 
 {% if product and product.options.size %}

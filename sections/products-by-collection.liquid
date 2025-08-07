@@ -8,12 +8,12 @@
     {% if collection %}
       {% paginate collection.products by 4 id category_id: collection.id %}
         {% for item in items %}
-          {% render 'product-block', product: item %}
+          {% render 'block-product', product: item %}
         {% endfor %}
       {% endpaginate %}
     {% else %}
       {% for item in (1..4) %}
-        {% render 'product-block' %}
+        {% render 'block-product' %}
       {% endfor %}
     {% endif %}
   </ul>
