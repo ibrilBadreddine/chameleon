@@ -1,3 +1,8 @@
+{{ 'section.faq.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size > 0 %}
+  {{ 'ui.accordion.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
 <div section="faq">
   <div class="section-head">
     <h2>{{ section.settings.title }}</h2>

@@ -1,3 +1,4 @@
+{{ 'section.product-reviews.css' | asset_url | stylesheet_tag }}
 {% if section.settings.product.id or product.id %}
   {{ 'section.product-reviews.js' | asset_url | script_tag_deferred }}
 {% endif %}

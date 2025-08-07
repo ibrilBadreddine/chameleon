@@ -1,37 +1,8 @@
 @import url("./_tokens.css");
-@import url("./_layout.css");
 @import url("./_misc.css");
+@import url("./_layout.css");
 
-@import url("./section.slideshow.css");
-@import url("./section.benefits.css");
-@import url("./section.socials.css");
-@import url("./section.collections.css");
-@import url("./section.products.css");
-@import url("./section.about-us.css");
-@import url("./section.faq.css");
-@import url("./section.single-product.css");
-@import url("./section.all-collections.css");
-@import url("./section.single-collection.css");
-@import url("./section.cart.css");
-@import url("./section.thankyou.css");
-@import url("./section.product-details.css");
-@import url("./section.related-products.css");
-@import url("./section.product-reviews.css");
-@import url("./section.page.css");
-@import url("./section.search.css");
-
-@import url("./ui.search.css");
-@import url("./misc.variants.css");
-@import url("./ui.accordion.css");
-@import url("./ui.drawer.css");
-@import url("./core.express-checkout.css");
-@import url("./ui.whatsapp.css");
-@import url("./misc.add-review.css");
-@import url("./ui.pagination.css");
 @import url("./ui.toast.css");
-
-@import url("./block.social.css");
-@import url("./block.product.css");
 
 * {
   margin: 0;
