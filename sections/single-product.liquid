@@ -1,7 +1,17 @@
-<div section="single-product">
+{{ '_product.js' | asset_url | script_tag_deferred }}
+
+<ui-product section="single-product" product-id="{{ product.id }}">
   {% render 'pd-media-block' %}
   {% render 'pd-content-block' %}
-</div>
+</ui-product>
+
+{% if product and product.options.size %}
+  {% javascript %}
+    if (!window.productsVariants["{{ product.id }}"]) {
+      window.productsVariants["{{ product.id }}"] = JSON.parse({{ product.variants | json }});
+    }
+  {% endjavascript %}
+{% endif %}
 
 {% schema %}
 {

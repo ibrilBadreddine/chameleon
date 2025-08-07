@@ -44,9 +44,14 @@
         {% render 'ui-icon', name: 'add' %}
       </button>
     {% else %}
-      <button ui-button data-variant="primary" data-size="md" class="add-to-cart">
-        {{ 'general.add_to_cart' | t }}
-      </button>
+      <button
+        ui-button
+        data-variant="primary"
+        data-size="md"
+        class="add-to-cart"
+        data-cta="{{ 'general.add_to_cart' | t }}"
+        data-out-of-stock="{{ 'general.out_of_stock' | t }}"
+      ></button>
     {% endif %}
   {% endif %}
 </ui-product-button>

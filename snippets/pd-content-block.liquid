@@ -28,7 +28,7 @@
       {% render 'ui-variants' %}
     {% endif %}
     {% if product.isTrackingInventory %}
-      {% render 'ui-inventory-status', count: default_variant.inventory, threshold: 10 %}
+      {% render 'ui-inventory-status', count: inventory_value, threshold: 10 %}
     {% endif %}
     {% if settings.checkout_type == 'express' %}
       {% render 'ui-express-checkout' %}

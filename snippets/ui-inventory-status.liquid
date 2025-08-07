@@ -11,7 +11,7 @@
 
 <div
   class="inventory"
-  {% if count == 0 %}
+  {% if count == 0 or count == null %}
     data-inventory="out-of-stock"
   {% elsif count > threshold %}
     data-inventory="in-stock"
@@ -23,7 +23,7 @@
 >
   {% render 'ui-icon', name: 'circle', filled: true, size: 8 %}
   <span data-status>
-    {% if count == 0 %}
+    {% if count == 0 or count == null %}
       {{ 'product.inventory_out_of_stock' | t }}
     {% elsif count > threshold %}
       {{ 'product.inventory_in_stock_show_count' | t | replace: '%', count }}

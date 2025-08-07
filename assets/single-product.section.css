@@ -92,6 +92,18 @@
         ui-product-button {
           [ui-button] {
             width: 100%;
+
+            &:empty::before {
+              content: attr(data-cta);
+            }
+          }
+
+          &:has([ui-button]:empty)[not-available] {
+            [ui-button] {
+              &::before {
+                content: attr(data-out-of-stock);
+              }
+            }
           }
         }
       }
