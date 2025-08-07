@@ -293,7 +293,7 @@ class CartItems extends BaseCartItem {
 
   setIsEmpty(isEmpty = false) {
     this.parentElement.querySelector("[ui-empty]").toggleAttribute("hidden", !isEmpty);
-    this.parentElement.querySelector("[ui-cart-summary]").toggleAttribute("hidden", isEmpty);
+    this.parentElement.querySelector("ui-summary-box").toggleAttribute("hidden", isEmpty);
   }
 }
 
@@ -469,12 +469,12 @@ class CartSummary extends HTMLElement {
   constructor() {
     super();
 
-    this.couponForm = this.querySelector("[data-coupon-form]");
-    this.subtotal = this.querySelector("[data-cart-subtotal]");
-    this.total = this.querySelector("[data-cart-total]");
-    this.couponCode = this.querySelector("[data-coupon-code]");
-    this.discount = this.querySelector("[data-discount]");
-    this.removeCouponButton = this.querySelector("[data-remove-coupon]");
+    this.couponForm = this.querySelector('[ui-summary-box="coupon-form"]');
+    this.subtotal = this.querySelector('[ui-summary-box="subtotal"]');
+    this.total = this.querySelector('[ui-summary-box="total"]');
+    this.couponCode = this.querySelector('[ui-summary-box="coupon-code"]');
+    this.discount = this.querySelector('[ui-summary-box="discount"]');
+    this.removeCouponButton = this.querySelector('[ui-summary-box="remove-coupon"]');
 
     const [couponInput, couponButton] = this.couponForm.querySelectorAll("[data-coupon]");
     this.couponInput = couponInput;
@@ -594,4 +594,4 @@ class CartSummary extends HTMLElement {
   }
 }
 
-customElements.define("yc-summary-box", CartSummary);
+customElements.define("ui-summary-box", CartSummary);

@@ -150,6 +150,75 @@
             padding-block-start: var(--spacing-24);
             border-block-start: 1px dashed color-mix(in srgb, currentColor 38%, transparent);
           }
+
+          &:has([ui-summary-box][hidden]) {
+            display: none;
+          }
+
+          .value {
+            &:has([ui-summary-box="coupon-code"]) {
+              display: flex;
+              align-items: center;
+              gap: var(--spacing-4);
+              font: var(--font-body-sm);
+              border-radius: var(--radius-xs);
+              padding: var(--spacing-2) var(--spacing-8);
+              padding-inline-end: var(--spacing-2);
+              background-color: color-mix(in srgb, currentColor 8%, transparent);
+
+              [ui-button] {
+                width: 24px;
+                color: currentColor;
+
+                &:hover:not(:disabled) {
+                  background-color: color-mix(in srgb, currentColor 12%, transparent);
+                }
+              }
+            }
+          }
+        }
+
+        .coupon {
+          form {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-12);
+            border-radius: var(--radius-xs);
+            padding-inline: var(--spacing-12) var(--spacing-4);
+            border: 1px solid color-mix(in srgb, currentColor 38%, transparent);
+            transition: border-color var(--transition-standard-default-effects);
+
+            .icon {
+              padding-inline-end: var(--spacing-12);
+              border-inline-end: 1px solid color-mix(in srgb, currentColor 38%, transparent);
+            }
+
+            & > input {
+              flex: 2;
+              width: 100%;
+              border: none;
+              outline: none;
+              color: currentColor;
+              background-color: transparent;
+              padding-block: var(--spacing-12);
+
+              &::placeholder {
+                color: color-mix(in srgb, currentColor 50%, transparent);
+              }
+            }
+
+            & > [ui-button] {
+              color: currentColor;
+
+              &:hover:not(:disabled) {
+                background-color: color-mix(in srgb, currentColor 8%, transparent);
+              }
+            }
+
+            &:has(input:focus) {
+              border-color: currentColor;
+            }
+          }
         }
       }
 
@@ -158,6 +227,10 @@
           width: 100%;
         }
       }
+    }
+
+    &:has([ui-empty]:not([hidden])) {
+      grid-template-columns: 1fr;
     }
   }
 
