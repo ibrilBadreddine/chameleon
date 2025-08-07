@@ -3,9 +3,10 @@
 
   Accepts:
   - product: {Object} Cart item liquid object
+  - size: {String} Buttons size ("xss" | "md")
 
   Usage:
-  {% render 'ui-quantity' product: {...} %}
+  {% render 'ui-quantity' product: {...}, size: 'sm' %}
 {% endcomment %}
 
 {% assign quantity = 1 %}
@@ -23,13 +24,37 @@
   {% endif %}
   quantity="{{ quantity }}"
 >
-  <button ui-button data-variant="ghost" data-size="xxs" as-icon name="minus" aria-label="decrease">
+  <button
+    ui-button
+    type="button"
+    {% if size == 'md' %}
+      data-variant="tertiary"
+    {% else %}
+      data-variant="ghost"
+    {% endif %}
+    data-size="{{ size |  default: 'xxs' }}"
+    as-icon
+    name="minus"
+    aria-label="decrease"
+  >
     {% render 'ui-icon', name: 'remove' %}
   </button>
   <span ui-quantity-value class="value" ui-cart-item="quantity">
-    {{ product.quantity }}
+    {{ quantity }}
   </span>
-  <button ui-button data-variant="ghost" data-size="xxs" as-icon name="plus" aria-label="increase">
+  <button
+    ui-button
+    type="button"
+    {% if size == 'md' %}
+      data-variant="tertiary"
+    {% else %}
+      data-variant="ghost"
+    {% endif %}
+    data-size="{{ size |  default: 'xxs' }}"
+    as-icon
+    name="plus"
+    aria-label="increase"
+  >
     {% render 'ui-icon', name: 'add' %}
   </button>
 </ui-quantity>

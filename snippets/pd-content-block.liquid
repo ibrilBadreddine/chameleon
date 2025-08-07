@@ -12,10 +12,8 @@
 {% assign price = default_variant.price | default: product.price %}
 {% assign compare_at_price = default_variant.compare_at_price | default: product.compare_at_price %}
 
-{% assign info = 'Description|Elevate your dining experience with the Nordic Dining Chair, a perfect blend of timeless design and modern craftsmanship. Made from solid oak, this chair showcases the natural beauty of the wood with its smooth grain and warm finish. The ergonomic design ensures comfort for long meals and gatherings, while its minimalist silhouette complements any interior style.;Dimensions|Materials: Solid oak Finish: Natural matte Dimensions: W: 45 cm D: 50 cm H: 85 cm Seat Height: 47 cm Weight: 6 kg;Shipping a Returns|We ship your furniture securely within 14 business days. Delivery times vary by location, and tracking details are provided upon dispatch. International orders may incur customs fees.' %}
-
 <div block="pd-content">
-  <div class="general-info">
+  <form class="general-info" ui-order-form>
     <div class="price">
       <span class="original-price">{{ price | default: 0 | money }}</span>
       {% if compare_at_price %}
@@ -32,23 +30,26 @@
     {% if product.isTrackingInventory %}
       {% render 'ui-inventory-status', count: default_variant.inventory, threshold: 10 %}
     {% endif %}
-    {% render 'ui-express-checkout' %}
+    {% if settings.checkout_type == 'express' %}
+      {% render 'ui-express-checkout' %}
+    {% endif %}
     <div class="cta">
-      <div class="quantity">
-        <button ui-button data-variant="tertiary" data-size="md" as-icon aria-label="minus" disabled>
-          {% render 'ui-icon', name: 'remove' %}
-        </button>
-        <span class="value">1</span>
-        <button ui-button data-variant="tertiary" data-size="md" as-icon aria-label="plus">
-          {% render 'ui-icon', name: 'add' %}
-        </button>
-      </div>
+      {% render 'ui-quantity', product: product, size: 'md' %}
       {% if settings.checkout_type == 'express' %}
-        <button ui-button data-variant="primary" data-size="md" class="add-to-cart">
-          {{ 'product.buy_button.express_checkout.place_order' | t }}
-        </button>
+        <ui-product-button
+          quantity="1"
+          variant-id="{{ default_variant.id }}"
+          checkout-type="express"
+          {% unless product.available %}
+            not-available
+          {% endunless %}
+        >
+          <button ui-button data-variant="primary" data-size="md" class="add-to-cart">
+            {{ 'product.buy_button.express_checkout.place_order' | t }}
+          </button>
+        </ui-product-button>
       {% else %}
-        <button ui-button data-variant="primary" data-size="md" class="add-to-cart">Add to cart</button>
+        {% render 'ui-product-button', product: product %}
       {% endif %}
     </div>
     {% for block in section.blocks %}
@@ -61,7 +62,7 @@
         %}
       {% endif %}
     {% endfor %}
-  </div>
+  </form>
   {% render 'ui-accordion', name: product.id, items: section.blocks %}
 
   {% assign has_social = false %}

@@ -3,9 +3,10 @@
 
   Accepts:
   - product: {Object} Product info
+  - as_icon: {Boolean} Button style
 
   Usage:
-  {% render 'ui-product-button' %}
+  {% render 'ui-product-button', product: {...}, as_icon: false %}
 {% endcomment %}
 
 {% assign default_variant = product.selected_or_first_available_variant %}
@@ -24,16 +25,28 @@
   {% endif %}
 >
   {% if product.skip_to_checkout %}
-    {{ 'general.shop_now' | t }}
+    {% if as_icon %}
+      {{ 'general.shop_now' | t }}
+    {% else %}
+      <button ui-button data-variant="primary" data-size="md" class="add-to-cart">
+        {{ 'general.shop_now' | t }}
+      </button>
+    {% endif %}
   {% else %}
-    <button
-      ui-button
-      data-variant="primary"
-      data-size="sm"
-      as-icon
-      aria-label="{{ 'general.add_to_cart' | t }}"
-    >
-      {% render 'ui-icon', name: 'add' %}
-    </button>
+    {% if as_icon %}
+      <button
+        ui-button
+        data-variant="primary"
+        data-size="sm"
+        as-icon
+        aria-label="{{ 'general.add_to_cart' | t }}"
+      >
+        {% render 'ui-icon', name: 'add' %}
+      </button>
+    {% else %}
+      <button ui-button data-variant="primary" data-size="md" class="add-to-cart">
+        {{ 'general.add_to_cart' | t }}
+      </button>
+    {% endif %}
   {% endif %}
 </ui-product-button>

@@ -277,7 +277,6 @@ class CartItems extends BaseCartItem {
   }
 
   getCartItemElements(cartItem) {
-    console.log(cartItem.querySelectorAll("[ui-cart-item]"));
     const [image, title, variant, deleteButton, quantity, price, subtotal] = cartItem.querySelectorAll("[ui-cart-item]");
     return { image, title, variant, price, quantity, subtotal, deleteButton };
   }

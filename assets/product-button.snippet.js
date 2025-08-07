@@ -5,7 +5,7 @@ if (!customElements.get("ui-product-button")) {
     constructor() {
       super();
 
-      this.form = this.closest("[data-order-form]");
+      this.form = this.closest("[ui-order-form]");
       this.buyButton = this.querySelector("button");
     }
 
@@ -24,7 +24,7 @@ if (!customElements.get("ui-product-button")) {
         ? this.form.addEventListener("submit", this.onBuyClicked.bind(this))
         : this.buyButton.addEventListener("click", this.onBuyClicked.bind(this));
 
-      this.addEventListener("change", this.handleQuantityChange.bind(this));
+      this.previousElementSibling.addEventListener("change", this.handleQuantityChange.bind(this));
     }
 
     handleQuantityChange(event) {

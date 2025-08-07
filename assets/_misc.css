@@ -86,6 +86,10 @@
 
     &[as-icon] {
       width: 44px;
+
+      [ui-icon] {
+        --icon-size: 24px !important;
+      }
     }
   }
 

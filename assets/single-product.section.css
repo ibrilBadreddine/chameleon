@@ -88,6 +88,12 @@
             font: var(--font-body-lg);
           }
         }
+
+        ui-product-button {
+          [ui-button] {
+            width: 100%;
+          }
+        }
       }
     }
 

@@ -11,6 +11,15 @@ ui-express-checkout {
     display: grid;
     gap: var(--spacing-8);
 
+    &[error-message] {
+      &::after {
+        content: attr(error-message);
+        position: relative;
+        font: var(--font-body-sm);
+        color: var(--color-error);
+      }
+    }
+
     &:has(input:required, select:required, textarea:required) {
       [ui-express-checkout-label]::after {
         content: " *";
