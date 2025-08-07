@@ -24,11 +24,11 @@
     </div>
     <div class="main">
       <template ui-cart-drawer-item>
-        {% render 'ui-cart-drawer-item', product: product %}
+        {% render 'misc-cart-drawer-item', product: product %}
       </template>
       <ui-cart-drawer-items>
         {% for product in cart.items %}
-          {% render 'ui-cart-drawer-item', product: product %}
+          {% render 'misc-cart-drawer-item', product: product %}
         {% endfor %}
       </ui-cart-drawer-items>
       {% unless cart.count > 0 %}

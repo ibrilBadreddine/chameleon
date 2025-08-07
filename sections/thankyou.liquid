@@ -13,7 +13,7 @@
           <h4 class="id">Your order</h4>
           <span class="date-total">{{ 'now' | date: '%b %d, %Y' }} . {{ order.total | default: 0 | money }}</span>
         </div>
-        {% render 'ui-payment-status', status: order.paymentStatusSlug %}
+        {% render 'const-payment-status', status: order.paymentStatusSlug %}
       </div>
       <div class="summary-title">Products</div>
       <div class="order-info">
@@ -45,7 +45,7 @@
           <span class="label">{{ 'order.payment_method.label' | t }}:</span>
           <span class="value">
             {% assign payment_gateway = order.gatewayType %}
-            {% render 'ui-payment-gateway', type: payment_gateway %}
+            {% render 'const-payment-gateway', type: payment_gateway %}
           </span>
         </div>
       </div>
@@ -63,7 +63,7 @@
           <div class="item">
             <span class="label">{{ 'order.discount_amount' | t }}</span>
             <span class="value">
-              {% render 'ui-discount-value', coupon: order.coupon %}
+              {% render 'const-discount-value', coupon: order.coupon %}
             </span>
           </div>
         {% endif %}

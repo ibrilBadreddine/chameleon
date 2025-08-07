@@ -25,16 +25,16 @@
       <p class="subtitle">{{ product.description }}</p>
     </div>
     {% if product.options.size > 0 %}
-      {% render 'ui-variants' %}
+      {% render 'misc-variants' %}
     {% endif %}
     {% if product.isTrackingInventory %}
-      {% render 'ui-inventory-status', count: inventory_value, threshold: 10 %}
+      {% render 'const-inventory-status', count: inventory_value, threshold: 10 %}
     {% endif %}
     {% if settings.checkout_type == 'express' %}
-      {% render 'ui-express-checkout' %}
+      {% render 'core-express-checkout' %}
     {% endif %}
     <div class="cta">
-      {% render 'ui-quantity', product: product, size: 'md' %}
+      {% render 'core-quantity', product: product, size: 'md' %}
       {% if settings.checkout_type == 'express' %}
         <ui-product-button
           quantity="1"
@@ -49,7 +49,7 @@
           </button>
         </ui-product-button>
       {% else %}
-        {% render 'ui-product-button', product: product %}
+        {% render 'core-product-button', product: product %}
       {% endif %}
     </div>
     {% for block in section.blocks %}

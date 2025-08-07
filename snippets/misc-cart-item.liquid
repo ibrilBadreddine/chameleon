@@ -5,7 +5,7 @@
   - product: {Object} cart item info
 
   Usage:
-  {% render 'ui-cart-item', product: {...} %}
+  {% render 'misc-cart-item', product: {...} %}
 {% endcomment %}
 
 <div class="item">
@@ -61,7 +61,7 @@
       </ui-cart-remove>
     </div>
     <div class="bottom">
-      {% render 'ui-quantity', product: product %}
+      {% render 'core-quantity', product: product %}
       {% assign subtotal = product.quantity | times: product.price %}
       <span class="price" ui-cart-item="price" hidden>{{ product.price | default: 0 | money }}</span>
       <span class="price" ui-cart-item="subtotal">{{ subtotal | money }}</span>

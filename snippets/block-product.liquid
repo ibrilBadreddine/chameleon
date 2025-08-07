@@ -45,7 +45,7 @@
         </div>
       {% endif %}
       {% unless settings.checkout_type == 'express' or product.variants.size > 1 or product.skip_to_checkout %}
-        {% render 'ui-product-button', product: product, as_icon: true %}
+        {% render 'core-product-button', product: product, as_icon: true %}
       {% endunless %}
     </div>
     <div class="info">
@@ -55,7 +55,7 @@
           {{ 'general.buy_now' | t }}
         {% else %}
           {% if product.skip_to_checkout %}
-            {% render 'ui-product-button', product: product, as_icon: true %}
+            {% render 'core-product-button', product: product, as_icon: true %}
           {% endif %}
         {% endif %}
       </span>

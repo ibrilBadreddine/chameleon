@@ -5,7 +5,7 @@
   - fields: {Array} Checkout fields
 
   Usage:
-  {% render 'ui-express-checkout', name: [...] %}
+  {% render 'core-express-checkout', name: [...] %}
 {% endcomment %}
 
 {% assign linked_fields = 'country,region,city' %}
@@ -65,6 +65,6 @@
   {% endfor %}
 
   {% if has_linked_fields %}
-    {% render 'ui-linked-fields', fields: checkout.fields %}
+    {% render 'misc-linked-fields', fields: checkout.fields %}
   {% endif %}
 </ui-express-checkout>

@@ -5,7 +5,7 @@
   - product: {Object} product info
 
   Usage:
-  {% render 'ui-cart-drawer-item' %}
+  {% render 'misc-cart-drawer-item' %}
 {% endcomment %}
 
 <div class="item">
@@ -47,7 +47,7 @@
       <span class="price" ui-cart-item="price">{{ product.price | default: 0 | money }}</span>
     </div>
     <div class="actions">
-      {% render 'ui-quantity', product: product %}
+      {% render 'core-quantity', product: product %}
       <ui-cart-remove
         item="{{ product.id }}"
         product-variant="{{ product.product_variant_id }}"

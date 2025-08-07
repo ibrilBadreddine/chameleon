@@ -6,7 +6,7 @@
   <div class="section-head">
     <h2>{{ section.settings.title }}</h2>
     {% if template.name == 'product' %}
-      {% render 'ui-add-review', product_id: product.id %}
+      {% render 'misc-add-review', product_id: product.id %}
     {% endif %}
   </div>
   <ul class="section-core">
