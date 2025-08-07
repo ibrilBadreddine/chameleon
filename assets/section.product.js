@@ -36,7 +36,6 @@ if (!customElements.get("ui-product")) {
       const matchedVariant = this.productVariants.find((variant) => JSON.stringify(variant.variations) === JSON.stringify(this.selectedOptions));
 
       if (matchedVariant) await this.updateVariant(matchedVariant);
-      console.log(matchedVariant)
 
       this.disableUnavailableOptions();
     }

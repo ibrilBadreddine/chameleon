@@ -164,12 +164,12 @@
     {{ content_for_header }}
 
     <script src="https://unpkg.com/@youcan/js@latest/dist/index.umd.js" defer></script>
-    {{ 'toast.snippet.js' | asset_url | script_tag_deferred }}
+    {{ 'ui.toast.js' | asset_url | script_tag_deferred }}
     {{ '_global.js' | asset_url | script_tag_deferred }}
     {{ '_pubsub.js' | asset_url | script_tag_deferred }}
     {{ '_cart.js' | asset_url | script_tag_deferred }}
-    {{ 'product-button.snippet.js' | asset_url | script_tag_deferred }}
-    {{ 'drawer.snippet.js' | asset_url | script_tag_deferred }}
+    {{ 'core.product-button.js' | asset_url | script_tag_deferred }}
+    {{ 'ui.drawer.js' | asset_url | script_tag_deferred }}
 
     <script>
       window.errorStrings = {

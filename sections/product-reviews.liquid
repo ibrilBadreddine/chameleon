@@ -1,5 +1,5 @@
 {% if section.settings.product.id or product.id %}
-  {{ 'product-reviews.section.js' | asset_url | script_tag_deferred }}
+  {{ 'section.product-reviews.js' | asset_url | script_tag_deferred }}
 {% endif %}
 
 <ui-product-reviews section="product-reviews" product-id="{{ section.settings.product.id | default: product.id }}">
