@@ -67,6 +67,7 @@
     "title": "Merci pour votre commande !",
     "description": "Votre commande a bien été enregistrée et est en cours de traitement",
     "order_summary": "Récapitulatif de la Commande",
+    "your_order": "Votre commande",
     "status": {
       "label": "Statut",
       "paid": "Payé",
@@ -80,6 +81,8 @@
       "custom": "Personnalisé",
       "label": "Mode de paiement"
     },
+    "products": "Produits",
+    "payment": "Paiement",
     "subtotal": "Sous-total",
     "coupon_code": "Code promo",
     "discount_amount": "Réduction",
@@ -137,6 +140,9 @@
       "ratings": "Notes",
       "write_review": "Écrire un avis",
       "fields": {
+        "rating": {
+          "label": "Votre expérience vous a-t-elle satisfait(e) ?"
+        },
         "first_name": {
           "label": "Prénom",
           "placeholder": "Tapez votre prénom.."
@@ -187,9 +193,15 @@
   "success_messages": {
     "review_submitted": "Avis reçu, merci pour votre partage !"
   },
+  "header": {
+    "menu": {
+      "name": "Menu"
+    }
+  },
   "footer": {
     "copyright": {
-      "title": "© %. Tous droits réservés"
+      "title": "© Créé par",
+      "platform": "YouCan"
     }
   },
   "metadata": {
@@ -201,5 +213,13 @@
   },
   "accessibility": {
     "skip_to_content": "Aller au contenu"
+  },
+  "socials": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "snapchat": "Snapchat",
+    "tiktok": "TikTok",
+    "x": "X (Twitter)"
   }
 }

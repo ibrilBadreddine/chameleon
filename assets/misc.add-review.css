@@ -135,6 +135,10 @@ ui-add-review {
           position: relative;
           background: linear-gradient(90deg, var(--color-error) 0%, var(--color-star) 50%, var(--color-success) 100%);
 
+          &:dir(rtl) {
+            background: linear-gradient(-90deg, var(--color-error) 0%, var(--color-star) 50%, var(--color-success) 100%);
+          }
+
           & > span {
             height: 25px;
             z-index: 3;

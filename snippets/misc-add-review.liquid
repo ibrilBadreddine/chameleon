@@ -14,18 +14,18 @@
 <ui-add-review product-id="{{ product_id }}">
   <button ui-link ui-add-review-trigger>
     {% render 'ui-icon', name: 'add' %}
-    Add review
+    {{ 'product.reviews.write_review' | t }}
   </button>
   <div ui-add-review-content data-state="closed">
     <div class="head">
-      <h6 class="title">Add a review</h6>
+      <h6 class="title">{{ 'product.reviews.write_review' | t }}</h6>
       <button ui-button data-variant="secondary" data-size="sm" as-icon aria-label="close" ui-add-review-close>
         {% render 'ui-icon', name: 'close' %}
       </button>
     </div>
     <form class="core">
       <div class="field rating">
-        <label for="rating">How satisfied is your experience?</label>
+        <label for="rating">{{ 'product.reviews.fields.rating.label' | t }}</label>
         <div class="stars">
           {% for star in (1..5) %}
             <button
@@ -98,8 +98,12 @@
         ></textarea>
       </div>
       <div class="actions" ui-add-review-actions>
-        <button ui-button data-variant="secondary" data-size="md" type="button" ui-add-review-close>Cancel</button>
-        <button ui-button data-variant="primary" data-size="md" ui-add-review-submit>Submit</button>
+        <button ui-button data-variant="secondary" data-size="md" type="button" ui-add-review-close>
+          {{ 'product.reviews.actions.cancel' | t }}
+        </button>
+        <button ui-button data-variant="primary" data-size="md" ui-add-review-submit>
+          {{ 'product.reviews.actions.submit' | t }}
+        </button>
       </div>
     </form>
   </div>

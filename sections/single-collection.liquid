@@ -12,12 +12,12 @@
       {% render 'ui-icon', name: 'home' %}
     </a>
     <a href="/collections" ui-button data-variant="secondary" data-size="lg">
-      Collections
-      {% render 'ui-icon', name: 'arrow_right_alt' %}
+      {{ 'navigation.collections' | t }}
+      {% render 'ui-icon', name: 'arrow_right_alt', flip_in_rtl: true %}
     </a>
     <a href="/collections/{{ category.slug }}" ui-button data-variant="secondary" data-size="lg">
       {{ category.name }}
-      {% render 'ui-icon', name: 'arrow_right_alt' -%}
+      {% render 'ui-icon', name: 'arrow_right_alt', flip_in_rtl: true %}
     </a>
   </div>
 
@@ -31,7 +31,8 @@
         </ul>
         {% render 'ui-pagination', next_page_url: next_page, previous_page_url: previous_page, current: current, last: last, terms: terms %}
       {% else %}
-        {% render 'ui-empty', content: 'No results found (;-;)' %}
+        {% assign empty_content = 'single-collection.empty.title' | t %}
+        {% render 'ui-empty', content: empty_content %}
       {% endif %}
     </div>
   {% endpaginate %}

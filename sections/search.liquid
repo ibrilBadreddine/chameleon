@@ -5,13 +5,13 @@
     <div class="search-head">
       <h2 class="title">
         {% if terms == null or terms == '' %}
-          All products
+          {{ 'search.all_products' | t }}
         {% else %}
           "{{ terms | escape }}" <small>[{{ total }}]</small>
         {% endif %}
       </h2>
       {% if terms %}
-        <p class="description">Result for</p>
+        <p class="description">{{ 'search.heading' | t }}</p>
       {% endif %}
     </div>
     <div class="search-core">
@@ -23,7 +23,8 @@
         </ul>
         {% render 'ui-pagination', next_page_url: next_page, previous_page_url: previous_page, current: current, last: last, terms: terms %}
       {% else %}
-        {% render 'ui-empty', content: 'No results found (;-;)' %}
+        {% assign empty_content = 'search.empty.title' | t %}
+        {% render 'ui-empty', content: empty_content %}
       {% endif %}
     </div>
   </div>

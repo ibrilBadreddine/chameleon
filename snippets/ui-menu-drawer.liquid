@@ -6,10 +6,12 @@
 {% endcomment %}
 
 <ui-drawer class="menu">
-  <button class="drawer-trigger action" aria-expanded="false" aria-label="menu">Menu</button>
+  <button class="drawer-trigger action" aria-expanded="false" aria-label="menu">
+    {{ 'header.menu.name' | t }}
+  </button>
   <div class="drawer-content" data-state="closed">
     <div class="header">
-      <h6 class="title">Menu</h6>
+      <h6 class="title">{{ 'header.menu.name' | t }}</h6>
       <button ui-button data-variant="secondary" data-size="sm" as-icon aria-label="close">
         {% render 'ui-icon', name: 'close' %}
       </button>

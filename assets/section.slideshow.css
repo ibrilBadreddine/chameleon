@@ -94,6 +94,10 @@
       justify-content: center;
       transition: var(--transition-standard-default-effects);
 
+      &:dir(rtl) {
+        rotate: 180deg;
+      }
+
       &:active:not(:disabled) {
         scale: 0.95;
       }

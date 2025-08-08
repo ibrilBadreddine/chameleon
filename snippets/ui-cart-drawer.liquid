@@ -13,7 +13,7 @@
   <div class="drawer-content" data-state="closed">
     <div class="header">
       <h6 class="title">
-        Cart
+        {{ 'cart.drawer.title' | t }}
         <span class="total">
           (<ui-cart-bubble>{{ cart.count | default: 0 }}</ui-cart-bubble>)
         </span>
@@ -31,10 +31,11 @@
           {% render 'misc-cart-drawer-item', product: product %}
         {% endfor %}
       </ui-cart-drawer-items>
+      {% assign empty_cart_content = 'cart.empty.title' | t %}
       {% unless cart.count > 0 %}
-        {% render 'ui-empty', content: 'Cart is empty (;-;)' %}
+        {% render 'ui-empty', content: empty_cart_content %}
       {% else %}
-        {% render 'ui-empty', content: 'Cart is empty (;-;)', hidden: true %}
+        {% render 'ui-empty', content: empty_cart_content, hidden: true %}
       {% endunless %}
     </div>
     <div
@@ -45,10 +46,12 @@
       ui-cart-drawer-footer
     >
       <div class="info">
-        <span class="label">Subtotal</span>
+        <span class="label">{{ 'cart.drawer.total' | t }}</span>
         <span class="value" ui-cart-item="subtotal">{{ cart.sub_total | default: 0 | money }}</span>
       </div>
-      <a href="{{ routes.cart_url }}" ui-button data-variant="primary" data-size="md" class="checkout">Checkout</a>
+      <a href="{{ routes.cart_url }}" ui-button data-variant="primary" data-size="md" class="checkout">
+        {{ 'cart.drawer.actions.go_to_cart' | t }}
+      </a>
     </div>
   </div>
 </ui-drawer>

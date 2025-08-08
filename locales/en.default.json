@@ -66,6 +66,7 @@
   "order": {
     "title": "Thank you for your purchase!",
     "description": "Your order has been received and is being processed",
+    "your_order": "Your order",
     "status": {
       "label": "Status",
       "paid": "Paid",
@@ -80,6 +81,8 @@
       "cod": "Cash on Delivery",
       "custom": "Custom"
     },
+    "products": "Products",
+    "payment": "Payment",
     "subtotal": "Subtotal",
     "coupon_code": "Coupon Code",
     "discount_amount": "Discount Amount",
@@ -137,6 +140,9 @@
       "ratings": "Ratings",
       "write_review": "Write a review",
       "fields": {
+        "rating": {
+          "label": "How satisfied is your experience?"
+        },
         "first_name": {
           "label": "First name",
           "placeholder": "Type your first name.."
@@ -187,9 +193,15 @@
   "success_messages": {
     "review_submitted": "Review received, thank you for sharing!"
   },
+  "header": {
+    "menu": {
+      "name": "Menu"
+    }
+  },
   "footer": {
     "copyright": {
-      "title": "© %. All rights reserved"
+      "title": "© Made by",
+      "platform": "YouCan"
     }
   },
   "metadata": {
@@ -201,5 +213,13 @@
   },
   "accessibility": {
     "skip_to_content": "Skip to content"
+  },
+  "socials": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "snapchat": "Snapchat",
+    "tiktok": "TikTok",
+    "x": "X (Twitter)"
   }
 }

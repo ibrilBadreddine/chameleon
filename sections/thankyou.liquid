@@ -12,12 +12,12 @@
     <div class="order-summary">
       <div class="summary-head">
         <div class="info">
-          <h4 class="id">Your order</h4>
+          <h4 class="id">{{ 'order.your_order' | t }}</h4>
           <span class="date-total">{{ 'now' | date: '%b %d, %Y' }} . {{ order.total | default: 0 | money }}</span>
         </div>
         {% render 'const-payment-status', status: order.paymentStatusSlug %}
       </div>
-      <div class="summary-title">Products</div>
+      <div class="summary-title">{{ 'order.products' | t }}</div>
       <div class="order-info">
         {% for product in order.order_variants %}
           <div class="product">
@@ -41,7 +41,7 @@
           </div>
         {% endfor %}
       </div>
-      <div class="summary-title">Payment</div>
+      <div class="summary-title">{{ 'order.payment' | t }}</div>
       <div class="order-info">
         <div class="item">
           <span class="label">{{ 'order.payment_method.label' | t }}:</span>
@@ -90,7 +90,7 @@
         </div>
         <a href="{{ routes.root_url |  default: "/" }}" ui-button data-variant="primary" data-size="md">
           {{ 'order.action' | t }}
-          {% render 'ui-icon', name: 'arrow_right_alt' %}
+          {% render 'ui-icon', name: 'arrow_right_alt', flip_in_rtl: true %}
         </a>
       </div>
     </div>

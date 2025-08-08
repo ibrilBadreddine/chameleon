@@ -2,8 +2,7 @@
 
 <div section="cart" theme="{{ section.settings.theme }}">
   <div class="cart-head">
-    <h2 class="title">Your shopping cart</h2>
-    <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, iusto?</p>
+    <h2 class="title">{{ 'cart.page.title' | t }}</h2>
   </div>
   <div class="cart-core">
     <template ui-cart-item>
@@ -92,14 +91,15 @@
       <div class="cta">
         <a href="{{ cart.cart_submit_url }}" ui-button data-variant="secondary" data-size="md">
           {{ 'cart.page.summary.checkout_button' | t }}
-          {% render 'ui-icon', name: 'arrow_right_alt' %}
+          {% render 'ui-icon', name: 'arrow_right_alt', flip_in_rtl: true %}
         </a>
       </div>
     </ui-summary-box>
     {% if cart.items.size > 0 %}
-      {% render 'ui-empty', content: 'Cart is empty (;-;)', hidden: true %}
+      {% assign empty_content = 'cart.empty.title' | t %}
+      {% render 'ui-empty', content: empty_content, hidden: true %}
     {% else %}
-      {% render 'ui-empty', content: 'Cart is empty (;-;)' %}
+      {% render 'ui-empty', content: empty_content %}
     {% endif %}
   </div>
 </div>

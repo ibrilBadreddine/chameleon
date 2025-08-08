@@ -66,6 +66,7 @@
   "order": {
     "title": "شكراً لطلبك!",
     "description": "تم تأكيد طلبك وجاري تجهيزه",
+    "your_order": "طلبك",
     "status": {
       "label": "الحالة",
       "paid": "مدفوع",
@@ -80,6 +81,8 @@
       "custom": "مخصص",
       "label": "طريقة الدفع"
     },
+    "products": "المنتجات",
+    "payment": "الدفع",
     "subtotal": "المجموع الفرعي",
     "coupon_code": "رمز القسيمة",
     "discount_amount": "قيمة الخصم",
@@ -137,6 +140,9 @@
       "ratings": "تقييمات",
       "write_review": "اكتب تقييمًا",
       "fields": {
+        "rating": {
+          "label": "ما مدى رضاك عن تجربتك؟"
+        },
         "first_name": {
           "label": "الاسم الأول",
           "placeholder": "اكتب اسمك الأول.."
@@ -187,9 +193,15 @@
   "success_messages": {
     "review_submitted": "تم استلام التقييم، شكراً لمشاركتكم!"
   },
+  "header": {
+    "menu": {
+      "name": "القائمة"
+    }
+  },
   "footer": {
     "copyright": {
-      "title": "© %. جميع الحقوق محفوظة"
+      "title": "© تصميم",
+      "platform": "يوكان"
     }
   },
   "metadata": {
@@ -201,5 +213,13 @@
   },
   "accessibility": {
     "skip_to_content": "تجاوز إلى المحتوى"
+  },
+  "socials": {
+    "facebook": "فيسبوك",
+    "instagram": "انستغرام",
+    "whatsapp": "واتساب",
+    "snapchat": "سناب شات",
+    "tiktok": "تيك توك",
+    "x": "إكس (تويتر)"
   }
 }

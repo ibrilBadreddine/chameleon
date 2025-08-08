@@ -27,10 +27,23 @@
       inset-inline-end: 0;
     }
 
+    &:dir(rtl) {
+      &::before,
+      &::after {
+        rotate: 180deg;
+      }
+    }
+
     .marquee {
+      --scroll-direction: -50%;
+
       display: flex;
       width: fit-content;
       animation: scroll-start 15s linear infinite;
+
+      &:dir(rtl) {
+        --scroll-direction: 50%;
+      }
     }
 
     .bar-wrapper {
@@ -98,7 +111,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(var(--scroll-direction));
   }
 }
 
