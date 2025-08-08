@@ -1,5 +1,16 @@
 {
   "common": {
+    "theme": {
+      "label": "Thème",
+      "contrast": {
+        "low": "Primaire (faible contraste)",
+        "high": "Primaire (fort contraste)",
+        "neutral": "Neutre"
+      }
+    },
+    "heading": "En-tête",
+    "subheading": "Sous-titre",
+    "image": "Image",
     "colors": {
       "text_color": "Couleur du texte",
       "background_color": "Couleur d'arrière-plan"
@@ -31,7 +42,8 @@
     },
     "content": {
       "title": "Titre",
-      "description": "Description"
+      "description": "Description",
+      "text": "Contenu"
     },
     "position": {
       "header_position": "Position de l'en-tête",
@@ -58,6 +70,7 @@
     },
     "buttons": {
       "button_text": "Texte du bouton",
+      "button_link": "Lien du bouton",
       "button_background": "Arrière-plan du bouton"
     },
     "screens": {
@@ -280,6 +293,48 @@
       "title_default": "Produits associés",
       "description_default": "Produits qui pourraient aussi vous plaire"
     },
+    "benefits": {
+      "label": "Bénéfices",
+      "blocks": {
+        "benefit": {
+          "label": "Bénéfice",
+          "icon": "Icône",
+          "content": "Contenu",
+          "icon_source": "Vous pouvez utiliser librement [Google Icons](https://fonts.google.com/icons)"
+        }
+      }
+    },
+    "faq": {
+      "label": "FAQ",
+      "blocks": {
+        "label": "FAQ",
+        "question": "Question",
+        "answer": "Répondre"
+      }
+    },
+    "product_details": {
+      "label": "Détails du produit",
+      "blocks": {
+        "label": "Détail"
+      }
+    },
+    "socials": {
+      "label": "Réseaux sociaux",
+      "blocks": {
+        "label": "Article",
+        "social_name": "Nom",
+        "social_link": "Lien",
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "whatsapp": "WhatsApp",
+        "snapchat": "Snapchat",
+        "tiktok": "TikTok",
+        "x": "X (Twitter)"
+      }
+    },
+    "about_us": {
+      "label": "À propos"
+    },
     "search": {
       "label": "Recherche"
     },
@@ -360,7 +415,8 @@
           "subheading_default": "Une image vaut mille mots",
           "button_link": "Lien du bouton",
           "desktop_image": "🖥️ Image du bureau",
-          "mobile_image": "📱 Image mobile"
+          "mobile_image": "📱 Image mobile",
+          "image": "Image"
         }
       }
     },

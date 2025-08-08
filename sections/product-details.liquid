@@ -36,7 +36,7 @@
 
 {% schema %}
 {
-  "label": "Product Details",
+  "label": "t:sections.product_details.label",
   "limit": 3,
   "max_blocks": 2,
   "settings": [
@@ -50,24 +50,24 @@
   "blocks": [
     {
       "type": "detail",
-      "label": "Detail",
+      "label": "t:sections.product_details.blocks.label",
       "settings": [
         {
           "id": "heading",
           "type": "text",
-          "label": "Heading",
+          "label": "t:common.heading",
           "default": "Heading"
         },
         {
           "id": "description",
           "type": "text",
-          "label": "Description",
+          "label": "t:common.content.description",
           "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur possimus non ipsa esse iure ratione aperiam consectetur doloremque accusantium necessitatibus."
         },
         {
           "id": "image",
           "type": "image_picker",
-          "label": "Image"
+          "label": "t:common.image"
         }
       ]
     }

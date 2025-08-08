@@ -95,8 +95,8 @@
         </a>
       </div>
     </ui-summary-box>
+    {% assign empty_content = 'cart.empty.title' | t %}
     {% if cart.items.size > 0 %}
-      {% assign empty_content = 'cart.empty.title' | t %}
       {% render 'ui-empty', content: empty_content, hidden: true %}
     {% else %}
       {% render 'ui-empty', content: empty_content %}
@@ -106,24 +106,24 @@
 
 {% schema %}
 {
-  "label": "Cart",
+  "label": "t:sections.cart.label",
   "settings": [
     {
       "type": "select",
       "id": "theme",
-      "label": "Theme",
+      "label": "t:common.theme.label",
       "options": [
         {
           "value": "primary-low",
-          "label": "Primary (low contrast)"
+          "label": "t:common.theme.contrast.low"
         },
         {
           "value": "primary-high",
-          "label": "Primary (high contrast)"
+          "label": "t:common.theme.contrast.high"
         },
         {
           "value": "neutral",
-          "label": "Neutral"
+          "label": "t:common.theme.contrast.neutral"
         }
       ],
       "default": "primary-low"

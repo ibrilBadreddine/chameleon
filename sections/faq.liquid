@@ -34,7 +34,7 @@
 
 {% schema %}
 {
-  "label": "FAQ",
+  "label": "t:sections.faq.label",
   "templates": ["index", "product", "page"],
   "limit": 1,
   "max_blocks": 8,
@@ -48,36 +48,36 @@
     {
       "id": "heading",
       "type": "text",
-      "label": "Heading",
+      "label": "t:common.heading",
       "default": "Heading"
     },
     {
       "id": "subheading",
       "type": "text",
-      "label": "Subheading",
+      "label": "t:common.subheading",
       "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur possimus non ipsa esse iure ratione aperiam consectetur doloremque accusantium necessitatibus."
     },
     {
       "id": "image",
       "type": "image_picker",
-      "label": "Image"
+      "label": "t:common.image"
     }
   ],
   "blocks": [
     {
       "type": "faq",
-      "label": "FAQ",
+      "label": "t:sections.faq.blocks.label",
       "settings": [
         {
           "id": "question",
           "type": "text",
-          "label": "Question",
+          "label": "t:sections.faq.blocks.question",
           "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
         },
         {
           "id": "answer",
           "type": "text",
-          "label": "Answer",
+          "label": "t:sections.faq.blocks.answer",
           "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias impedit illo quam culpa rem eius, eveniet sunt beatae officia consequuntur."
         }
       ]

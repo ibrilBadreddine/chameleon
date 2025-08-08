@@ -1,5 +1,16 @@
 {
   "common": {
+    "theme": {
+      "label": "Theme",
+      "contrast": {
+        "low": "Primary (low contrast)",
+        "high": "Primary (high contrast)",
+        "neutral": "Neutral"
+      }
+    },
+    "heading": "Heading",
+    "subheading": "Subheading",
+    "image": "Image",
     "colors": {
       "text_color": "Text color",
       "background_color": "Background color"
@@ -31,7 +42,8 @@
     },
     "content": {
       "title": "Title",
-      "description": "Description"
+      "description": "Description",
+      "text": "Content"
     },
     "position": {
       "header_position": "Header position",
@@ -58,6 +70,7 @@
     },
     "buttons": {
       "button_text": "Button text",
+      "button_link": "Button link",
       "button_background": "Button background"
     },
     "screens": {
@@ -280,6 +293,48 @@
       "title_default": "Related Products",
       "description_default": "Products you may also like"
     },
+    "benefits": {
+      "label": "Benefits",
+      "blocks": {
+        "benefit": {
+          "label": "Benefit",
+          "icon": "Icon",
+          "content": "Content",
+          "icon_source": "Feel free to use [Google Icons](https://fonts.google.com/icons)"
+        }
+      }
+    },
+    "faq": {
+      "label": "FAQ",
+      "blocks": {
+        "label": "FAQ",
+        "question": "Question",
+        "answer": "Answer"
+      }
+    },
+    "product_details": {
+      "label": "Product details",
+      "blocks": {
+        "label": "Detail"
+      }
+    },
+    "socials": {
+      "label": "Socials",
+      "blocks": {
+        "label": "Social item",
+        "social_name": "Social name",
+        "social_link": "Social link",
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "whatsapp": "WhatsApp",
+        "snapchat": "Snapchat",
+        "tiktok": "TikTok",
+        "x": "X (Twitter)"
+      }
+    },
+    "about_us": {
+      "label": "About us"
+    },
     "search": {
       "label": "Search"
     },
@@ -360,7 +415,8 @@
           "subheading_default": "An image is worth a thousand words",
           "button_link": "Button link",
           "desktop_image": "🖥️ Desktop image",
-          "mobile_image": "📱 Mobile image"
+          "mobile_image": "📱 Mobile image",
+          "image": "Image"
         }
       }
     },

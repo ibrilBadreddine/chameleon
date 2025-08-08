@@ -1,19 +1,21 @@
-{{ 'section.related-products.css' | asset_url | stylesheet_tag }}
+{% if product.related_products %}
+  {{ 'section.related-products.css' | asset_url | stylesheet_tag }}
 
-<div section="related-products">
-  <div class="section-head">
-    <h2>{{ section.settings.title }}</h2>
+  <div section="related-products">
+    <div class="section-head">
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+    <ul class="section-core">
+      {% for product in product.related_products %}
+        {% render 'block-product', product: product %}
+      {% endfor %}
+    </ul>
   </div>
-  <ul class="section-core">
-    {% for block in section.blocks %}
-      {% render 'block-product', product: block.settings.product, badge: block.settings.badge %}
-    {% endfor %}
-  </ul>
-</div>
+{% endif %}
 
 {% schema %}
 {
-  "label": "Related products",
+  "label": "t:sections.related_products.label",
   "templates": ["product"],
   "limit": 3,
   "settings": [
@@ -22,24 +24,6 @@
       "type": "text",
       "label": "t:common.content.title",
       "default": "Related products"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "product",
-      "label": "t:common.blocks.product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "t:common.collection.label"
-        },
-        {
-          "type": "text",
-          "id": "badge",
-          "label": "Badge"
-        }
-      ]
     }
   ]
 }

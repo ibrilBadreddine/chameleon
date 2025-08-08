@@ -13,7 +13,7 @@
 
 {% schema %}
 {
-  "label": "Products",
+  "label": "t:sections.products.label",
   "templates": ["index", "product"],
   "limit": 3,
   "max_blocks": 24,
@@ -28,17 +28,17 @@
   "blocks": [
     {
       "type": "product",
-      "label": "t:common.blocks.product",
+      "label": "t:sections.products.blocks.product.label",
       "settings": [
         {
           "type": "product",
           "id": "product",
-          "label": "t:common.collection.label"
+          "label": "t:sections.products.blocks.product.label"
         },
         {
           "type": "text",
           "id": "badge",
-          "label": "Badge"
+          "label": "t:sections.products.blocks.product.badge_text"
         }
       ]
     }
