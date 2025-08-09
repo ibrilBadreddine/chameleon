@@ -1,8 +1,8 @@
 {
-  "name": "cameleon",
+  "name": "chameleon",
   "type": "module",
   "version": "0.1.0",
-  "description": "A mobile-first, lightweight, and minimal theme",
+  "description": "Modern look, easy theming, light and dark modes, fully accessible",
   "author": {
     "name": "YouCan",
     "url": "https://youcan.shop"
@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/youcan-shop/origins"
+    "url": "https://github.com/youcan-shop/chameleon"
   },
   "scripts": {
     "postcss": "postcss ./.temp/*.css --dir ./assets",
