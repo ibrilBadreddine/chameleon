@@ -97,6 +97,14 @@
           }
         }
       }
+
+      &:has(.item:nth-child(4)):not(:has(.item:nth-child(5))) {
+        grid-template-columns: repeat(4, 1fr);
+
+        .item {
+          grid-column: auto;
+        }
+      }
     }
   }
 }
@@ -107,6 +115,14 @@
     .all-collections-head {
       padding: calc(var(--spacing-24) + var(--spacing-8));
     }
+
+    .all-collections-core {
+      .items {
+        &:has(.item:nth-child(4)):not(:has(.item:nth-child(5))) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
   }
 }
 
@@ -115,7 +131,7 @@
   [section="all-collections"] {
     .all-collections-core {
       .items {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
 
         .item {
           grid-column: auto !important;

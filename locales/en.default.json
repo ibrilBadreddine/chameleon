@@ -221,5 +221,9 @@
     "snapchat": "Snapchat",
     "tiktok": "TikTok",
     "x": "X (Twitter)"
+  },
+  "whatsapp": {
+    "title": "Need help chat with us",
+    "subtitle": "Customer support"
   }
 }

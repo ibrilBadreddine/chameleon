@@ -221,5 +221,9 @@
     "snapchat": "Snapchat",
     "tiktok": "TikTok",
     "x": "X (Twitter)"
+  },
+  "whatsapp": {
+    "title": "Besoin d’aide ? Discutez avec nous",
+    "subtitle": "Service client"
   }
 }
