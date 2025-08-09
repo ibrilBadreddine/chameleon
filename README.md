@@ -26,7 +26,7 @@ youcan auth login
 3. Initialize the starter theme:
 
 ```bash
-youcan theme init
+youcan theme:init -i
 ```
 
 > YouCan CLI uploads this theme as a development version to the store you're connected to, ready for further modifications in your local code editor.
@@ -34,7 +34,7 @@ youcan theme init
 4. Start the Development Server:
 
 ```bash
-youcan theme dev
+pnpm run dev
 ```
 
 For detailed instructions, visit the [YouCan Theme Get Started Guide](https://developer.youcan.shop/themes/get_started).
