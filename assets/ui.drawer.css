@@ -3,6 +3,8 @@ ui-drawer {
 
   /* Trigger */
   .drawer-trigger {
+    font: var(--font-body-md);
+
     /* Overlay */
     &:has(+ .drawer-content[data-state="open"]) {
       &::before {
