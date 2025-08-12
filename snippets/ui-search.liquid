@@ -9,7 +9,7 @@
 
 <ui-search role="search">
   <button class="search-trigger action" aria-label="search">
-    {% render 'ui-icon', name: 'search', size: 20 %}
+    {% render 'ui-icon', name: 'search' %}
   </button>
   <label class="search-content" data-state="closed">
     {% render 'ui-icon', name: 'search' %}
@@ -17,7 +17,7 @@
       <input type="text" name="q" placeholder="{{ 'general.search' | t }}">
     </form>
     <button aria-label="close">
-      {% render 'ui-icon', name: 'cancel', size: 20, filled: true %}
+      {% render 'ui-icon', name: 'cancel', filled: true %}
     </button>
   </label>
 </ui-search>
