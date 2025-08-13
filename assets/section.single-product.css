@@ -126,7 +126,8 @@
 
   /* Media */
   [block="pd-media"] {
-    position: relative;
+    position: sticky;
+    inset-block-start: var(--spacing-12);
     border-radius: var(--radius-md);
     overflow: hidden scroll;
     scroll-behavior: smooth;
@@ -242,6 +243,11 @@
 @media (max-width: 1024px) {
   [section="single-product"] {
     grid-template-columns: 1fr;
+
+    [block="pd-media"] {
+      position: relative;
+      inset-block-start: auto;
+    }
   }
 }
 

@@ -2,6 +2,10 @@
   display: grid;
   gap: var(--spacing-12);
 
+  &:not(:has([ui-accordion-item])) {
+    display: none;
+  }
+
   [ui-accordion-item] {
     & > label {
       display: grid;
