@@ -107,6 +107,13 @@
           }
         }
       }
+
+      article {
+        img,
+        iframe {
+          max-width: 100%;
+        }
+      }
     }
 
     .social-info {
