@@ -10,6 +10,18 @@
     }
   }
 
+  &:has(.section-core > :last-child:is(template)) {
+    gap: var(--spacing-0);
+
+    .section-head {
+      background-color: transparent;
+
+      h2 {
+        display: none;
+      }
+    }
+  }
+
   .section-core {
     display: grid;
     gap: var(--spacing-12);
@@ -140,6 +152,12 @@
     .section-head {
       &:has(ui-add-review) {
         justify-content: space-between;
+      }
+    }
+
+    &:has(.section-core > :last-child:is(template)) {
+      .section-head {
+        justify-content: center;
       }
     }
 
