@@ -10,7 +10,7 @@ if (!customElements.get("ui-product")) {
 
       this.variants = [...this.querySelectorAll("[ui-variant]")];
       this.productForm = this.querySelector("ui-product-button");
-      this.productMedia = this.firstElementChild;
+      this.productMedia = this.querySelector("ui-media");
       this.productVariants = window.productsVariants[this.getAttribute("product-id")];
     }
 
@@ -54,8 +54,8 @@ if (!customElements.get("ui-product")) {
     }
 
     updateProduct(price, compare_at_price) {
-      const priceElement = this.querySelector("[data-product-item='price']");
-      const compareAtPriceElement = this.querySelector("[data-product-item='compare-at-price']");
+      const priceElement = this.querySelector("[ui-product-item='price']");
+      const compareAtPriceElement = this.querySelector("[ui-product-item='compare-at-price']");
 
       if (!priceElement) return;
 
@@ -91,16 +91,11 @@ if (!customElements.get("ui-product")) {
     }
 
     updateMainImage(image_src) {
-      const gallery = this.productMedia.querySelector("[data-gallery]");
+      if (!this.productMedia) return;
 
-      if (!gallery) return;
-
-      gallery.querySelectorAll("img").forEach((element) => {
+      this.productMedia.querySelectorAll("[ui-media-images] img").forEach((element, i) => {
         if (element.src === image_src) {
-          const input = element.previousElementSibling;
-
-          input.checked = true;
-          this.productMedia.updateMainImage(input.value, element.src);
+          this.productMedia.move(i, matchMedia("(max-width: 769px)").matches ? "left" : "top");
         }
       });
     }
