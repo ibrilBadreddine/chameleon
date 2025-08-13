@@ -22,7 +22,6 @@
     </div>
     <div class="about">
       <h1 class="title">{{ product.name }}</h1>
-      <p class="subtitle">{{ product.description }}</p>
     </div>
     {% if product.options.size > 0 %}
       {% render 'misc-variants' %}
@@ -63,6 +62,11 @@
       {% endif %}
     {% endfor %}
   </form>
+  {% if product.description %}
+    <div class="general-info">
+      <article>{{ product.description }}</article>
+    </div>
+  {% endif %}
   {% render 'ui-accordion', name: product.id, items: section.blocks %}
 
   {% assign has_social = false %}
