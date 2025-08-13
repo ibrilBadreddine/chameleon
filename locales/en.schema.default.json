@@ -6,6 +6,26 @@
         "low": "Primary (low contrast)",
         "high": "Primary (high contrast)",
         "neutral": "Neutral"
+      },
+      "note": "You can play with the contrast of section colors while keeping your brand color. Neutral just makes everything B&W."
+    },
+    "theme_settings": {
+      "primary_color": {
+        "label": "Primary color",
+        "note": "Pick your brand color and get an automatic, accessible color palette for your store."
+      },
+      "theme_mode": {
+        "label": "Theme mode",
+        "options": {
+          "light": "Light",
+          "dark": "Dark",
+          "auto": "Auto"
+        },
+        "note": "Pick \"Light\" or \"Dark\" to lock the mode for customers, or \"Auto\" to let them switch with a toggle."
+      },
+      "global_theme_style": {
+        "label": "Enable global theme style",
+        "note": "This setting overrides per section theme styles, with the option to revert by turning it off."
       }
     },
     "heading": "Heading",

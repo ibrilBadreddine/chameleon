@@ -1,6 +1,13 @@
 {{ 'section.cart.css' | asset_url | stylesheet_tag }}
 
-<div section="cart" theme="{{ section.settings.theme }}">
+<div
+  section="cart"
+  {% if settings.enable_global_theme_style %}
+    theme="{{ settings.theme_style }}"
+  {% else %}
+    theme="{{ section.settings.theme }}"
+  {% endif %}
+>
   <div class="cart-head">
     <h2 class="title">{{ 'cart.page.title' | t }}</h2>
   </div>

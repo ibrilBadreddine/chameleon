@@ -6,6 +6,26 @@
         "low": "Primaire (faible contraste)",
         "high": "Primaire (fort contraste)",
         "neutral": "Neutre"
+      },
+      "note": "Ajustez le contraste des sections tout en conservant la couleur de votre marque. Le mode neutre transforme tout en noir et blanc."
+    },
+    "theme_settings": {
+      "primary_color": {
+        "label": "Couleur primaire",
+        "note": "Choisissez la couleur de votre marque et obtenez automatiquement une palette de couleurs accessible pour votre boutique."
+      },
+      "theme_mode": {
+        "label": "Mode thème",
+        "options": {
+          "light": "Clair",
+          "dark": "Sombre",
+          "auto": "Auto"
+        },
+        "note": "Choisissez \"Clair\" ou \"Sombre\" pour verrouiller le mode pour vos clients, ou \"Auto\" pour leur permettre de changer via un bouton."
+      },
+      "global_theme_style": {
+        "label": "Activer le style de thème global ",
+        "note": "Ce paramètre remplace les styles de thème de chaque section, avec la possibilité de revenir en arrière en le désactivant."
       }
     },
     "heading": "En-tête",

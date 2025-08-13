@@ -1,6 +1,13 @@
 {{ 'section.collections.css' | asset_url | stylesheet_tag }}
 
-<div section="collections" theme="{{ section.settings.theme }}">
+<div
+  section="collections"
+  {% if settings.enable_global_theme_style %}
+    theme="{{ settings.theme_style }}"
+  {% else %}
+    theme="{{ section.settings.theme }}"
+  {% endif %}
+>
   <div class="section-head">
     <h2>{{ section.settings.title }}</h2>
   </div>

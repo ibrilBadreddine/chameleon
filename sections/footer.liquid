@@ -1,4 +1,11 @@
-<footer layout="footer" theme="{{ section.settings.theme }}">
+<footer
+  layout="footer"
+  {% if settings.enable_global_theme_style %}
+    theme="{{ settings.theme_style }}"
+  {% else %}
+    theme="{{ section.settings.theme }}"
+  {% endif %}
+>
   <div class="general">
     <div class="store">
       <a href="#" class="logo">

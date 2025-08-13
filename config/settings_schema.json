@@ -1,32 +1,74 @@
 [
   {
-    "label": "Theme",
+    "label": "t:common.theme.label",
     "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:common.theme_settings.primary_color.note"
+      },
       {
         "type": "color",
         "id": "primary_color",
-        "label": "Primary color",
+        "label": "t:common.theme_settings.primary_color.label",
         "default": "#2d6a4f"
       },
       {
+        "type": "paragraph",
+        "content": "t:common.theme_settings.theme_mode.note"
+      },
+      {
         "type": "select",
-        "id": "them_mode",
-        "label": "Theme mode",
+        "id": "theme_mode",
+        "label": "t:common.theme_settings.theme_mode.label",
         "options": [
           {
             "value": "light",
-            "label": "Light"
+            "label": "t:common.theme_settings.theme_mode.options.light"
           },
           {
             "value": "dark",
-            "label": "Dark"
+            "label": "t:common.theme_settings.theme_mode.options.dark"
           },
           {
             "value": "auto",
-            "label": "Auto"
+            "label": "t:common.theme_settings.theme_mode.options.auto"
           }
         ],
         "default": "light"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:common.theme.note"
+      },
+      {
+        "type": "select",
+        "id": "theme_style",
+        "label": "t:common.theme.label",
+        "options": [
+          {
+            "value": "primary-low",
+            "label": "t:common.theme.contrast.low"
+          },
+          {
+            "value": "primary-high",
+            "label": "t:common.theme.contrast.high"
+          },
+          {
+            "value": "neutral",
+            "label": "t:common.theme.contrast.neutral"
+          }
+        ],
+        "default": "primary-low"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:common.theme_settings.global_theme_style.note"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_global_theme_style",
+        "label": "t:common.theme_settings.global_theme_style.label",
+        "default": false
       }
     ]
   },
