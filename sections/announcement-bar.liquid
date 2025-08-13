@@ -1,4 +1,11 @@
-<div layout="announcement-bar" theme="{{ section.settings.theme }}">
+<div
+  layout="announcement-bar"
+  {% if settings.enable_global_theme_style %}
+    theme="{{ settings.theme_style }}"
+  {% else %}
+    theme="{{ section.settings.theme }}"
+  {% endif %}
+>
   <div class="marquee-container">
     <div class="marquee">
       {% for _ in (1..2) %}
