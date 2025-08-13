@@ -21,7 +21,7 @@
           "dark": "Dark",
           "auto": "Auto"
         },
-        "note": "Pick \"Light\" or \"Dark\" to lock the mode for customers, or \"Auto\" to let them switch with a toggle."
+        "note": "Pick «Light» or «Dark» to lock the mode for customers, or «Auto» to let them switch with a toggle."
       },
       "global_theme_style": {
         "label": "Enable global theme style",

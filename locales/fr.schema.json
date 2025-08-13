@@ -21,7 +21,7 @@
           "dark": "Sombre",
           "auto": "Auto"
         },
-        "note": "Choisissez \"Clair\" ou \"Sombre\" pour verrouiller le mode pour vos clients, ou \"Auto\" pour leur permettre de changer via un bouton."
+        "note": "Choisissez «Clair» ou «Sombre» pour verrouiller le mode pour vos clients, ou «Auto» pour leur permettre de changer via un bouton."
       },
       "global_theme_style": {
         "label": "Activer le style de thème global ",
