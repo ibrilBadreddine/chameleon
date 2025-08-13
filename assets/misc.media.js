@@ -3,6 +3,7 @@ if (!customElements.get("ui-media")) {
     constructor() {
       super();
       this.index = 0;
+      this.scrollRAF = null;
     }
 
     connectedCallback() {
@@ -34,33 +35,49 @@ if (!customElements.get("ui-media")) {
     }
 
     setPosition(dir) {
-      (this.isDirectionTop(dir) ? this : this.imgWrapper).scrollTo({
-        [dir]: this.isDirectionTop(dir) ? window.innerHeight * 0.85 * this.index : window.innerWidth * this.index,
-      });
+      const el = this.isDirectionTop(dir) ? this : this.imgWrapper;
+      const size = this.isDirectionTop(dir) ? el.clientHeight : el.clientWidth;
+
+      el.scrollTo({ [dir]: size * this.index * (1 | -this.isRTL()) });
     }
 
     setState() {
       for (const pages of this.pagination) {
-        pages.forEach((page, i) => page.setAttribute("aria-selected", i === this.index));
+        pages.forEach((page, i) => page.setAttribute("aria-selected", String(i === this.index)));
       }
     }
 
     setIndex(index) {
-      this.index = index;
+      const max = Math.max(0, this.images.length - 1);
+      this.index = Math.min(Math.max(0, index), max);
     }
 
     isDirectionTop(dir) {
       return dir === "top";
     }
 
-    onScroll(dir) {
-      const element = this.isDirectionTop(dir) ? this : this.imgWrapper;
-      const newIndex = Math.round((this.isDirectionTop(dir) ? element.scrollTop : element.scrollLeft) / element.offsetWidth);
+    isRTL() {
+      return document.dir === "rtl";
+    }
 
-      if (newIndex !== this.index) {
-        this.index = newIndex;
-        this.setState();
-      }
+    onScroll(dir) {
+      if (this.scrollRAF) return;
+
+      this.scrollRAF = requestAnimationFrame(() => {
+        const el = this.isDirectionTop(dir) ? this : this.imgWrapper;
+        let pos = this.isDirectionTop(dir) ? el.scrollTop : el.scrollLeft;
+        const size = this.isDirectionTop(dir) ? el.clientHeight : el.clientWidth;
+
+        let newIndex = Math.abs(Math.round(pos / Math.max(1, size)));
+        const max = Math.max(0, this.images.length - 1);
+        if (newIndex > max) newIndex = max;
+
+        if (newIndex !== this.index) {
+          this.index = newIndex;
+          this.setState();
+        }
+        this.scrollRAF = null;
+      });
     }
   }
 
