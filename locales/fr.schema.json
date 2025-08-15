@@ -23,6 +23,9 @@
         },
         "note": "Choisissez «Clair» ou «Sombre» pour verrouiller le mode pour vos clients, ou «Auto» pour leur permettre de changer via un bouton."
       },
+      "theme_style": {
+        "label": "Style du thème"
+      },
       "global_theme_style": {
         "label": "Activer le style de thème global ",
         "note": "Ce paramètre remplace les styles de thème de chaque section, avec la possibilité de revenir en arrière en le désactivant."
@@ -114,7 +117,8 @@
       "font_family_label": "Famille de polices",
       "headings": "Titres",
       "font_size_scale": "Échelle de taille de police",
-      "body": "Corps"
+      "body": "Corps",
+      "suggestions": "Nous vous suggérons d'utiliser « DM Sans » pour l'anglais, le français, etc., et « Almarai » pour l'arabe."
     },
     "buttons": {
       "label": "Boutons",

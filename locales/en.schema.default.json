@@ -23,6 +23,9 @@
         },
         "note": "Pick «Light» or «Dark» to lock the mode for customers, or «Auto» to let them switch with a toggle."
       },
+      "theme_style": {
+        "label": "Theme style"
+      },
       "global_theme_style": {
         "label": "Enable global theme style",
         "note": "This setting overrides per section theme styles, with the option to revert by turning it off."
@@ -114,7 +117,8 @@
       "font_family_label": "Font family",
       "headings": "Headings",
       "font_size_scale": "Font size scale",
-      "body": "Body"
+      "body": "Body",
+      "suggestions": "We suggest using «DM Sans» for English, French, etc., and «Almarai» for Arabic."
     },
     "buttons": {
       "label": "Buttons",
