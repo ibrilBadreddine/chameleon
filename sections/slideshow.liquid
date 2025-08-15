@@ -23,10 +23,11 @@
     </div>
   {% endif %}
   {% if section.blocks.size > 1 %}
-    <div class="slideshow-pagination">
+    <div class="slideshow-pagination" role="tablist" aria-label="Slideshow navigation">
       {% for index in (1..section.blocks.size) %}
         <button
-          aria-label="scroll to {{ index }}"
+          role="tab"
+          aria-label="Go to slide {{ index }}"
           {% if index == 1 %}
             aria-selected="true"
           {% else %}
