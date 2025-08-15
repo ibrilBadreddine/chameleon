@@ -3,9 +3,6 @@
     "single-product": {
       "type": "single-product"
     },
-    "product-details": {
-      "type": "product-details"
-    },
     "product-reviews": {
       "type": "product-reviews"
     },
@@ -13,5 +10,5 @@
       "type": "related-products"
     }
   },
-  "order": ["single-product", "product-details", "product-reviews", "related-products"]
+  "order": ["single-product", "product-reviews", "related-products"]
 }
