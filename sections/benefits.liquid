@@ -16,6 +16,7 @@
 {% schema %}
 {
   "label": "t:sections.benefits.label",
+  "templates": ["index"],
   "limit": 3,
   "max_blocks": 8,
   "settings": [
@@ -57,7 +58,8 @@
         {
           "type": "text",
           "id": "content",
-          "label": "t:sections.benefits.blocks.benefit.content"
+          "label": "t:sections.benefits.blocks.benefit.content",
+          "default": "My benefit"
         }
       ]
     }

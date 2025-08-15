@@ -10,7 +10,7 @@
         "type": "color",
         "id": "primary_color",
         "label": "t:common.theme_settings.primary_color.label",
-        "default": "#2d6a4f"
+        "default": "#4A5759"
       },
       {
         "type": "paragraph",
@@ -43,7 +43,7 @@
       {
         "type": "select",
         "id": "theme_style",
-        "label": "t:common.theme.label",
+        "label": "t:common.theme_settings.theme_style.label",
         "options": [
           {
             "value": "primary-low",
@@ -202,6 +202,10 @@
           }
         ],
         "default": "DM+Sans"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.typography.suggestions"
       }
     ]
   },

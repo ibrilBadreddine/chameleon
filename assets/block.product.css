@@ -30,6 +30,7 @@
     }
 
     .price {
+      width: fit-content;
       border-radius: var(--radius-sm);
       background-color: var(--color-background);
       padding: var(--spacing-8) var(--spacing-12);
@@ -57,6 +58,7 @@
       justify-content: space-between;
 
       .badge {
+        width: fit-content;
         font: var(--font-body-sm);
         border-radius: var(--radius-xs);
         color: var(--color-background);
@@ -67,6 +69,20 @@
       ui-product-button {
         & > button {
           clip-path: circle();
+        }
+      }
+
+      &:has(.badge):has(ui-product-button) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .badge {
+          order: 3;
+        }
+
+        ui-product-button {
+          display: flex;
+          justify-content: flex-end;
         }
       }
     }
@@ -135,7 +151,12 @@
 
         .badge {
           position: absolute;
+          inset-inline-start: var(--spacing-12);
           inset-block-end: calc(250px - 28px - var(--spacing-12));
+        }
+
+        ui-product-button {
+          justify-content: flex-start !important;
         }
       }
 
