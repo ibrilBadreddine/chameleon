@@ -10,7 +10,7 @@ if (!customElements.get("ui-slideshow")) {
         previous: this.querySelector('[aria-label="previous"]'),
         next: this.querySelector('[aria-label="next"]'),
       };
-      this.dots = this.querySelectorAll('[aria-label*="scroll"]');
+      this.dots = this.querySelectorAll('[aria-label*="slide"]');
 
       this.TOTAL = this.slides.length;
     }
